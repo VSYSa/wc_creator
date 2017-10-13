@@ -80,8 +80,8 @@ $acsess='true';
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked admin-menu">
                 <li class="active"><a href="#" data-target-id="home"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                <li><a  data-target-id="parsing_progress_list"><i class="fa fa-list-alt fa-fw"></i>Parsing</a></li>
-                <li><a  data-target-id="pages"><i class="fa fa-file-o fa-fw"></i>Pages</a></li>
+                <li><a  data-target-id="Creating"><i class="fa fa-list-alt fa-fw"></i>Creating</a></li>
+                <li><a  data-target-id="Updating"><i class="fa fa-file-o fa-fw"></i>Updating</a></li>
                 <li><a  data-target-id="charts"><i class="fa fa-bar-chart-o fa-fw"></i>Charts</a></li>
                 <li><a  data-target-id="table"><i class="fa fa-table fa-fw"></i>Table</a></li>
                 <li><a  data-target-id="forms"><i class="fa fa-tasks fa-fw"></i>Forms</a></li>
@@ -102,7 +102,7 @@ $acsess='true';
                 Thank you Baumik!
             </p>
         </div>
-        <div class="col-md-9 well admin-content" id="parsing_progress_list">
+        <div class="col-md-9 well admin-content" id="Creating">
 
 
 
@@ -186,7 +186,55 @@ $acsess='true';
 
 
         </div>
-        <div class="col-md-9 admin-content" id="pages">
+        <div class="col-md-9 admin-content" id="Updating">
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Информация</h2>
+                    <div class="row">
+                        <div class="col-md-8">Товаров в магазине: </div>   <div id="up_quantiti_products" class="col-md-4">0</div>
+                        <div class="col-md-8">Загружено товаров в базу:
+                            <div id="up_progress_uploaded_products" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
+                        </div>   <div  class="col-md-4"><div id="up_uploaded_products">0</div><div id="up_uploaded_products_time">0</div></div>
+                        <div class="col-md-8">Товары с обновленной информацией:
+                            <div id="up_progress_updated_products_information" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
+                        </div>   <div class="col-md-4"><div id="up_updated_products_information">0</div><div id="up_updated_products_information_time">0</div></div>
+                        <div class="col-md-8">Загружено товаров в магазин:
+                            <div id="up_progress_updated_products" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
+                        </div>   <div class="col-md-4"><div id="up_updated_products">0</div><div id="up_updated_products_time">0</div></div>
+                        <div class="col-md-8">Времени прошло: </div>   <div  id="up_time_from_start" class="col-md-4">0</div>
+                        <div class="col-md-8">Времени осталось: </div>   <div id="up_time_to_end" class="col-md-4">0</div>
+                        <!--<div class="col-md-8">Шаг обновления: </div>   <div id="status_step_updating" class="col-md-4">0</div>-->
+                        <div class="col-md-8">Статус обновления: </div>   <div id="up_status_updating" class="col-md-4">0</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="start_buttons">
+                        <p><button id='up_startparsing' >START UPDATING</button></p>
+                        <p><button id='up_update_PL' >UPDATE PRODUCTS LIST</button></p>
+                        <p><button id='up_update_PI' >UPDATE PRODUCT INFORMATION</button></p>
+                        <p><button id='up_upload_PL' >UPLOAD PRODUCTS LIST</button></p>
+                        <input  type="radio" name="answer" data-update='quantiti' >количество товаров</p>
+                        <input  type="radio" name="answer" data-update='prise' >цену товаров</p>
+                        <input  type="radio" name="answer" data-update='all' checked>все</p>
+                    </div>
+                    <div id="continue_buttons" >
+                        <p><button id='up_continue_updating' >CONTINUE UPDATING</button></p>
+                        <p><button id='up_pause_updating' >PAUSE UPDATING</button></p>
+                        <p><button id='up_stop_updating' >STOP UPDATING</button></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
         </div>
         <div class="col-md-9 well admin-content" id="charts">
             Charts
@@ -210,6 +258,6 @@ $acsess='true';
         </div>
     </div>
 </div>
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

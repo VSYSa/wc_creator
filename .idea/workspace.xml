@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="79986b25-f786-4ab5-8124-cb1a25201274" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cookie.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/creator.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cron.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/download.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/status.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="228" column="0" lean-forward="true" selection-start-line="228" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="845" column="0" lean-forward="true" selection-start-line="845" selection-start-column="0" selection-end-line="845" selection-end-column="0" />
+              <folding>
+                <element signature="e#56#4692#0" expanded="false" />
+                <element signature="e#4714#11817#0" expanded="false" />
+                <element signature="n#!!block;n#live_indicators#0" expanded="false" />
+                <element signature="e#11969#11994#0" expanded="false" />
+                <element signature="n#!!block;n#dop_z#0" expanded="false" />
+                <element signature="n#!!block;n#timer#0" expanded="false" />
+                <element signature="n#!!block;n#create_record#0" expanded="false" />
+                <element signature="e#12837#12980#0" expanded="false" />
+                <element signature="e#13015#13087#0" expanded="false" />
+                <element signature="n#!!block;n#load_start#0" expanded="false" />
+                <element signature="n#!!block;n#load_finish#0" expanded="false" />
+                <element signature="n#!!block;n#start_creating#0" expanded="false" />
+                <element signature="n#!!block;n#end_of_updating#0" expanded="false" />
+                <element signature="e#13556#13991#0" expanded="false" />
+                <element signature="e#14034#14467#0" expanded="false" />
+                <element signature="e#14512#14566#0" expanded="false" />
+                <element signature="e#14610#14665#0" expanded="false" />
+                <element signature="e#14716#14776#0" expanded="false" />
+                <element signature="e#14817#14884#0" expanded="false" />
+                <element signature="e#14933#14960#0" expanded="false" />
+                <element signature="e#15006#15030#0" expanded="false" />
+                <element signature="e#15075#15121#0" expanded="false" />
+                <element signature="e#15183#15372#0" expanded="false" />
+                <element signature="e#15414#15456#0" expanded="false" />
+                <element signature="e#15469#19567#0" expanded="false" />
+                <element signature="e#19589#24517#0" expanded="false" />
+                <element signature="e#24526#27574#0" expanded="false" />
+                <element signature="e#27590#27865#0" expanded="false" />
+                <element signature="n#!!block;n#live_indicators#1" expanded="false" />
+                <element signature="e#28031#28056#0" expanded="false" />
+                <element signature="e#28068#29119#0" expanded="false" />
+                <element signature="n#!!block;n#dop_z#1" expanded="false" />
+                <element signature="n#!!block;n#ClearСlock#0" expanded="false" />
+                <element signature="n#!!block;n#timer#1" expanded="false" />
+                <element signature="n#!!block;n#StartStop#0" expanded="false" />
+                <element signature="n#!!block;n#create_record#1" expanded="false" />
+                <element signature="e#30469#30612#0" expanded="false" />
+                <element signature="e#30647#30719#0" expanded="false" />
+                <element signature="n#!!block;n#load_start#1" expanded="false" />
+                <element signature="n#!!block;n#load_finish#1" expanded="false" />
+                <element signature="n#!!block;n#start_parsing#0" expanded="false" />
+                <element signature="n#!!block;n#end_of_updating#1" expanded="false" />
+                <element signature="e#31189#31240#0" expanded="false" />
+                <element signature="e#31284#31332#0" expanded="false" />
+                <element signature="e#31376#31424#0" expanded="false" />
+                <element signature="e#31468#31516#0" expanded="false" />
+                <element signature="e#31568#31594#0" expanded="false" />
+                <element signature="e#31643#31666#0" expanded="false" />
+                <element signature="e#31714#31759#0" expanded="false" />
+                <element signature="n#!!block;n#on_load_page#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>parsing_progress_list</find>
+      <find>api_host</find>
+      <find>db</find>
+      <find>quantiti_products</find>
+      <find>#quantiti_products</find>
+      <find>progress_uploaded_products</find>
+      <find>uploaded_products</find>
+      <find>#uploaded_products</find>
+      <find>#progress_updated_products_information</find>
+      <find>uploaded_products_time</find>
+      <find>#updated_products_information</find>
+      <find>#progress_updated_products</find>
+      <find>#updated_products</find>
+      <find>time_from_start</find>
+      <find>time_to_end</find>
+      <find>#time_to_end</find>
+      <find>#status_updating</find>
+      <find>startparsing</find>
+      <find>updated_products_information</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>up_progress_uploaded_products</replace>
+      <replace>#up_progress_updated_products_information</replace>
+      <replace>#up_updated_products_information</replace>
+      <replace>#up_progress_updated_products</replace>
+      <replace>#up_updated_products</replace>
+      <replace>#up_status_updating</replace>
+      <replace>#up_uploaded_products</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/up_index.php" />
+        <option value="$PROJECT_DIR$/settings.php" />
+        <option value="$PROJECT_DIR$/creator.php" />
+        <option value="$PROJECT_DIR$/lib.php" />
+        <option value="$PROJECT_DIR$/up_index.js" />
+        <option value="$PROJECT_DIR$/libs/settings.php" />
+        <option value="$PROJECT_DIR$/libs/lib_creator.php" />
+        <option value="$PROJECT_DIR$/libs/lib_updator.php" />
+        <option value="$PROJECT_DIR$/js/up_index.js" />
+        <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programs\OSPanel\domains\localhost\wc_up\main" />
+      <recent name="D:\programs\OSPanel\domains\localhost\wc_up\js" />
+      <recent name="D:\programs\OSPanel\domains\localhost\wc_up\status" />
+      <recent name="D:\programs\OSPanel\domains\localhost\wc_up" />
+      <recent name="D:\programs\OSPanel\domains\localhost\wc_up\libs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programs\OSPanel\domains\localhost\wc_up" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79986b25-f786-4ab5-8124-cb1a25201274" name="Default" comment="" />
+      <created>1507921049016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1507921049016</updated>
+      <workItem from="1507921052738" duration="1860000" />
+      <workItem from="1507923037030" duration="621000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2481000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3349">
+          <caret line="197" column="83" lean-forward="false" selection-start-line="197" selection-start-column="75" selection-end-line="197" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6528">
+          <caret line="384" column="0" lean-forward="true" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
+          <folding>
+            <element signature="e#56#4692#0" expanded="false" />
+            <element signature="e#4714#11817#0" expanded="false" />
+            <element signature="n#!!block;n#live_indicators#0" expanded="false" />
+            <element signature="e#11969#11994#0" expanded="false" />
+            <element signature="n#!!block;n#dop_z#0" expanded="false" />
+            <element signature="n#!!block;n#timer#0" expanded="false" />
+            <element signature="n#!!block;n#create_record#0" expanded="false" />
+            <element signature="e#12837#12980#0" expanded="false" />
+            <element signature="e#13015#13087#0" expanded="false" />
+            <element signature="n#!!block;n#load_start#0" expanded="false" />
+            <element signature="n#!!block;n#load_finish#0" expanded="false" />
+            <element signature="n#!!block;n#start_creating#0" expanded="false" />
+            <element signature="n#!!block;n#end_of_updating#0" expanded="false" />
+            <element signature="e#13556#13991#0" expanded="false" />
+            <element signature="e#14034#14467#0" expanded="false" />
+            <element signature="e#14512#14566#0" expanded="false" />
+            <element signature="e#14610#14665#0" expanded="false" />
+            <element signature="e#14716#14776#0" expanded="false" />
+            <element signature="e#14817#14884#0" expanded="false" />
+            <element signature="e#14933#14960#0" expanded="false" />
+            <element signature="e#15006#15030#0" expanded="false" />
+            <element signature="e#15075#15121#0" expanded="false" />
+            <element signature="e#15183#15372#0" expanded="false" />
+            <element signature="e#15414#15456#0" expanded="false" />
+            <element signature="e#15469#19567#0" expanded="false" />
+            <element signature="e#19589#24517#0" expanded="false" />
+            <element signature="e#24526#27574#0" expanded="false" />
+            <element signature="e#27590#27865#0" expanded="false" />
+            <element signature="n#!!block;n#live_indicators#1" expanded="false" />
+            <element signature="e#28031#28056#0" expanded="false" />
+            <element signature="e#28068#29119#0" expanded="false" />
+            <element signature="n#!!block;n#dop_z#1" expanded="false" />
+            <element signature="n#!!block;n#ClearСlock#0" expanded="false" />
+            <element signature="n#!!block;n#timer#1" expanded="false" />
+            <element signature="n#!!block;n#StartStop#0" expanded="false" />
+            <element signature="n#!!block;n#create_record#1" expanded="false" />
+            <element signature="e#30469#30612#0" expanded="false" />
+            <element signature="e#30647#30719#0" expanded="false" />
+            <element signature="n#!!block;n#load_start#1" expanded="false" />
+            <element signature="n#!!block;n#load_finish#1" expanded="false" />
+            <element signature="n#!!block;n#start_parsing#0" expanded="false" />
+            <element signature="n#!!block;n#end_of_updating#1" expanded="false" />
+            <element signature="e#31189#31240#0" expanded="false" />
+            <element signature="e#31284#31332#0" expanded="false" />
+            <element signature="e#31376#31424#0" expanded="false" />
+            <element signature="e#31468#31516#0" expanded="false" />
+            <element signature="e#31568#31594#0" expanded="false" />
+            <element signature="e#31643#31666#0" expanded="false" />
+            <element signature="e#31714#31759#0" expanded="false" />
+            <element signature="n#!!block;n#on_load_page#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/up_index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3196">
+          <caret line="188" column="9" lean-forward="true" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/up_status.js" />
+    <entry file="file://$PROJECT_DIR$/creator_old.php" />
+    <entry file="file://$PROJECT_DIR$/main/creator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib.php" />
+    <entry file="file://$PROJECT_DIR$/up_include.php" />
+    <entry file="file://$PROJECT_DIR$/libs/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/lib_creator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="581" column="0" lean-forward="true" selection-start-line="581" selection-start-column="0" selection-end-line="581" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/lib_updator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/up_index.php" />
+    <entry file="file://$PROJECT_DIR$/js/up_index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="421" column="48" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="845" column="0" lean-forward="true" selection-start-line="845" selection-start-column="0" selection-end-line="845" selection-end-column="0" />
+          <folding>
+            <element signature="e#56#4692#0" expanded="false" />
+            <element signature="e#4714#11817#0" expanded="false" />
+            <element signature="n#!!block;n#live_indicators#0" expanded="false" />
+            <element signature="e#11969#11994#0" expanded="false" />
+            <element signature="n#!!block;n#dop_z#0" expanded="false" />
+            <element signature="n#!!block;n#timer#0" expanded="false" />
+            <element signature="n#!!block;n#create_record#0" expanded="false" />
+            <element signature="e#12837#12980#0" expanded="false" />
+            <element signature="e#13015#13087#0" expanded="false" />
+            <element signature="n#!!block;n#load_start#0" expanded="false" />
+            <element signature="n#!!block;n#load_finish#0" expanded="false" />
+            <element signature="n#!!block;n#start_creating#0" expanded="false" />
+            <element signature="n#!!block;n#end_of_updating#0" expanded="false" />
+            <element signature="e#13556#13991#0" expanded="false" />
+            <element signature="e#14034#14467#0" expanded="false" />
+            <element signature="e#14512#14566#0" expanded="false" />
+            <element signature="e#14610#14665#0" expanded="false" />
+            <element signature="e#14716#14776#0" expanded="false" />
+            <element signature="e#14817#14884#0" expanded="false" />
+            <element signature="e#14933#14960#0" expanded="false" />
+            <element signature="e#15006#15030#0" expanded="false" />
+            <element signature="e#15075#15121#0" expanded="false" />
+            <element signature="e#15183#15372#0" expanded="false" />
+            <element signature="e#15414#15456#0" expanded="false" />
+            <element signature="e#15469#19567#0" expanded="false" />
+            <element signature="e#19589#24517#0" expanded="false" />
+            <element signature="e#24526#27574#0" expanded="false" />
+            <element signature="e#27590#27865#0" expanded="false" />
+            <element signature="n#!!block;n#live_indicators#1" expanded="false" />
+            <element signature="e#28031#28056#0" expanded="false" />
+            <element signature="e#28068#29119#0" expanded="false" />
+            <element signature="n#!!block;n#dop_z#1" expanded="false" />
+            <element signature="n#!!block;n#ClearСlock#0" expanded="false" />
+            <element signature="n#!!block;n#timer#1" expanded="false" />
+            <element signature="n#!!block;n#StartStop#0" expanded="false" />
+            <element signature="n#!!block;n#create_record#1" expanded="false" />
+            <element signature="e#30469#30612#0" expanded="false" />
+            <element signature="e#30647#30719#0" expanded="false" />
+            <element signature="n#!!block;n#load_start#1" expanded="false" />
+            <element signature="n#!!block;n#load_finish#1" expanded="false" />
+            <element signature="n#!!block;n#start_parsing#0" expanded="false" />
+            <element signature="n#!!block;n#end_of_updating#1" expanded="false" />
+            <element signature="e#31189#31240#0" expanded="false" />
+            <element signature="e#31284#31332#0" expanded="false" />
+            <element signature="e#31376#31424#0" expanded="false" />
+            <element signature="e#31468#31516#0" expanded="false" />
+            <element signature="e#31568#31594#0" expanded="false" />
+            <element signature="e#31643#31666#0" expanded="false" />
+            <element signature="e#31714#31759#0" expanded="false" />
+            <element signature="n#!!block;n#on_load_page#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="228" column="0" lean-forward="true" selection-start-line="228" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

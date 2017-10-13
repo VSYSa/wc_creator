@@ -1,20 +1,13 @@
 <?php
-/*
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-*/
-error_reporting (E_ALL & ~ E_DEPRECATED & ~ E_NOTICE);
-error_reporting (0);
-
+/**
+ * Created by PhpStorm.
+ * User: vladislav
+ * Date: 14.10.2017
+ * Time: 2:14
+ */
+require_once( 'libs/settings.php' );
 $mem_start = memory_get_usage();
-define('WP_MEMORY_LIMIT', '1024M');
-ignore_user_abort(true);
-set_time_limit(0);
 
-define("api_host", "https://mnogosveta.su/");
-define("api_key_ck", "ck_73951e6714a5f64af41448ed70965ad43cf05efe");
-define("api_key_cs", "cs_eb7b510b0042b842f9730fd8806fba20e03c4475");
 // рекурсивный сбор ссылок с сайта, определение кто товар и загрузка информации о нем
 function spider($url)
 {
@@ -186,13 +179,13 @@ function upload_products(){
 
             foreach ($atributes as $name => $atribut) {
                 if($atribut!=""){ //если атрибут не пустой, то мы добалвяем его
-                $import['attributes'][]=
-                    array(
-                        'name' => $name_atributes[$name],
-                        'slug' => "$name",
-                        'visible'=>'true',
-                        'options'=> array( $atribut )
-                    );
+                    $import['attributes'][]=
+                        array(
+                            'name' => $name_atributes[$name],
+                            'slug' => "$name",
+                            'visible'=>'true',
+                            'options'=> array( $atribut )
+                        );
                 }
                 unset($name,$atribut);
 
@@ -295,85 +288,85 @@ function pars_magia_sveta(&$url,&$html){
     if(preg_match('/Уточнить цену/',$html->find('div.product-price a',0))){//есть ли запись "уточнить цену", то error
         write_error('471','У товара нет цены, поэтому не парсим его.',$url);
         return;
-        }
+    }
     if(!preg_match('/в наличии/',$html->find('a.available-tab-open span',0))){//если нет в наличии, то error
         write_error('472','Товара нет в наличии, поэтому не парсим его.',$html->find('a.available-tab-open'));
         return;
     }
 
 
-        $price = $html->find('span.price', 0);    //находим первое значение у тега а с классом available-tab-open
-        if (count($price->find('span.old-price', 0))) {
-            $price = $price->find('span.old-price', 0);
-        }
-        $price = $price->innertext;
-        $price = preg_replace("/[^0-9]/", '', $price);     //отчищаем от слов
-        $quantity = $html->find('a.available-tab-open', 0);    //находим первое значение у тега а с классом available-tab-open
-        $quantity = preg_replace("/[^0-9]/", '', $quantity);
-        //выводим строку
+    $price = $html->find('span.price', 0);    //находим первое значение у тега а с классом available-tab-open
+    if (count($price->find('span.old-price', 0))) {
+        $price = $price->find('span.old-price', 0);
+    }
+    $price = $price->innertext;
+    $price = preg_replace("/[^0-9]/", '', $price);     //отчищаем от слов
+    $quantity = $html->find('a.available-tab-open', 0);    //находим первое значение у тега а с классом available-tab-open
+    $quantity = preg_replace("/[^0-9]/", '', $quantity);
+    //выводим строку
 
-        $image_url = $html->find('div.product-photo img', 0)->attr['src'];
-        error_check_image_url($image_url, $url);
-        if ($image_url{0} == '/') {
-            $host = parse_url($url);
-            $scheme = $host['scheme'];
-            $host = $host['host'];
-            $image_url = $scheme . '://' . $host . $image_url;
-            unset($host, $scheme);
+    $image_url = $html->find('div.product-photo img', 0)->attr['src'];
+    error_check_image_url($image_url, $url);
+    if ($image_url{0} == '/') {
+        $host = parse_url($url);
+        $scheme = $host['scheme'];
+        $host = $host['host'];
+        $image_url = $scheme . '://' . $host . $image_url;
+        unset($host, $scheme);
+    }
+    $title = $html->find('ul.breadcrumbs', 0)->find('li span', 0)->innertext;
+    $category = $html->find('ul.breadcrumbs', 0)->find('li a', -1)->innertext;
+    $sku = $html->find('div.product-code span', 0)->innertext;
+    $atributs = $html->find('table.product-settings tr');
+    $base_color = NULL;
+    $plafond_color = NULL;
+    $brand = NULL;
+    $lamp_base = NULL;
+    $voltage = NULL;
+    $power = NULL;
+    $quantity_lamps = NULL;
+    foreach ($atributs as &$atribut) {
+        if ($atribut->find('td.name span', 0)->innertext == 'Цвет арматуры') {
+            $base_color = $atribut->find('td.value', 0)->innertext;
+        } elseif ($atribut->find('td.name span', 0)->innertext == 'Цвет плафона') {
+            $plafond_color = $atribut->find('td.value', 0)->innertext;
+        } elseif ($atribut->find('td.name span', 0)->innertext == 'Бренд') {
+            $brand = $atribut->find('td.value', 0)->plaintext;
+        } elseif ($atribut->find('td.name span', 0)->innertext == 'Цоколь') {
+            $lamp_base = $atribut->find('td.value', 0)->innertext;
+        } elseif($atribut->find('td.name span',0)->innertext=='Напряжение'){
+            $voltage=$atribut->find('td.value',0)->innertext;
+            $voltage=preg_replace('/[^0-9\-]/','',$voltage);
         }
-        $title = $html->find('ul.breadcrumbs', 0)->find('li span', 0)->innertext;
-        $category = $html->find('ul.breadcrumbs', 0)->find('li a', -1)->innertext;
-        $sku = $html->find('div.product-code span', 0)->innertext;
-        $atributs = $html->find('table.product-settings tr');
-        $base_color = NULL;
-        $plafond_color = NULL;
-        $brand = NULL;
-        $lamp_base = NULL;
-        $voltage = NULL;
-        $power = NULL;
-        $quantity_lamps = NULL;
-        foreach ($atributs as &$atribut) {
-            if ($atribut->find('td.name span', 0)->innertext == 'Цвет арматуры') {
-                $base_color = $atribut->find('td.value', 0)->innertext;
-            } elseif ($atribut->find('td.name span', 0)->innertext == 'Цвет плафона') {
-                $plafond_color = $atribut->find('td.value', 0)->innertext;
-            } elseif ($atribut->find('td.name span', 0)->innertext == 'Бренд') {
-                $brand = $atribut->find('td.value', 0)->plaintext;
-            } elseif ($atribut->find('td.name span', 0)->innertext == 'Цоколь') {
-                $lamp_base = $atribut->find('td.value', 0)->innertext;
-            } elseif($atribut->find('td.name span',0)->innertext=='Напряжение'){
-                $voltage=$atribut->find('td.value',0)->innertext;
-                $voltage=preg_replace('/[^0-9\-]/','',$voltage);
-            }
-            elseif ($atribut->find('td.name span', 0)->innertext == 'Макс. мощность одной лампы') {
-                $power = $atribut->find('td.value', 0)->innertext;
-                $power = preg_replace("/[^0-9]/", '', $power);
-            } elseif ($atribut->find('td.name span', 0)->innertext == 'Кол-во ламп') {
-                $quantity_lamps = $atribut->find('td.value', 0)->innertext;
-                $quantity_lamps = preg_replace("/[^0-9]/", '', $quantity_lamps);
-            }
+        elseif ($atribut->find('td.name span', 0)->innertext == 'Макс. мощность одной лампы') {
+            $power = $atribut->find('td.value', 0)->innertext;
+            $power = preg_replace("/[^0-9]/", '', $power);
+        } elseif ($atribut->find('td.name span', 0)->innertext == 'Кол-во ламп') {
+            $quantity_lamps = $atribut->find('td.value', 0)->innertext;
+            $quantity_lamps = preg_replace("/[^0-9]/", '', $quantity_lamps);
+        }
 
-        }
-        $html->clear();
-        unset($html);
-        $str = array(
-            'product_url' => $url,
-            'title' => $title,
-            'quantity' => $quantity,
-            'price' => $price,
-            'sku' => $sku,
-            'category' => $category,
-            'image' => $image_url,
-            'base_color' => $base_color,
-            'plafond_color' => $plafond_color,
-            'brand' => $brand,
-            'lamp_base' => $lamp_base,
-            'voltage' => $voltage,
-            'power' => $power,
-            'quantity_lamps' => $quantity_lamps
-        );
-        unset($url, $title, $quantity, $prise, $sku, $image_url, $base_color, $plafond_color, $brand, $lamp_base, $power, $quantity_lamps, $atributs, $atribut);
-        return ($str);
+    }
+    $html->clear();
+    unset($html);
+    $str = array(
+        'product_url' => $url,
+        'title' => $title,
+        'quantity' => $quantity,
+        'price' => $price,
+        'sku' => $sku,
+        'category' => $category,
+        'image' => $image_url,
+        'base_color' => $base_color,
+        'plafond_color' => $plafond_color,
+        'brand' => $brand,
+        'lamp_base' => $lamp_base,
+        'voltage' => $voltage,
+        'power' => $power,
+        'quantity_lamps' => $quantity_lamps
+    );
+    unset($url, $title, $quantity, $prise, $sku, $image_url, $base_color, $plafond_color, $brand, $lamp_base, $power, $quantity_lamps, $atributs, $atribut);
+    return ($str);
 
 }
 function pars_electra(&$url,&$html){
@@ -428,49 +421,49 @@ function pars_electra(&$url,&$html){
     }
 
 
-        $category = $html->find('nav.catalog-menu-block li.selected',0)->plaintext;
-        $title= $html->find('div.main-inner h1',0)->innertext;
-        $image_url= $html->find('div.prw-block img',0)->attr['src'];
-        if($image_url!=''){
-            $image_url='https://mnogosveta.su/upload/electra/'.(array_pop(preg_split("/\//", $image_url)));
+    $category = $html->find('nav.catalog-menu-block li.selected',0)->plaintext;
+    $title= $html->find('div.main-inner h1',0)->innertext;
+    $image_url= $html->find('div.prw-block img',0)->attr['src'];
+    if($image_url!=''){
+        $image_url='https://mnogosveta.su/upload/electra/'.(array_pop(preg_split("/\//", $image_url)));
+    }
+    error_check_image_url($image_url,$url);
+    $base_color=NULL;
+    $plafond_color=NULL;
+    $brand=NULL;
+    $lamp_base=NULL;
+    $voltage=NULL;
+    $power=NULL;
+    $quantity_lamps=NULL;
+    $atributs= $html->find('table.properties tr');
+    foreach ($atributs as &$atribut){
+        if($atribut->find('th',0)->innertext=='Цвет основания'){
+            $base_color=$atribut->find('td',0)->innertext;
         }
-        error_check_image_url($image_url,$url);
-        $base_color=NULL;
-        $plafond_color=NULL;
-        $brand=NULL;
-        $lamp_base=NULL;
-        $voltage=NULL;
-        $power=NULL;
-        $quantity_lamps=NULL;
-        $atributs= $html->find('table.properties tr');
-        foreach ($atributs as &$atribut){
-            if($atribut->find('th',0)->innertext=='Цвет основания'){
-                $base_color=$atribut->find('td',0)->innertext;
-            }
-            elseif ($atribut->find('th',0)->innertext=='Цвет каркаса'){
-                $base_color=$atribut->find('td',0)->innertext;
-            }
-            elseif ($atribut->find('th',0)->innertext=='Цвет плафона'){
-                $plafond_color=$atribut->find('td',0)->innertext;
-            }
-            elseif ($atribut->find('th',0)->innertext=='Производитель'){
-                $brand=$atribut->find('td span',0)->innertext;
-            }
-            elseif ($atribut->find('th',0)->innertext=='Цоколь лампы'){
-                $lamp_base=$atribut->find('td',0)->innertext;
-            }
-            elseif ($atribut->find('th',0)->innertext=='Напряжение, В'){
-                $voltage=$atribut->find('td',0)->innertext;
-            }
-            elseif ($atribut->find('th',0)->innertext=='Потребляемая мощность, Вт'){
-                $power=$atribut->find('td',0)->innertext;
-            }
-            elseif ($atribut->find('th',0)->innertext=='Количество ламп'){
-                $quantity_lamps=$atribut->find('td',0)->innertext;
-            }
+        elseif ($atribut->find('th',0)->innertext=='Цвет каркаса'){
+            $base_color=$atribut->find('td',0)->innertext;
         }
+        elseif ($atribut->find('th',0)->innertext=='Цвет плафона'){
+            $plafond_color=$atribut->find('td',0)->innertext;
+        }
+        elseif ($atribut->find('th',0)->innertext=='Производитель'){
+            $brand=$atribut->find('td span',0)->innertext;
+        }
+        elseif ($atribut->find('th',0)->innertext=='Цоколь лампы'){
+            $lamp_base=$atribut->find('td',0)->innertext;
+        }
+        elseif ($atribut->find('th',0)->innertext=='Напряжение, В'){
+            $voltage=$atribut->find('td',0)->innertext;
+        }
+        elseif ($atribut->find('th',0)->innertext=='Потребляемая мощность, Вт'){
+            $power=$atribut->find('td',0)->innertext;
+        }
+        elseif ($atribut->find('th',0)->innertext=='Количество ламп'){
+            $quantity_lamps=$atribut->find('td',0)->innertext;
+        }
+    }
 
-    
+
     $str = array(
         'product_url'=> $url,
         'title'=> $title,
@@ -538,35 +531,35 @@ function pars_antares_svet(&$url,&$html){
     $sku= $html->find('span.art',0)->innertext;
 
     $atributs= $html->find('div.descript-product table.table tr');
-        foreach ($atributs as &$atribut){
-            if($atribut->find('td',0)->innertext=='Цвет основания'){
-                $base_color=$atribut->find('td',1)->innertext;
-            }
-            elseif ($atribut->find('td',0)->innertext=='Цвет плафона'){
-                $plafond_color=$atribut->find('td',1)->innertext;
-            }
-            elseif ($atribut->find('td',0)->innertext=='Производитель'){
-                $brand=$atribut->find('td',1)->innertext;
-            }
-            elseif ($atribut->find('td',0)->innertext=='Цоколь'){
-                $lamp_base=$atribut->find('td',1)->innertext;
-            }
-            elseif (preg_match('/Напряжение сети/',$atribut->find('td',0)->innertext)){
-                $voltage=$atribut->find('td',1)->innertext;
-            }
-            elseif ($atribut->find('td',0)->innertext=='Мощность, Вт'){
-                $power=$atribut->find('td',1)->innertext;
-            }
-            elseif ($atribut->find('td',0)->innertext=='Общее количество ламп'){
-                $quantity_lamps=$atribut->find('td',1)->innertext;
-            }
+    foreach ($atributs as &$atribut){
+        if($atribut->find('td',0)->innertext=='Цвет основания'){
+            $base_color=$atribut->find('td',1)->innertext;
         }
+        elseif ($atribut->find('td',0)->innertext=='Цвет плафона'){
+            $plafond_color=$atribut->find('td',1)->innertext;
+        }
+        elseif ($atribut->find('td',0)->innertext=='Производитель'){
+            $brand=$atribut->find('td',1)->innertext;
+        }
+        elseif ($atribut->find('td',0)->innertext=='Цоколь'){
+            $lamp_base=$atribut->find('td',1)->innertext;
+        }
+        elseif (preg_match('/Напряжение сети/',$atribut->find('td',0)->innertext)){
+            $voltage=$atribut->find('td',1)->innertext;
+        }
+        elseif ($atribut->find('td',0)->innertext=='Мощность, Вт'){
+            $power=$atribut->find('td',1)->innertext;
+        }
+        elseif ($atribut->find('td',0)->innertext=='Общее количество ламп'){
+            $quantity_lamps=$atribut->find('td',1)->innertext;
+        }
+    }
     $image_url= $html->find('div.view-product img',1)->attr['src'];
     error_check_image_url($image_url,$url);
     $category=$html->find('ol.breadcrumb li',-1)->plaintext;
     $html->clear();
     unset($html);
-    
+
     $str = array(
         'product_url'=> $url,
         'title'=> $title,
@@ -585,17 +578,6 @@ function pars_antares_svet(&$url,&$html){
     );
     unset($price,$title,$quantity,$price,$sku,$category,$image_url,$base_color,$plafond_color,$brand,$lamp_base,$voltage,$power,$quantity_lamps);
     return ($str);
-}
-
-function db(){
-    $db_host="localhost";
-    $db_username="root";
-    $db_password="toor";
-    $db_id = mysql_connect($db_host, $db_username, $db_password)
-    or die('Не удалось соединиться: ' . mysql_error());
-    mysql_select_db('creating_products')
-    or die('Не удалось выбрать базу данных');
-    mysql_set_charset("utf8");
 }
 
 function write_log($str){

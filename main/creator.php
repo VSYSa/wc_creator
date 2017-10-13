@@ -2,13 +2,9 @@
 
 
 
-require_once( 'api/woocommerce-api.php' );
-require_once( 'parser/simple_html_dom.php' );
-require_once( 'lib.php' );
-db();
-
-
-
+require_once('api/woocommerce-api.php');
+require_once('parser/simple_html_dom.php');
+require_once('libs/lib_creator.php');
 
 
 
@@ -66,7 +62,4 @@ elseif($_POST['what_to_do']==='upload_products'){
     mysql_query('UPDATE `settings` SET `value` = '.time().' WHERE `title` = "end_of_updating"');
 
 }
-
-
-
 ?>
