@@ -5,7 +5,18 @@
  * Date: 14.10.2017
  * Time: 2:14
  */
-require_once( 'libs/settings.php' );
+require_once( 'settings.php' );
+require_once('../api/woocommerce-api.php');
+require_once( '../parser/parser.php' );
+
+function db(){
+    $db_id = mysql_connect(db_host, db_username, db_password)
+    or die('Не удалось соединиться: ' . mysql_error());
+    mysql_select_db('creating_products')
+    or die('Не удалось выбрать базу данных');
+}
+db();
+
 $mem_start = memory_get_usage();
 
 // рекурсивный сбор ссылок с сайта, определение кто товар и загрузка информации о нем
@@ -278,7 +289,7 @@ function pars(&$url,&$html){
         return;
     }
 }
-
+/* прописали в parser.php
 function pars_magia_sveta(&$url,&$html){
 
     if($html->innertext==''){
@@ -579,7 +590,7 @@ function pars_antares_svet(&$url,&$html){
     unset($price,$title,$quantity,$price,$sku,$category,$image_url,$base_color,$plafond_color,$brand,$lamp_base,$voltage,$power,$quantity_lamps);
     return ($str);
 }
-
+*/
 function write_log($str){
     $date = date("d-m");
     $time = date("H:i:s");
@@ -647,6 +658,7 @@ function next_url(){
         return;
     }
 }
+/* прописали в parser.php
 function get($url){
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
@@ -664,6 +676,7 @@ function get($url){
     curl_close($curl);
     return $str;
 }
+*/
 function this_is_file(&$link){
     preg_match('/.+\.(\w+)$/xis', $link, $pocket);//получаю расширение файла
     if(!empty($pocket)) {
@@ -716,7 +729,6 @@ function error_check_image_url (&$image_url,&$url){
     }
     return;
 }
-
 
 function check_is_NULL ($str){
     if($str==""){

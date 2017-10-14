@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79986b25-f786-4ab5-8124-cb1a25201274" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cookie.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/creator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cron.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/download.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/status.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/up_index.js" afterPath="$PROJECT_DIR$/js/up_index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/lib_creator.php" afterPath="$PROJECT_DIR$/libs/lib_creator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/lib_updator.php" afterPath="$PROJECT_DIR$/libs/lib_updator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/settings.php" afterPath="$PROJECT_DIR$/libs/settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/creator.php" afterPath="$PROJECT_DIR$/main/creator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parser.php" afterPath="$PROJECT_DIR$/parser/parser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/status/up_status.php" afterPath="$PROJECT_DIR$/status/up_status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/adminstyle.css" afterPath="$PROJECT_DIR$/style/adminstyle.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/main/up_updating.php" afterPath="$PROJECT_DIR$/main/updator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/status/status.php" afterPath="$PROJECT_DIR$/status/cr_status.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,11 +26,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="228" column="0" lean-forward="true" selection-start-line="228" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+            <state relative-caret-position="1380">
+              <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -35,60 +39,25 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="845" column="0" lean-forward="true" selection-start-line="845" selection-start-column="0" selection-end-line="845" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="247" selection-end-column="1" />
               <folding>
-                <element signature="e#56#4692#0" expanded="false" />
-                <element signature="e#4714#11817#0" expanded="false" />
-                <element signature="n#!!block;n#live_indicators#0" expanded="false" />
-                <element signature="e#11969#11994#0" expanded="false" />
-                <element signature="n#!!block;n#dop_z#0" expanded="false" />
-                <element signature="n#!!block;n#timer#0" expanded="false" />
-                <element signature="n#!!block;n#create_record#0" expanded="false" />
-                <element signature="e#12837#12980#0" expanded="false" />
-                <element signature="e#13015#13087#0" expanded="false" />
-                <element signature="n#!!block;n#load_start#0" expanded="false" />
-                <element signature="n#!!block;n#load_finish#0" expanded="false" />
-                <element signature="n#!!block;n#start_creating#0" expanded="false" />
-                <element signature="n#!!block;n#end_of_updating#0" expanded="false" />
-                <element signature="e#13556#13991#0" expanded="false" />
-                <element signature="e#14034#14467#0" expanded="false" />
-                <element signature="e#14512#14566#0" expanded="false" />
-                <element signature="e#14610#14665#0" expanded="false" />
-                <element signature="e#14716#14776#0" expanded="false" />
-                <element signature="e#14817#14884#0" expanded="false" />
-                <element signature="e#14933#14960#0" expanded="false" />
-                <element signature="e#15006#15030#0" expanded="false" />
-                <element signature="e#15075#15121#0" expanded="false" />
-                <element signature="e#15183#15372#0" expanded="false" />
-                <element signature="e#15414#15456#0" expanded="false" />
-                <element signature="e#15469#19567#0" expanded="false" />
-                <element signature="e#19589#24517#0" expanded="false" />
-                <element signature="e#24526#27574#0" expanded="false" />
-                <element signature="e#27590#27865#0" expanded="false" />
-                <element signature="n#!!block;n#live_indicators#1" expanded="false" />
-                <element signature="e#28031#28056#0" expanded="false" />
-                <element signature="e#28068#29119#0" expanded="false" />
-                <element signature="n#!!block;n#dop_z#1" expanded="false" />
-                <element signature="n#!!block;n#ClearСlock#0" expanded="false" />
-                <element signature="n#!!block;n#timer#1" expanded="false" />
-                <element signature="n#!!block;n#StartStop#0" expanded="false" />
-                <element signature="n#!!block;n#create_record#1" expanded="false" />
-                <element signature="e#30469#30612#0" expanded="false" />
-                <element signature="e#30647#30719#0" expanded="false" />
-                <element signature="n#!!block;n#load_start#1" expanded="false" />
-                <element signature="n#!!block;n#load_finish#1" expanded="false" />
-                <element signature="n#!!block;n#start_parsing#0" expanded="false" />
-                <element signature="n#!!block;n#end_of_updating#1" expanded="false" />
-                <element signature="e#31189#31240#0" expanded="false" />
-                <element signature="e#31284#31332#0" expanded="false" />
-                <element signature="e#31376#31424#0" expanded="false" />
-                <element signature="e#31468#31516#0" expanded="false" />
-                <element signature="e#31568#31594#0" expanded="false" />
-                <element signature="e#31643#31666#0" expanded="false" />
-                <element signature="e#31714#31759#0" expanded="false" />
-                <element signature="n#!!block;n#on_load_page#0" expanded="false" />
+                <element signature="e#56#4752#0" expanded="false" />
+                <element signature="e#8004#8302#0" expanded="false" />
+                <element signature="e#8936#9252#0" expanded="false" />
+                <element signature="e#10706#10791#0" expanded="false" />
+                <element signature="e#10843#10923#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="up_index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/up_index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="269" column="70" lean-forward="false" selection-start-line="269" selection-start-column="70" selection-end-line="269" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,34 +66,68 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parsing_progress_list</find>
-      <find>api_host</find>
-      <find>db</find>
-      <find>quantiti_products</find>
-      <find>#quantiti_products</find>
-      <find>progress_uploaded_products</find>
-      <find>uploaded_products</find>
-      <find>#uploaded_products</find>
-      <find>#progress_updated_products_information</find>
-      <find>uploaded_products_time</find>
-      <find>#updated_products_information</find>
-      <find>#progress_updated_products</find>
-      <find>#updated_products</find>
-      <find>time_from_start</find>
-      <find>time_to_end</find>
-      <find>#time_to_end</find>
-      <find>#status_updating</find>
+      <find>clear_all</find>
+      <find>startspider</find>
+      <find>start_spider</find>
+      <find>upload_our_PL</find>
+      <find>upload_PL</find>
+      <find>create_new_products</find>
+      <find>quantity_urls</find>
       <find>startparsing</find>
+      <find>continue_updating</find>
+      <find>status.php</find>
+      <find>quantiti_products</find>
+      <find>parser</find>
+      <find>indicators_store</find>
+      <find>quantiti_errors</find>
+      <find>uploaded_products</find>
       <find>updated_products_information</find>
+      <find>updated_products</find>
+      <find>status_updating</find>
+      <find>status_step_updating</find>
+      <find>time_of_last_update</find>
+      <find>time_of_start_updating</find>
+      <find>uploaded_products_time</find>
+      <find>updated_products_information_time</find>
+      <find>updated_products_time</find>
+      <find>get_indicators</find>
+      <find>continue_buttons</find>
+      <find>timers</find>
+      <find>live_indicators</find>
+      <find>start_buttons</find>
+      <find>time_last_updated</find>
     </findStrings>
     <replaceStrings>
-      <replace>up_progress_uploaded_products</replace>
-      <replace>#up_progress_updated_products_information</replace>
-      <replace>#up_updated_products_information</replace>
-      <replace>#up_progress_updated_products</replace>
-      <replace>#up_updated_products</replace>
-      <replace>#up_status_updating</replace>
-      <replace>#up_uploaded_products</replace>
+      <replace>cr_memory_usage</replace>
+      <replace>cr_next_url_to_updating</replace>
+      <replace>cr_continue_creating</replace>
+      <replace>cr_startupdating</replace>
+      <replace>cr_clear_all</replace>
+      <replace>cr_startspider</replace>
+      <replace>cr_start_spider</replace>
+      <replace>cr_upload_our_PL</replace>
+      <replace>cr_upload_PL</replace>
+      <replace>cr_create_new_products</replace>
+      <replace>cr_startparsing</replace>
+      <replace>cr_quantiti_products</replace>
+      <replace>updator</replace>
+      <replace>up_indicators_store</replace>
+      <replace>up_quantiti_errors</replace>
+      <replace>up_uploaded_products</replace>
+      <replace>up_updated_products_information</replace>
+      <replace>up_updated_products</replace>
+      <replace>up_status_updating</replace>
+      <replace>up_status_step_updating</replace>
+      <replace>up_time_of_last_update</replace>
+      <replace>up_time_of_start_updating</replace>
+      <replace>up_uploaded_products_time</replace>
+      <replace>up_updated_products_information_time</replace>
+      <replace>up_updated_products_time</replace>
+      <replace>cr_continue_updating</replace>
+      <replace>up_continue_buttons</replace>
+      <replace>cr_start_buttons</replace>
+      <replace>cr_continue_buttons</replace>
+      <replace>up_start_buttons</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -138,12 +141,18 @@
         <option value="$PROJECT_DIR$/creator.php" />
         <option value="$PROJECT_DIR$/lib.php" />
         <option value="$PROJECT_DIR$/up_index.js" />
+        <option value="$PROJECT_DIR$/parser/parser.php" />
+        <option value="$PROJECT_DIR$/main/creator.php" />
+        <option value="$PROJECT_DIR$/main/updator.php" />
+        <option value="$PROJECT_DIR$/style/adminstyle.css" />
+        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/libs/settings.php" />
         <option value="$PROJECT_DIR$/libs/lib_creator.php" />
         <option value="$PROJECT_DIR$/libs/lib_updator.php" />
-        <option value="$PROJECT_DIR$/js/up_index.js" />
-        <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/status/cr_status.php" />
+        <option value="$PROJECT_DIR$/status/up_status.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/up_index.js" />
       </list>
     </option>
   </component>
@@ -184,6 +193,76 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="style" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="status" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -300,18 +379,19 @@
       <option name="presentableId" value="Default" />
       <updated>1507921049016</updated>
       <workItem from="1507921052738" duration="1860000" />
-      <workItem from="1507923037030" duration="621000" />
+      <workItem from="1507923037030" duration="670000" />
+      <workItem from="1507952536718" duration="9080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2481000" />
+    <option name="totallyTimeSpent" value="11610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -329,6 +409,25 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -338,11 +437,29 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14365">
+          <caret line="845" column="0" lean-forward="true" selection-start-line="845" selection-start-column="0" selection-end-line="845" selection-end-column="0" />
+          <folding>
+            <element signature="e#56#4752#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3349">
@@ -356,56 +473,7 @@
         <state relative-caret-position="6528">
           <caret line="384" column="0" lean-forward="true" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
           <folding>
-            <element signature="e#56#4692#0" expanded="false" />
-            <element signature="e#4714#11817#0" expanded="false" />
-            <element signature="n#!!block;n#live_indicators#0" expanded="false" />
-            <element signature="e#11969#11994#0" expanded="false" />
-            <element signature="n#!!block;n#dop_z#0" expanded="false" />
-            <element signature="n#!!block;n#timer#0" expanded="false" />
-            <element signature="n#!!block;n#create_record#0" expanded="false" />
-            <element signature="e#12837#12980#0" expanded="false" />
-            <element signature="e#13015#13087#0" expanded="false" />
-            <element signature="n#!!block;n#load_start#0" expanded="false" />
-            <element signature="n#!!block;n#load_finish#0" expanded="false" />
-            <element signature="n#!!block;n#start_creating#0" expanded="false" />
-            <element signature="n#!!block;n#end_of_updating#0" expanded="false" />
-            <element signature="e#13556#13991#0" expanded="false" />
-            <element signature="e#14034#14467#0" expanded="false" />
-            <element signature="e#14512#14566#0" expanded="false" />
-            <element signature="e#14610#14665#0" expanded="false" />
-            <element signature="e#14716#14776#0" expanded="false" />
-            <element signature="e#14817#14884#0" expanded="false" />
-            <element signature="e#14933#14960#0" expanded="false" />
-            <element signature="e#15006#15030#0" expanded="false" />
-            <element signature="e#15075#15121#0" expanded="false" />
-            <element signature="e#15183#15372#0" expanded="false" />
-            <element signature="e#15414#15456#0" expanded="false" />
-            <element signature="e#15469#19567#0" expanded="false" />
-            <element signature="e#19589#24517#0" expanded="false" />
-            <element signature="e#24526#27574#0" expanded="false" />
-            <element signature="e#27590#27865#0" expanded="false" />
-            <element signature="n#!!block;n#live_indicators#1" expanded="false" />
-            <element signature="e#28031#28056#0" expanded="false" />
-            <element signature="e#28068#29119#0" expanded="false" />
-            <element signature="n#!!block;n#dop_z#1" expanded="false" />
-            <element signature="n#!!block;n#ClearСlock#0" expanded="false" />
-            <element signature="n#!!block;n#timer#1" expanded="false" />
-            <element signature="n#!!block;n#StartStop#0" expanded="false" />
-            <element signature="n#!!block;n#create_record#1" expanded="false" />
-            <element signature="e#30469#30612#0" expanded="false" />
-            <element signature="e#30647#30719#0" expanded="false" />
-            <element signature="n#!!block;n#load_start#1" expanded="false" />
-            <element signature="n#!!block;n#load_finish#1" expanded="false" />
-            <element signature="n#!!block;n#start_parsing#0" expanded="false" />
-            <element signature="n#!!block;n#end_of_updating#1" expanded="false" />
-            <element signature="e#31189#31240#0" expanded="false" />
-            <element signature="e#31284#31332#0" expanded="false" />
-            <element signature="e#31376#31424#0" expanded="false" />
-            <element signature="e#31468#31516#0" expanded="false" />
-            <element signature="e#31568#31594#0" expanded="false" />
-            <element signature="e#31643#31666#0" expanded="false" />
-            <element signature="e#31714#31759#0" expanded="false" />
-            <element signature="n#!!block;n#on_load_page#0" expanded="false" />
+            <element signature="e#56#4752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -420,108 +488,285 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/up_status.js" />
     <entry file="file://$PROJECT_DIR$/creator_old.php" />
-    <entry file="file://$PROJECT_DIR$/main/creator.php">
+    <entry file="file://$PROJECT_DIR$/lib.php" />
+    <entry file="file://$PROJECT_DIR$/up_include.php" />
+    <entry file="file://$PROJECT_DIR$/up_index.php" />
+    <entry file="file://$PROJECT_DIR$/parser/parser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="349" column="2" lean-forward="true" selection-start-line="349" selection-start-column="2" selection-end-line="349" selection-end-column="2" />
+          <folding>
+            <element signature="n#get#0;n#!!top" expanded="false" />
+            <element signature="n#pars#0;n#!!top" expanded="false" />
+            <element signature="n#pars_magia_sveta#0;n#!!top" expanded="false" />
+            <element signature="n#pars_electra#0;n#!!top" expanded="false" />
+            <element signature="n#pars_antares_svet#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib.php" />
-    <entry file="file://$PROJECT_DIR$/up_include.php" />
+    <entry file="file://$PROJECT_DIR$/main/creator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-179">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1507956436709" expanded="true" signature="116:181" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="202:281" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="391:473" ph="SELECT COUNT... url_list" />
+            <marker date="1507956436709" expanded="true" signature="511:669" ph="INSERT INTO `url_list`... " />
+            <marker date="1507956436709" expanded="true" signature="795:860" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="881:957" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="1029:1094" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="1115:1194" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="1304:1386" ph="SELECT COUNT... url_list" />
+            <marker date="1507956436709" expanded="true" signature="1424:1582" ph="INSERT INTO `url_list`... " />
+            <marker date="1507956436709" expanded="true" signature="1658:1724" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="1745:1821" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="1898:1967" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="1988:2067" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2115:2181" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2202:2278" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2360:2429" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2450:2529" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2581:2647" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2668:2744" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2818:2887" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="2908:2987" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="3031:3097" ph="UPDATE `sett... " />
+            <marker date="1507956436709" expanded="true" signature="3118:3194" ph="UPDATE `sett... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/updator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="91" lean-forward="false" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
+          <folding>
+            <marker date="1507956784865" expanded="true" signature="119:182" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="202:281" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="386:449" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="470:563" ph="UPDATE `upda... " />
+            <marker date="1507956784865" expanded="true" signature="632:699" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="720:799" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="847:910" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="931:1024" ph="UPDATE `upda... " />
+            <marker date="1507956784865" expanded="true" signature="1092:1159" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="1180:1259" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="1314:1377" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="1398:1491" ph="UPDATE `upda... " />
+            <marker date="1507956784865" expanded="true" signature="1559:1626" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="1647:1726" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="1866:1929" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="1950:2043" ph="UPDATE `upda... " />
+            <marker date="1507956784865" expanded="true" signature="2116:2195" ph="UPDATE `sett... " />
+            <marker date="1507956784865" expanded="true" signature="2258:2351" ph="UPDATE `upda... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/adminstyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/libs/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/lib_creator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="581" column="0" lean-forward="true" selection-start-line="581" selection-start-column="0" selection-end-line="581" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="n#spider#0;n#!!top" expanded="false" />
+            <element signature="n#update_product_list#0;n#!!top" expanded="false" />
+            <element signature="n#check_on_valid_products#0;n#!!top" expanded="false" />
+            <element signature="n#upload_products#0;n#!!top" expanded="false" />
+            <element signature="n#insert_product_with_data#0;n#!!top" expanded="false" />
+            <element signature="n#pars#0;n#!!top" expanded="false" />
+            <element signature="e#11948#23644#0#PHP" expanded="false" />
+            <element signature="n#write_log#0;n#!!top" expanded="false" />
+            <element signature="n#table_in_array#0;n#!!top" expanded="false" />
+            <element signature="n#get_categories_links#0;n#!!top" expanded="false" />
+            <element signature="n#send_email#0;n#!!top" expanded="false" />
+            <element signature="n#is_product#0;n#!!top" expanded="false" />
+            <element signature="n#next_url#0;n#!!top" expanded="false" />
+            <element signature="n#this_is_file#0;n#!!top" expanded="false" />
+            <element signature="n#addhttp#0;n#!!top" expanded="false" />
+            <element signature="n#continue_update#0;n#!!top" expanded="false" />
+            <element signature="n#error_check_image_url#0;n#!!top" expanded="false" />
+            <element signature="n#check_is_NULL#0;n#!!top" expanded="false" />
+            <element signature="n#write_error#0;n#!!top" expanded="false" />
+            <marker date="1507961150026" expanded="true" signature="598:665" ph="UPDATE `sett... " />
+            <marker date="1507961150026" expanded="true" signature="860:964" ph="SELECT COUNT... url_list" />
+            <marker date="1507961150026" expanded="true" signature="1163:1255" ph="UPDATE `url_... " />
+            <marker date="1507961150026" expanded="true" signature="1932:2013" ph="SELECT COUNT... url_list" />
+            <marker date="1507961150026" expanded="true" signature="2057:2188" ph="INSERT INTO `url_list`... " />
+            <marker date="1507961150026" expanded="true" signature="2388:2478" ph="UPDATE `url_... " />
+            <marker date="1507961150026" expanded="true" signature="2665:2732" ph="UPDATE `sett... " />
+            <marker date="1507961150026" expanded="true" signature="2804:2848" ph="ALTER TABLE `products_list`... " />
+            <marker date="1507961150026" expanded="true" signature="3216:3338" ph="UPDATE `crea... " />
+            <marker date="1507961150026" expanded="true" signature="3681:3876" ph="INSERT INTO `products_list`... " />
+            <marker date="1507961150026" expanded="true" signature="4356:4423" ph="UPDATE `sett... " />
+            <marker date="1507961150026" expanded="true" signature="4467:4537" ph="SELECT COUNT... found_products" />
+            <marker date="1507961150026" expanded="true" signature="4613:4688" ph="SELECT `prod... found_products" />
+            <marker date="1507961150026" expanded="true" signature="4736:4823" ph="SELECT COUNT... products_list" />
+            <marker date="1507961150026" expanded="true" signature="4859:4938" ph="DELETE FROM " />
+            <marker date="1507961150026" expanded="true" signature="4982:5079" ph="UPDATE `foun... " />
+            <marker date="1507961150026" expanded="true" signature="5228:5295" ph="UPDATE `sett... " />
+            <marker date="1507961150026" expanded="true" signature="5887:6193" ph="SELECT t.`ca... categories_сommunication" />
+            <marker date="1507961150026" expanded="true" signature="6458:6520" ph="SELECT COUNT... found_products" />
+            <marker date="1507961150026" expanded="true" signature="6585:6716" ph="SELECT `id`,... found_products" />
+            <marker date="1507961150026" expanded="true" signature="6746:6826" ph="UPDATE `foun... " />
+            <marker date="1507961150026" expanded="true" signature="6935:7015" ph="UPDATE `foun... " />
+            <marker date="1507961150026" expanded="true" signature="7148:7299" ph="SELECT `base... found_products" />
+            <marker date="1507961150026" expanded="true" signature="9042:9120" ph="UPDATE `foun... " />
+            <marker date="1507961150026" expanded="true" signature="9322:9431" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1507961150026" expanded="true" signature="9686:9818" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1507961150026" expanded="true" signature="9890:10018" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1507961150026" expanded="true" signature="10094:10201" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1507961150026" expanded="true" signature="10333:11439" ph="INSERT INTO `found_products`... " />
+            <marker date="1507961150026" expanded="false" signature="15977:20147" ph="..." />
+            <marker date="1507961150026" expanded="false" signature="20190:23640" ph="..." />
+            <marker date="1507961150026" expanded="true" signature="25424:25481" ph="SELECT COUNT... url_list" />
+            <marker date="1507961150026" expanded="true" signature="25545:25640" ph="SELECT `url`... url_list" />
+            <marker date="1507961150026" expanded="true" signature="27192:27292" ph="UPDATE `sett... " />
+            <marker date="1507961150026" expanded="true" signature="27313:27386" ph="UPDATE `sett... " />
+            <marker date="1507961150026" expanded="true" signature="27442:27506" ph="SELECT `valu... settings" />
+            <marker date="1507961150026" expanded="true" signature="28306:28479" ph="INSERT INTO `errors_log`... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/lib_updator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/up_index.php" />
-    <entry file="file://$PROJECT_DIR$/js/up_index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="421" column="48" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="845" column="0" lean-forward="true" selection-start-line="845" selection-start-column="0" selection-end-line="845" selection-end-column="0" />
+        <state relative-caret-position="527">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding>
-            <element signature="e#56#4692#0" expanded="false" />
-            <element signature="e#4714#11817#0" expanded="false" />
-            <element signature="n#!!block;n#live_indicators#0" expanded="false" />
-            <element signature="e#11969#11994#0" expanded="false" />
-            <element signature="n#!!block;n#dop_z#0" expanded="false" />
-            <element signature="n#!!block;n#timer#0" expanded="false" />
-            <element signature="n#!!block;n#create_record#0" expanded="false" />
-            <element signature="e#12837#12980#0" expanded="false" />
-            <element signature="e#13015#13087#0" expanded="false" />
-            <element signature="n#!!block;n#load_start#0" expanded="false" />
-            <element signature="n#!!block;n#load_finish#0" expanded="false" />
-            <element signature="n#!!block;n#start_creating#0" expanded="false" />
-            <element signature="n#!!block;n#end_of_updating#0" expanded="false" />
-            <element signature="e#13556#13991#0" expanded="false" />
-            <element signature="e#14034#14467#0" expanded="false" />
-            <element signature="e#14512#14566#0" expanded="false" />
-            <element signature="e#14610#14665#0" expanded="false" />
-            <element signature="e#14716#14776#0" expanded="false" />
-            <element signature="e#14817#14884#0" expanded="false" />
-            <element signature="e#14933#14960#0" expanded="false" />
-            <element signature="e#15006#15030#0" expanded="false" />
-            <element signature="e#15075#15121#0" expanded="false" />
-            <element signature="e#15183#15372#0" expanded="false" />
-            <element signature="e#15414#15456#0" expanded="false" />
-            <element signature="e#15469#19567#0" expanded="false" />
-            <element signature="e#19589#24517#0" expanded="false" />
-            <element signature="e#24526#27574#0" expanded="false" />
-            <element signature="e#27590#27865#0" expanded="false" />
-            <element signature="n#!!block;n#live_indicators#1" expanded="false" />
-            <element signature="e#28031#28056#0" expanded="false" />
-            <element signature="e#28068#29119#0" expanded="false" />
-            <element signature="n#!!block;n#dop_z#1" expanded="false" />
-            <element signature="n#!!block;n#ClearСlock#0" expanded="false" />
-            <element signature="n#!!block;n#timer#1" expanded="false" />
-            <element signature="n#!!block;n#StartStop#0" expanded="false" />
-            <element signature="n#!!block;n#create_record#1" expanded="false" />
-            <element signature="e#30469#30612#0" expanded="false" />
-            <element signature="e#30647#30719#0" expanded="false" />
-            <element signature="n#!!block;n#load_start#1" expanded="false" />
-            <element signature="n#!!block;n#load_finish#1" expanded="false" />
-            <element signature="n#!!block;n#start_parsing#0" expanded="false" />
-            <element signature="n#!!block;n#end_of_updating#1" expanded="false" />
-            <element signature="e#31189#31240#0" expanded="false" />
-            <element signature="e#31284#31332#0" expanded="false" />
-            <element signature="e#31376#31424#0" expanded="false" />
-            <element signature="e#31468#31516#0" expanded="false" />
-            <element signature="e#31568#31594#0" expanded="false" />
-            <element signature="e#31643#31666#0" expanded="false" />
-            <element signature="e#31714#31759#0" expanded="false" />
-            <element signature="n#!!block;n#on_load_page#0" expanded="false" />
+            <marker date="1507961390262" expanded="true" signature="341:409" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="475:512" ph="ALTER TABLE `errors`... " />
+            <marker date="1507961390262" expanded="true" signature="584:628" ph="ALTER TABLE `products_list`... " />
+            <marker date="1507961390262" expanded="true" signature="998:1099" ph="UPDATE `upda... " />
+            <marker date="1507961390262" expanded="true" signature="1581:1832" ph="INSERT INTO `products_list`... " />
+            <marker date="1507961390262" expanded="true" signature="1865:1941" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="2426:2494" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="2538:2626" ph="SELECT `id`,... products_list" />
+            <marker date="1507961390262" expanded="true" signature="2694:2795" ph="SELECT `id`,... products_list" />
+            <marker date="1507961390262" expanded="true" signature="2934:3059" ph="UPDATE `prod... " />
+            <marker date="1507961390262" expanded="true" signature="3098:3236" ph="INSERT INTO `errors`... " />
+            <marker date="1507961390262" expanded="true" signature="3280:3479" ph="UPDATE `prod... " />
+            <marker date="1507961390262" expanded="true" signature="3526:3602" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="4659:4727" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="5049:5128" ph="SELECT `id` products_list" />
+            <marker date="1507961390262" expanded="true" signature="5203:5341" ph="SELECT `id`,... products_list" />
+            <marker date="1507961390262" expanded="true" signature="5648:5717" ph="UPDATE `prod... " />
+            <marker date="1507961390262" expanded="true" signature="5779:5860" ph="UPDATE `prod... " />
+            <marker date="1507961390262" expanded="true" signature="5913:5989" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="6402:6464" ph="SELECT `valu... settings" />
+            <marker date="1507961390262" expanded="true" signature="6522:6598" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="6674:6746" ph="UPDATE `sett... " />
+            <marker date="1507961390262" expanded="true" signature="6820:6893" ph="UPDATE `sett... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/status/cr_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="22" selection-end-column="1" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <marker date="1507961882154" expanded="true" signature="545:584" ph="SELECT COUNT... url_list" />
+            <marker date="1507961882154" expanded="true" signature="659:716" ph="SELECT COUNT... url_list" />
+            <marker date="1507961882154" expanded="true" signature="795:852" ph="SELECT COUNT... url_list" />
+            <marker date="1507961882154" expanded="true" signature="930:975" ph="SELECT COUNT... found_products" />
+            <marker date="1507961882154" expanded="true" signature="1047:1111" ph="SELECT `valu... settings" />
+            <marker date="1507961882154" expanded="true" signature="1181:1243" ph="SELECT `valu... settings" />
+            <marker date="1507961882154" expanded="true" signature="1314:1409" ph="SELECT `url`... url_list" />
+            <marker date="1507961882154" expanded="true" signature="1474:1536" ph="SELECT COUNT... found_products" />
+            <marker date="1507961882154" expanded="true" signature="1618:1662" ph="SELECT COUNT... products_list" />
+            <marker date="1507961882154" expanded="true" signature="1739:1808" ph="SELECT `valu... settings" />
+            <marker date="1507961882154" expanded="true" signature="1883:1945" ph="SELECT `valu... settings" />
+            <marker date="1507961882154" expanded="true" signature="2029:2105" ph="SELECT `valu... settings" />
+            <marker date="1507961882154" expanded="true" signature="2170:2229" ph="SELECT `valu... settings" />
+            <marker date="1507961882154" expanded="true" signature="2294:2353" ph="SELECT `valu... settings" />
+            <marker date="1507961882154" expanded="true" signature="2455:2520" ph="UPDATE `sett... " />
+            <marker date="1507961882154" expanded="true" signature="2613:2678" ph="UPDATE `sett... " />
+            <marker date="1507961882154" expanded="true" signature="2768:2833" ph="UPDATE `sett... " />
+            <marker date="1507961882154" expanded="true" signature="2854:2921" ph="UPDATE `sett... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/status/up_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <marker date="1507961991121" expanded="true" signature="544:608" ph="SELECT `valu... settings" />
+            <marker date="1507961991121" expanded="true" signature="678:715" ph="SELECT COUNT... errors" />
+            <marker date="1507961991121" expanded="true" signature="787:862" ph="SELECT COUNT... products_list" />
+            <marker date="1507961991121" expanded="true" signature="945:1004" ph="SELECT COUNT... products_list" />
+            <marker date="1507961991121" expanded="true" signature="1075:1134" ph="SELECT COUNT... products_list" />
+            <marker date="1507961991121" expanded="true" signature="1201:1267" ph="SELECT `id` products_list" />
+            <marker date="1507961991121" expanded="true" signature="1337:1399" ph="SELECT `valu... settings" />
+            <marker date="1507961991121" expanded="true" signature="1474:1541" ph="SELECT `valu... settings" />
+            <marker date="1507961991121" expanded="true" signature="1615:1673" ph="SELECT `valu... settings" />
+            <marker date="1507961991121" expanded="true" signature="1750:1819" ph="SELECT `valu... settings" />
+            <marker date="1507961991121" expanded="true" signature="1896:2044" ph="SELECT `date... products_list" />
+            <marker date="1507961991121" expanded="true" signature="2082:2229" ph="SELECT `date... products_list" />
+            <marker date="1507961991121" expanded="true" signature="2317:2417" ph="SELECT `date... products_list" />
+            <marker date="1507961991121" expanded="true" signature="2455:2554" ph="SELECT `date... products_list" />
+            <marker date="1507961991121" expanded="true" signature="2630:2730" ph="SELECT `date... products_list" />
+            <marker date="1507961991121" expanded="true" signature="2768:2867" ph="SELECT `date... products_list" />
+            <marker date="1507961991121" expanded="true" signature="3052:3288" ph="SELECT `prod... products_list" />
+            <marker date="1507961991121" expanded="true" signature="3360:3427" ph="UPDATE `sett... " />
+            <marker date="1507961991121" expanded="true" signature="3520:3587" ph="UPDATE `sett... " />
+            <marker date="1507961991121" expanded="true" signature="3676:3743" ph="UPDATE `sett... " />
+            <marker date="1507961991121" expanded="true" signature="3764:3836" ph="UPDATE `sett... " />
+            <marker date="1507961991121" expanded="true" signature="3933:4029" ph="INSERT INTO `updateproducts`.`to_remove`... " />
+            <marker date="1507961991121" expanded="true" signature="4240:4280" ph="DELETE FROM " />
+            <marker date="1507961991121" expanded="true" signature="4322:4381" ph="UPDATE `prod... " />
+            <marker date="1507961991121" expanded="true" signature="4534:4581" ph="DELETE FROM " />
+            <marker date="1507961991121" expanded="true" signature="4623:4666" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="228" column="0" lean-forward="true" selection-start-line="228" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+        <state relative-caret-position="1380">
+          <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="247" selection-end-column="1" />
+          <folding>
+            <element signature="e#56#4752#0" expanded="false" />
+            <element signature="e#8004#8302#0" expanded="false" />
+            <element signature="e#8936#9252#0" expanded="false" />
+            <element signature="e#10706#10791#0" expanded="false" />
+            <element signature="e#10843#10923#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/up_index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="269" column="70" lean-forward="false" selection-start-line="269" selection-start-column="70" selection-end-line="269" selection-end-column="70" />
           <folding />
         </state>
       </provider>

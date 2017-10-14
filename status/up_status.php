@@ -7,9 +7,18 @@
  * Time: 20:18
  */
 
-require_once( 'include.php' );
+require_once( '../libs/settings.php' );
+function db(){
+    $db_id = mysql_connect(db_host, db_username, db_password)
+    or die('Не удалось соединиться: ' . mysql_error());
+    mysql_select_db('updateproducts')
+    or die('Не удалось выбрать базу данных');
+}
 db();
 
+function send($a){
+    print_r(json_encode($a));
+}
 
 if($_POST['what_to_do']==='get_all_information'){
     $request = array(
@@ -61,33 +70,5 @@ elseif($_POST['what_to_do']==='stop_parsing'){
 }
 else{
     echo 111;
-}
-function remove_product($product_id){
-    $options = array(
-        'debug' => false,
-        'return_as_array' => true,
-        'validate_url' => false,
-        'timeout' => 300,
-        'ssl_verify' => false,
-    );
-
-    try {
-
-        $client = new WC_API_Client($api_host, $api_key_ck, $api_key_cs, $options);
-
-        $client->products->delete( $product_id);
-
-    } catch (WC_API_Client_Exception $e) {
-
-        echo $e->getMessage() . PHP_EOL;
-        echo $e->getCode() . PHP_EOL;
-
-        if ($e instanceof WC_API_Client_HTTP_Exception) {
-
-            print_r($e->get_request());
-            print_r($e->get_response());
-        }
-    }
-
 }
 ?>

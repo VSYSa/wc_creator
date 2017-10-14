@@ -2,11 +2,11 @@
  * Created by vlad- on 29.07.2017.
  */
 
-var parser={
+var updator={
     update_PL: function () {
         var i= $.ajax({
             type:'post',
-            url:'updating.php',//url адрес файла обработчика
+            url:'main/updator.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'update_PL'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -23,7 +23,7 @@ var parser={
     update_PI: function () {
         var i= $.ajax({
             type:'post',//тип запроса: get,post либо head
-            url:'updating.php',//url адрес файла обработчика
+            url:'main/updator.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'update_PI'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -40,7 +40,7 @@ var parser={
     upload_PL: function () {
         var i= $.ajax({
             type:'post',//тип запроса: get,post либо head
-            url:'updating.php',//url адрес файла обработчика
+            url:'main/updator.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'upload_PL'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -57,7 +57,7 @@ var parser={
     startparsing: function () {
         var i= $.ajax({
             type:'post',//тип запроса: get,post либо head
-            url:'updating.php',//url адрес файла обработчика
+            url:'main/updator.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'update_product'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -71,7 +71,7 @@ var parser={
     stop: function () {
         $.ajax({
             type:'post',//тип запроса: get,post либо head
-            url:'status.php',//url адрес файла обработчика
+            url:'status/up_status.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'stop_parsing'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -87,7 +87,7 @@ var parser={
     pause: function () {
         $.ajax({
             type:'post',//тип запроса: get,post либо head
-            url:'status.php',//url адрес файла обработчика
+            url:'status/up_status.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'pause_parsing'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -103,7 +103,7 @@ var parser={
     contiune: function () {
         $.ajax({
             type:'post',//тип запроса: get,post либо head
-            url:'status.php',//url адрес файла обработчика
+            url:'status/up_status.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'continue_parsing'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -119,70 +119,104 @@ var parser={
 
 
 }
-var indicators_store={
-        quantiti_products:0,
-        quantiti_errors:0,
-        uploaded_products:0,
-        updated_products_information:0,
-        updated_products:0,
-        status_updating:0,
-        status_step_updating:0,
-        time_of_last_update:0,
-        time_of_start_updating:0,
-        uploaded_products_time:0,
-        updated_products_information_time:0,
-        updated_products_time:0,
+var up_indicators_store={
+    up_quantiti_products:0,
+        up_quantiti_errors:0,
+        up_uploaded_products:0,
+        up_updated_products_information:0,
+        up_updated_products:0,
+        up_status_updating:0,
+        up_status_step_updating:0,
+        up_time_of_last_update:0,
+        up_time_of_start_updating:0,
+        up_uploaded_products_time:0,
+        up_updated_products_information_time:0,
+        up_updated_products_time:0,
+        get_indicators: function () {
+            $.ajax({
+                type:'post',//тип запроса: get,post либо head
+                url:'status/up_status.php',//url адрес файла обработчика
+                cache: false,
+                data:{'what_to_do':'get_all_information'},//параметры запроса
+                response:'text',//тип возвращаемого ответа text либо xml
+                async:true,
+                error: function(){
+                    console.log('ajax error on getting')
+                },
+                success:function (data) {
+                    data = jQuery.parseJSON(data);
+                    up_indicators_store.cr_quantiti_products=parseInt(data['quantiti_products']);
+                    up_indicators_store.up_quantiti_errors=parseInt(data['quantiti_errors']);
+                    up_indicators_store.up_uploaded_products=parseInt(data['uploaded_products']);
+                    up_indicators_store.up_updated_products_information=parseInt(data['updated_products_information']);
+                    up_indicators_store.up_updated_products=parseInt(data['updated_products']);
+                    up_indicators_store.up_status_updating=parseInt(data['status_updating']);
+                    up_indicators_store.up_status_step_updating=parseInt(data['status_step_updating']);
+                    up_indicators_store.up_time_of_last_update=parseInt(data['time_of_last_update']);
+                    up_indicators_store.up_time_of_start_updating=parseInt(data['time_of_start_updating']);
+                    up_indicators_store.up_uploaded_products_time=parseInt(data['uploaded_products_time']);
+                    up_indicators_store.up_updated_products_information_time=parseInt(data['updated_products_information_time']);
+                    up_indicators_store.up_updated_products_time=parseInt(data['updated_products_time']);
+                    return ;
+                }
+            });
+        },
         update_all:function () {
-            $('#up_quantiti_products').html(indicators_store.quantiti_products);
-            $('#count_errors').html(indicators_store.quantiti_errors);
-            $('#up_uploaded_products').html(indicators_store.uploaded_products);
-            $('#up_updated_products_information').html(indicators_store.updated_products_information);
-            $('#up_updated_products').html(indicators_store.updated_products);
 
 
-            if(indicators_store.status_step_updating==1){
+
+
+
+            $('#up_quantiti_products').html(up_indicators_store.cr_quantiti_products);
+            $('#count_errors').html(up_indicators_store.up_quantiti_errors);
+            $('#up_uploaded_products').html(up_indicators_store.up_uploaded_products);
+            $('#up_updated_products_information').html(up_indicators_store.up_updated_products_information);
+            $('#up_updated_products').html(up_indicators_store.up_updated_products);
+
+
+            if(up_indicators_store.up_status_step_updating==1){
                 $('#up_progress_uploaded_products').addClass('active');
                 $('#up_progress_updated_products_information').removeClass('active');
                 $('#up_progress_updated_products').removeClass('active');
-                //$('#status_step_updating').html('Загрузка товаров');
-                $('#up_uploaded_products_time').html('Осталось '+timer(indicators_store.uploaded_products_time*indicators_store.quantiti_products/indicators_store.uploaded_products));
-                console.log(indicators_store.uploaded_products_time*indicators_store.quantiti_products/indicators_store.uploaded_products);
-            }else if(indicators_store.status_step_updating==2){
+                //$('#up_status_step_updating').html('Загрузка товаров');
+                $('#up_uploaded_products_time').html('Осталось '+timer(up_indicators_store.up_uploaded_products_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_uploaded_products));
+                console.log(up_indicators_store.up_uploaded_products_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_uploaded_products);
+            }else if(up_indicators_store.up_status_step_updating==2){
                 $('#up_progress_uploaded_products').removeClass('active');
                 $('#up_progress_updated_products_information').addClass('active');
                 $('#up_progress_updated_products').removeClass('active');
-                //$('#status_step_updating').html('Обновление информации о товарах');
-                $('#up_updated_products_information_time').html('Осталось '+timer(indicators_store.updated_products_information_time*indicators_store.quantiti_products/indicators_store.updated_products_information));
-                $('#up_uploaded_products_time').html('Готово за '+timer(indicators_store.uploaded_products_time));
-            }else if(indicators_store.status_step_updating==3){
+                //$('#up_status_step_updating').html('Обновление информации о товарах');
+                $('#up_updated_products_information_time').html('Осталось '+timer(up_indicators_store.up_updated_products_information_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_updated_products_information));
+                $('#up_uploaded_products_time').html('Готово за '+timer(up_indicators_store.up_uploaded_products_time));
+            }else if(up_indicators_store.up_status_step_updating==3){
                 $('#up_progress_uploaded_products').removeClass('active');
                 $('#up_progress_updated_products_information').removeClass('active');
                 $('#up_progress_updated_products').addClass('active');
-                ///$('#status_step_updating').html('Обновление товаров на сайте');
-                $('#up_updated_products_time').html('Осталось '+timer(indicators_store.updated_products_time*indicators_store.quantiti_products/indicators_store.updated_products));
-                $('#up_uploaded_products_time').html('Готово за '+timer(indicators_store.uploaded_products_time));
-                $('#up_updated_products_information_time').html('Сделано за '+timer(indicators_store.updated_products_information_time));
-            }else if(indicators_store.status_step_updating==0){
+                ///$('#up_status_step_updating').html('Обновление товаров на сайте');
+                $('#up_updated_products_time').html('Осталось '+timer(up_indicators_store.up_updated_products_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_updated_products));
+                $('#up_uploaded_products_time').html('Готово за '+timer(up_indicators_store.up_uploaded_products_time));
+                $('#up_updated_products_information_time').html('Сделано за '+timer(up_indicators_store.up_updated_products_information_time));
+            }else if(up_indicators_store.up_status_step_updating==0){
                 $('#up_progress_uploaded_products').removeClass('active');
                 $('#up_progress_updated_products_information').removeClass('active');
                 $('#up_progress_updated_products').removeClass('active');
-                //$('#status_step_updating').html('Обновление выключено');
-                $('#up_uploaded_products_time').html('Готово за '+timer(indicators_store.uploaded_products_time));
-                $('#up_updated_products_information_time').html('Закончено за '+timer(indicators_store.updated_products_information_time));
-                $('#up_updated_products_time').html('Закончено за '+timer(indicators_store.updated_products_time));
+                //$('#up_status_step_updating').html('Обновление выключено');
+                $('#up_uploaded_products_time').html('Готово за '+timer(up_indicators_store.up_uploaded_products_time));
+                $('#up_updated_products_information_time').html('Закончено за '+timer(up_indicators_store.up_updated_products_information_time));
+                $('#up_updated_products_time').html('Закончено за '+timer(up_indicators_store.up_updated_products_time));
             }
-            if(indicators_store.status_updating==1){
+            if(up_indicators_store.up_status_updating==1){
                 $('#up_status_updating').html('В процессе обновления');
-            }else if(indicators_store.status_updating==2) {
+            }else if(up_indicators_store.up_status_updating==2) {
                 $('#up_status_updating').html('Обновление приостановлено');
-            }else if(indicators_store.status_updating==0){
+            }else if(up_indicators_store.up_status_updating==0){
                 $('#up_status_updating').html('Обновление выключено');
             }
-            $('#up_progress_uploaded_products div').width(100*indicators_store.uploaded_products/indicators_store.quantiti_products+'%');
-            $('#up_progress_updated_products_information div').width(100*indicators_store.updated_products_information/indicators_store.quantiti_products+'%');
-            $('#up_progress_updated_products div').width(100*indicators_store.updated_products/indicators_store.quantiti_products+'%');
-            $('#up_time_from_start').html(timer(Math.floor(Date.now()/1000)-indicators_store.time_of_start_updating));
-            $('#up_time_to_end').html(timer(Math.floor(((Math.floor(Date.now()/1000)-indicators_store.time_of_start_updating)/(indicators_store.uploaded_products+indicators_store.updated_products_information+indicators_store.updated_products))*indicators_store.quantiti_products*3)
+            $('#up_progress_uploaded_products div').width(100*up_indicators_store.up_uploaded_products/up_indicators_store.cr_quantiti_products+'%');
+            $('#up_progress_updated_products_information div').width(100*up_indicators_store.up_updated_products_information/up_indicators_store.cr_quantiti_products+'%');
+            $('#up_progress_updated_products div').width(100*up_indicators_store.up_updated_products/up_indicators_store.cr_quantiti_products+'%');
+            $('#up_time_from_start').html(timer(Math.floor(Date.now()/1000)-up_indicators_store.up_time_of_start_updating));
+            $('#up_time_to_end').html(timer(Math.floor(((Math.floor(Date.now()/1000)-up_indicators_store.up_time_of_start_updating)/(up_indicators_store.up_uploaded_products+up_indicators_store.up_updated_products_information+up_indicators_store.up_updated_products))*up_indicators_store.cr_quantiti_products*3)
             ));
             //time_to_end();
             //timers.updating_indicators = setTimeout(indicators.update,2000);
@@ -190,40 +224,11 @@ var indicators_store={
 
 }
 var get={
-    indicators: function () {
-        $.ajax({
-            type:'post',//тип запроса: get,post либо head
-            url:'status.php',//url адрес файла обработчика
-            cache: false,
-            data:{'what_to_do':'get_all_information'},//параметры запроса
-            response:'text',//тип возвращаемого ответа text либо xml
-            async:true,
-            error: function(){
-                console.log('ajax error on getting')
-            },
-            success:function (data) {
-                data = jQuery.parseJSON(data);
-                indicators_store.quantiti_products=parseInt(data['quantiti_products']);
-                indicators_store.quantiti_errors=parseInt(data['quantiti_errors']);
-                indicators_store.uploaded_products=parseInt(data['uploaded_products']);
-                indicators_store.updated_products_information=parseInt(data['updated_products_information']);
-                indicators_store.updated_products=parseInt(data['updated_products']);
-                indicators_store.status_updating=parseInt(data['status_updating']);
-                indicators_store.status_step_updating=parseInt(data['status_step_updating']);
-                indicators_store.time_of_last_update=parseInt(data['time_of_last_update']);
-                indicators_store.time_of_start_updating=parseInt(data['time_of_start_updating']);
-                indicators_store.uploaded_products_time=parseInt(data['uploaded_products_time']);
-                indicators_store.updated_products_information_time=parseInt(data['updated_products_information_time']);
-                indicators_store.updated_products_time=parseInt(data['updated_products_time']);
-                return ;
-            }
-        });
-        //timers.uploading_indicators = setTimeout(get.indicators,2000);
-    },
+
     errors: function () {
         $.ajax({
             type:'post',//тип запроса: get,post либо head
-            url:'status.php',//url адрес файла обработчика
+            url:'status/up_status.php',//url адрес файла обработчика
             cache: false,
             data:{'what_to_do':'get_errors'},//параметры запроса
             response:'text',//тип возвращаемого ответа text либо xml
@@ -260,15 +265,16 @@ var indicators={
     }
 
 }
-function live_indicators() {
-    get.indicators();
-    indicators_store.update_all();
-    timers.live_indicators = setTimeout(live_indicators,2000);
+function up_live_indicators() {
+    up_indicators_store.get_indicators();
+    up_timers.live_indicators = setTimeout("up_live_indicators()",2000);
 
 }
-var timers = {
+
+var up_timers = {
     live_indicators:0
 }
+/*
 var ajax = {
     add_to_remove_product: function (id) {
         $.ajax({
@@ -297,7 +303,7 @@ var ajax = {
         });
     }
 };
-
+*/
 
 function dop_z(varr){
     if(varr<=9 && varr>=0){
@@ -376,73 +382,49 @@ function load_finish(){
     $('#content').css({opacity:1});
 }
 function start_parsing(){
-    $('#continue_buttons').show();
-    $('#start_buttons').hide();
-    live_indicators();
+    $('#up_continue_buttons').show();
+    $('#up_start_buttons').hide();
+    up_live_indicators();
 }
 function end_of_updating() {
-    $('#continue_buttons').hide();
-    $('#start_buttons').show();
+    $('#up_continue_buttons').hide();
+    $('#up_start_buttons').show();
 }
 $('#up_startparsing').on("click", function(){
     start_parsing();
-    parser.startparsing();
+    updator.startparsing();
 });
 $('#up_update_PL').on("click", function(){
     start_parsing();
-    parser.update_PL();
+    updator.update_PL();
 });
 $('#up_update_PI').on("click", function(){
     start_parsing();
-    parser.update_PI();
+    updator.update_PI();
 });
 $('#up_upload_PL').on("click", function(){
     start_parsing();
-    parser.upload_PL();
+    updator.upload_PL();
 });
 $('#up_continue_updating').on("click", function(){
-    parser.contiune();
+    updator.contiune();
 });
 $('#up_pause_updating').on("click", function(){
-    parser.pause();
+    updator.pause();
 });
 $('#up_stop_updating').on("click", function(){
     end_of_updating();
-    parser.stop();
+    updator.stop();
 });
-function on_load_page() {
-    $.ajax({
-        type:'post',//тип запроса: get,post либо head
-        url:'status.php',//url адрес файла обработчика
-        cache: false,
-        data:{'what_to_do':'get_all_information'},//параметры запроса
-        response:'text',//тип возвращаемого ответа text либо xml
-        async:true,
-        error: function(){
-            console.log('ajax error on getting')
-        },
-        success:function (data) {
-            data = jQuery.parseJSON(data);
-            indicators_store.quantiti_products=parseInt(data['quantiti_products']);
-            indicators_store.quantiti_errors=parseInt(data['quantiti_errors']);
-            indicators_store.uploaded_products=parseInt(data['uploaded_products']);
-            indicators_store.updated_products_information=parseInt(data['updated_products_information']);
-            indicators_store.updated_products=parseInt(data['updated_products']);
-            indicators_store.status_updating=parseInt(data['status_updating']);
-            indicators_store.status_step_updating=parseInt(data['status_step_updating']);
-            indicators_store.time_of_last_update=parseInt(data['time_of_last_update']);
-            indicators_store.time_of_start_updating=parseInt(data['time_of_start_updating']);
-            indicators_store.update_all();
-            if(data['status_updating']==0){
-                $('#continue_buttons').hide();
-            }else{
-                $('#start_buttons').hide();
-                live_indicators();
-            }
 
-            load_finish();
-            return ;
-        }
-    });
-}
-on_load_page();
+up_indicators_store.get_indicators();
+setTimeout(function () {
+    if(up_indicators_store.up_continue_creating==0){
+        $('#up_continue_buttons').hide();
+    }else{
+        $('#up_start_buttons').hide();
+        up_live_indicators();
+    }
+
+    load_finish();
+},500);

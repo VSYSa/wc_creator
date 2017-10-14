@@ -5,23 +5,22 @@
  * Date: 03.08.2017
  * Time: 21:33
  */
+require_once( '../libs/settings.php' );
 
-error_reporting (E_ALL & ~ E_DEPRECATED & ~ E_NOTICE);
-error_reporting (0);
-function send($a){
-    print_r(json_encode($a));
-}
 function db(){
-    $db_host="localhost";
-    $db_username="root";
-    $db_password="toor";
-    $db_id = mysql_connect($db_host, $db_username, $db_password)
+    $db_id = mysql_connect(db_host, db_username, db_password)
     or die('Не удалось соединиться: ' . mysql_error());
     mysql_select_db('creating_products')
     or die('Не удалось выбрать базу данных');
 }
 db();
 
+
+
+
+function send($a){
+    print_r(json_encode($a));
+}
 
 if($_POST['what_to_do']==='get_all_information'){
     $request = array(

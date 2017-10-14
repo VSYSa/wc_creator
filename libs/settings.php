@@ -17,11 +17,5 @@ error_reporting (E_ALL & ~ E_DEPRECATED & ~ E_NOTICE);
 error_reporting (0);
 
 
-function db(){
-    $db_id = mysql_connect(db_host, db_username, db_password)
-    or die('Не удалось соединиться: ' . mysql_error());
-    mysql_select_db('updateproducts')
-    or die('Не удалось выбрать базу данных');
-}
-db();
+
 ?>

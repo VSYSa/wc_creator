@@ -86,9 +86,8 @@ $acsess='true';
                 <li><a  data-target-id="table"><i class="fa fa-table fa-fw"></i>Table</a></li>
                 <li><a  data-target-id="forms"><i class="fa fa-tasks fa-fw"></i>Forms</a></li>
                 <li><a  data-target-id="calender"><i class="fa fa-calendar fa-fw"></i>Calender</a></li>
-                <li id="err"><a  data-target-id="errors"><i class="fa fa-pencil fa-fw"></i>errors <div id="count_errors"> 0 </div></a></li>
-                <li><a  data-target-id="to_delete"><i class="fa fa-book fa-fw"></i>To delete</a></li>
-                <li><a  data-target-id="settings"><i class="fa fa-cogs fa-fw"></i>Settings</a></li>
+                <li id="err"><a  data-target-id="cr_errors"><i class="fa fa-pencil fa-fw"></i>creating errors <div id="cr_count_errors"> 0 </div></a></li>
+                <li id="err"><a  data-target-id="up_errors"><i class="fa fa-pencil fa-fw"></i>updating errors <div id="up_count_errors"> 0 </div></a></li>
             </ul>
         </div>
         <div class="col-md-9 well admin-content" id="home">
@@ -111,62 +110,62 @@ $acsess='true';
                 <div class="col-md-8">
                     <h2>Информация</h2>
                     <div class="row">
-                        <div class="col-md-8">Ссылок найдено: </div>   <div id="quantity_urls" class="col-md-4">0</div>
+                        <div class="col-md-8">Ссылок найдено: </div>   <div id="cr_quantity_urls" class="col-md-4">0</div>
                         <div class="col-md-8">Количество ссылок, ожидающие обработку:
                         </div>
-                        <div class="col-md-4"><div id="quantity_urls_to_parsing">0</div></div>
+                        <div class="col-md-4"><div id="cr_quantity_urls_to_parsing">0</div></div>
                         <div class="col-md-8">Количество обработанных ссылок:
-                            <div id="progress_quantity_parsed_urls" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
-                        </div>   <div  class="col-md-4"><div id="quantity_parsed_urls">0</div><div id="uploaded_products_time">0</div></div>
+                            <div id="cr_progress_quantity_parsed_urls" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
+                        </div>   <div  class="col-md-4"><div id="cr_quantity_parsed_urls">0</div><div id="cr_uploaded_products_time">0</div></div>
 
                         <div class="col-md-8">
                             Продуктов найдено:
                         </div>
-                        <div id="quantity_found_products" class="col-md-4">
+                        <div id="cr_quantity_found_products" class="col-md-4">
                             0
                         </div>
 
                         <div class="col-md-8">
                             Товаров загружено из магазина:
-                            <div id="progress_quantity_downloaded_from_our_PL" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
+                            <div id="cr_progress_quantity_downloaded_from_our_PL" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
                         </div>
-                        <div id="quantity_downloaded_from_our_PL" class="col-md-4">
+                        <div id="cr_quantity_downloaded_from_our_PL" class="col-md-4">
                             0
                         </div>
                         <div class="col-md-8">Загружено товаров в магазин:
-                            <div id="progress_goods_uploaded" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
+                            <div id="cr_progress_goods_uploaded" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
                         </div>
-                        <div class="col-md-4"><div id="goods_uploaded">
+                        <div class="col-md-4"><div id="cr_goods_uploaded">
                                 0
                             </div>
-                            <div id="updated_products_time">
+                            <div id="cr_updated_products_time">
                                 0
                             </div>
                         </div>
-                        <div class="col-md-8">Шаг выполнения: </div>   <div  id="status_updating" class="col-md-4"></div>
-                        <div class="col-md-8">Времени прошло: </div>   <div  id="time_from_start" class="col-md-4">0</div>
-                        <div class="col-md-8">Времени прошло  последнего действия: </div>   <div  id="time_last_updated" class="col-md-4">0</div>
-                        <div class="col-md-8">Памяти используется: </div>   <div  id="memory_usage" class="col-md-4">0</div>
-                        <div class="col-md-8">Последний продукт: </div>   <div  id="next_url_to_updating" class="col-md-4"><a target="_blank" href="">Link</a></div>
-                        <div class="col-md-8">Статус обновления: </div>   <div id="continue_creating" class="col-md-4">0</div>
+                        <div class="col-md-8">Шаг выполнения: </div>   <div  id="cr_status_updating" class="col-md-4"></div>
+                        <div class="col-md-8">Времени прошло: </div>   <div  id="cr_time_from_start" class="col-md-4">0</div>
+                        <div class="col-md-8">Времени прошло  последнего действия: </div>   <div  id="cr_time_last_updated" class="col-md-4">0</div>
+                        <div class="col-md-8">Памяти используется: </div>   <div  id="cr_memory_usage" class="col-md-4">0</div>
+                        <div class="col-md-8">Последний продукт: </div>   <div  id="cr_next_url_to_updating" class="col-md-4"><a target="_blank" href="">Link</a></div>
+                        <div class="col-md-8">Статус обновления: </div>   <div id="cr_continue_creating" class="col-md-4">0</div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div id="start_buttons">
+                    <div id="cr_start_buttons">
                         <div class="col-md-12">
-                        <p><button id='startupdating' class="btn btn-success" >START UPDATING</button><button id='clear_all' class="btn btn-danger">CLEAR ALL</button></p>
+                        <p><button id='cr_startupdating' class="btn btn-success" >START UPDATING</button><button id='cr_clear_all' class="btn btn-danger">CLEAR ALL</button></p>
                         </div>
                         <div class="col-md-12">
-                        <p><button id='startspider' class="btn btn-success" >START SPIDER</button></p>
+                        <p><button id='cr_startspider' class="btn btn-success" >START SPIDER</button></p>
                         </div>
                         <div class="col-md-12">
-                        <p>URL LIST <br><button id='start_spider' class="btn btn-success">UPDATE</button><button id='' class="btn btn-danger">CLEAR</button></p>
+                        <p>URL LIST <br><button id='cr_start_spider' class="btn btn-success">UPDATE</button><button id='' class="btn btn-danger">CLEAR</button></p>
                         </div>
                         <div class="col-md-12">
-                        <p>LIST OF PRODUCTS IN SHOP<br><button id='upload_our_PL' class="btn btn-success">UPLOAD</button><button id='upload_PL' class="btn btn-danger">CLEAR</button></p>
+                        <p>LIST OF PRODUCTS IN SHOP<br><button id='cr_upload_our_PL' class="btn btn-success">UPLOAD</button><button id='cr_upload_PL' class="btn btn-danger">CLEAR</button></p>
                         </div>
                         <div class="col-md-12">
-                        <p>CREATE NEW PRODUCTS <br><button id='create_new_products' class="btn btn-success">UPLOAD</button><button id='startparsing' class="btn btn-danger">CLEAR</button></p>
+                        <p>CREATE NEW PRODUCTS <br><button id='cr_create_new_products' class="btn btn-success">UPLOAD</button><button id='cr_startparsing' class="btn btn-danger">CLEAR</button></p>
                         </div>
                         <div class="col-md-12">
                             Обновлять :<br>
@@ -175,10 +174,10 @@ $acsess='true';
                         <input  type="checkbox" class="btn-info" id='update_electra' checked>electra</p>
                         </div>
                     </div>
-                    <div id="continue_buttons" >
-                        <p><button id='continue_updating' >CONTINUE UPDATING</button></p>
-                        <p><button id='pause_updating' >PAUSE UPDATING</button></p>
-                        <p><button id='stop_updating' >STOP UPDATING</button></p>
+                    <div id="cr_continue_buttons" >
+                        <p><button id='cr_continue_updating' >CONTINUE UPDATING</button></p>
+                        <p><button id='cr_pause_updating' >PAUSE UPDATING</button></p>
+                        <p><button id='cr_stop_updating' >STOP UPDATING</button></p>
                     </div>
                 </div>
             </div>
@@ -210,7 +209,7 @@ $acsess='true';
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div id="start_buttons">
+                    <div id="up_start_buttons">
                         <p><button id='up_startparsing' >START UPDATING</button></p>
                         <p><button id='up_update_PL' >UPDATE PRODUCTS LIST</button></p>
                         <p><button id='up_update_PI' >UPDATE PRODUCT INFORMATION</button></p>
@@ -219,7 +218,7 @@ $acsess='true';
                         <input  type="radio" name="answer" data-update='prise' >цену товаров</p>
                         <input  type="radio" name="answer" data-update='all' checked>все</p>
                     </div>
-                    <div id="continue_buttons" >
+                    <div id="up_continue_buttons" >
                         <p><button id='up_continue_updating' >CONTINUE UPDATING</button></p>
                         <p><button id='up_pause_updating' >PAUSE UPDATING</button></p>
                         <p><button id='up_stop_updating' >STOP UPDATING</button></p>
@@ -245,19 +244,13 @@ $acsess='true';
         <div class="col-md-9 well admin-content" id="forms">
             Forms
         </div>
-        <div class="col-md-9 well admin-content" id="calender">
-            Calender
+        <div class="col-md-9 well admin-content" id="cr_errors">
         </div>
-        <div class="col-md-9 admin-content" id="errors">
-        </div>
-        <div class="col-md-9 well admin-content" id="to_delete">
-            Library
-        </div>
-        <div class="col-md-9 well admin-content" id="settings">
-            Settings
+        <div class="col-md-9 admin-content" id="up_errors">
         </div>
     </div>
 </div>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/up_index.js"></script>
 </body>
 </html>

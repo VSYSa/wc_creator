@@ -2,9 +2,8 @@
 
 
 
-require_once('api/woocommerce-api.php');
-require_once('parser/simple_html_dom.php');
-require_once('libs/lib_creator.php');
+
+require_once('../libs/lib_creator.php');
 
 
 
