@@ -1,51 +1,79 @@
 <?php
+
 require_once 'simple_html_dom.php';
 
 
 function get($url){
     $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url ); // отправляем на
+    curl_setopt($curl, CURLOPT_REFERER, $url); //откуда пользователь пришел
+    curl_setopt($curl, CURLOPT_HEADER, true); // пустые заголовки
+    //curl_setopt($curl, CURLOPT_HEADER, true); // пустые заголовки
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); // возвратить то что вернул сервер
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    //curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_REFERER, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+/*
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true); // следовать за редиректами
+    curl_setopt($curl, CURLOPT_MAXREDIRS, 10);
+    curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 30);// таймаут4
+*/
     curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4");
+
+    if(preg_match ( '/electra.ru/' ,  $url)){
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($curl, CURLOPT_POSTREDIR, 3);
+
+        curl_setopt($curl, CURLOPT_COOKIEJAR, dirname(__FILE__).'/cookie.txt'); // сохранять куки в файл
+        curl_setopt($curl, CURLOPT_COOKIEFILE,  dirname(__FILE__).'/cookie.txt');
+        curl_setopt($curl, CURLOPT_POSTFIELDS, array(
+            'USER_LOGIN'=>'potolok.plus2013',
+            'USER_PASSWORD'=>'89137758184',
+            'backurl'=>"$url",
+            'AUTH_FORM'=>'Y',
+            'TYPE'=>'AUTH',
+            'TYPE_NX'=>'AUTH',
+            'Login'=>'Войти',
+        ));
+    }
     $str = curl_exec($curl);
     if (curl_getinfo($curl, CURLINFO_HTTP_CODE) != 200) {
+        write_error('405','Код ответа на загрузку контента не 200, а '.curl_getinfo($curl, CURLINFO_HTTP_CODE),$url);
         curl_close($curl);
-        write_error('405','Код ответа на загрузку контента не 200.',$url);
         return 'error';
     }
+
     curl_close($curl);
     return $str;
 }
-function pars(&$url,&$html){
+
+
+function pars(&$url,&$html,$what=false){
     if(preg_match ( '/magia-sveta.ru/' ,  $url )) {
-        return(pars_magia_sveta($url,$html));
-    }elseif(preg_match ( '/antares-svet.ru/' ,  $url )){
-        return(pars_antares_svet($url,$html));
-    }elseif(preg_match ( '/electra.ru/' ,  $url )){
-        return(pars_electra($url,$html));
+        return(pars_magia_sveta($url,$html,$what));
+    }elseif(preg_match ( '/antares-svet.ru/' ,  $url)){
+        return(pars_antares_svet($url,$html,$what));
+    }elseif(preg_match ( '/electra.ru/' ,  $url)){
+        return(pars_electra($url,$html,$what));
     }
     else{
         write_error('466','Товар не может быть распарсен тк для него не прописывали правило.',$url);
-        return;
     }
+    return 466;
+
 }
-function pars_magia_sveta(&$url,&$html,$what='false'){
+
+function pars_magia_sveta(&$url,&$html,$what){
 
     if($html->innertext==''){
         write_error('470','Страница товара не загрузилась.',$url);//если не загрузилась страничка, то error
-        return;
+        return 470;
     }
     if(preg_match('/Уточнить цену/',$html->find('div.product-price a',0))){//есть ли запись "уточнить цену", то error
         write_error('471','У товара нет цены, поэтому не парсим его.',$url);
-        return;
+        return 471;
     }
     if(!preg_match('/в наличии/',$html->find('a.available-tab-open span',0))){//если нет в наличии, то error
         write_error('472','Товара нет в наличии, поэтому не парсим его.',$html->find('a.available-tab-open'));
-        return;
+        return 472;
     }
 
 
@@ -129,41 +157,13 @@ function pars_magia_sveta(&$url,&$html,$what='false'){
     return ($str);
 
 }
-function pars_electra(&$url,$what='false'){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url ); // отправляем на
-    curl_setopt($ch, CURLOPT_HEADER, 1); // пустые заголовки
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // возвратить то что вернул сервер
 
-    curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);// таймаут4
+function pars_electra(&$url,&$html,$what){
 
-    //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // следовать за редиректами
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-    curl_setopt($ch, CURLOPT_POSTREDIR, 3);
-
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);// просто отключаем проверку сертификата
-    curl_setopt($ch, CURLOPT_COOKIEJAR, dirname(__FILE__).'/cookie.txt'); // сохранять куки в файл
-    curl_setopt($ch, CURLOPT_COOKIEFILE,  dirname(__FILE__).'/cookie.txt');
-    //curl_setopt($ch, CURLOPT_POST, 1); // использовать данные в post
-    curl_setopt($ch, CURLOPT_POSTFIELDS, array(
-        'USER_LOGIN'=>'potolok.plus2013',
-        'USER_PASSWORD'=>'89137758184',
-        'backurl'=>"$url",
-        'AUTH_FORM'=>'Y',
-        'TYPE'=>'AUTH',
-        'TYPE_NX'=>'AUTH',
-        'Login'=>'Войти',
-    ));
-    $result = curl_exec ($ch);
-
-    if(curl_getinfo($ch, CURLINFO_HTTP_CODE)!==200){
+    if($html->innertext==''){
         write_error('470','Страница товара не загрузилась.',$url);//если не загрузилась страничка, то error
-        return;
+        return 470;
     }
-
-    $html = str_get_html($result);
-    curl_close ($ch);
     $out = $html -> find('div.nx-basket-byer');
     $out = $out[data-cart];
     preg_match('|{(.*?)}|sei', $out, $arr) ;
@@ -246,11 +246,12 @@ function pars_electra(&$url,$what='false'){
     );
     return ($str);
 }
-function pars_antares_svet(&$url,&$html,$what='false'){
+
+function pars_antares_svet(&$url,&$html,$what){
 
     if($html->innertext==''){
         write_error('470','Страница товара не загрузилась.',$url);//если не загрузилась страничка, то error
-        return;
+        return 470;
     }
     $price = $html->find('div.ecommerce-block',0);
     if($price->find('div.price-old', 0)->innertext==''){
@@ -346,5 +347,7 @@ function pars_antares_svet(&$url,&$html,$what='false'){
     unset($price,$title,$quantity,$price,$sku,$category,$image_url,$base_color,$plafond_color,$brand,$lamp_base,$voltage,$power,$quantity_lamps);
     return ($str);
 }
+
+
 
 ?>

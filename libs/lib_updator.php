@@ -69,14 +69,22 @@ function update_product_list()
  * Time: 18:25
  */
 function update_product_information(){
+
     mysql_query('UPDATE `settings` SET `value`=2 WHERE `title`="status_step_updating"');
 
     while(mysql_num_rows( mysql_query('SELECT `id`,`parsing_url` FROM `products_list` WHERE `status`=0  ORDER BY ID ASC LIMIT 1'))) {
+
         $data = mysql_fetch_object(
             mysql_query('SELECT `id`,`product_id`,`parsing_url` FROM `products_list` WHERE `status`=0  ORDER BY ID ASC LIMIT 1')
         );
-        $pars_data = pars($data->parsing_url);
-        if (array_key_exists('error', $pars_data)) {
+        $pars_data = pars($data->parsing_url,get($data->parsing_url),true);
+        if (!is_array($pars_data)) {
+
+
+            /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            удаляем товар если ошибка критическая и заносим в write_error
+            */!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
             mysql_query('UPDATE `products_list` SET `product_quantiti` = 0,`product_price` = 0,`date_update` = '.time().',`status` = 500 WHERE `id` = '.$data->id);
             mysql_query('INSERT INTO `errors` (`product_id`,`id_from_products_list`, `text`) VALUES ('.$data->product_id.','.$data->id.',"'.$pars_data['error'].'")');
         }else{
@@ -85,7 +93,7 @@ function update_product_information(){
         mysql_query('UPDATE `settings` SET `value` = ' . time() . ' WHERE `title` = "last_update"');
         continue_update();
     }
-    return ready;
+    return;
 }
 
 /**
@@ -95,6 +103,11 @@ function update_product_information(){
  * Time: 18:25
  */
 
+require_once( 'settings.php' );
+
+require_once('../api/woocommerce-api.php');
+
+require_once( '../parser/parser.php' );
 function db(){
     $db_id = mysql_connect(db_host, db_username, db_password)
     or die('Не удалось соединиться: ' . mysql_error());
@@ -179,13 +192,10 @@ function upload_products(){
 function continue_update(){
     $continue_update = mysql_fetch_array(mysql_query("SELECT `value` FROM `settings` WHERE `title`='continue_update'"))[0];
     if($continue_update==1){
-        mysql_query("UPDATE `settings` SET `value` = 'progress' WHERE `title` = 'progress_status'");
         return;
     }elseif ($continue_update==0){
-        mysql_query("UPDATE `settings` SET `value` = 'stop' WHERE `title` = 'progress_status'");
         exit;
     }elseif ($continue_update==2){
-        mysql_query("UPDATE `settings` SET `value` = 'pause' WHERE `title` = 'progress_status'");
         sleep(1);
         continue_update();
     }
@@ -193,7 +203,7 @@ function continue_update(){
 function write_log($str){
     $date = date("d-m");
     $time = date("H:i:s");
-    $fp = fopen("logs/$date.txt", 'a');
+    $fp = fopen("../logs/$date.txt", 'a');
     fwrite($fp, $time);
     fwrite($fp, $str. PHP_EOL);
     fclose($fp);

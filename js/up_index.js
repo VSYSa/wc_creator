@@ -120,7 +120,7 @@ var updator={
 
 }
 var up_indicators_store={
-    up_quantiti_products:0,
+        up_quantiti_products:0,
         up_quantiti_errors:0,
         up_uploaded_products:0,
         up_updated_products_information:0,
@@ -145,7 +145,7 @@ var up_indicators_store={
                 },
                 success:function (data) {
                     data = jQuery.parseJSON(data);
-                    up_indicators_store.cr_quantiti_products=parseInt(data['quantiti_products']);
+                    up_indicators_store.up_quantiti_products=parseInt(data['quantiti_products']);
                     up_indicators_store.up_quantiti_errors=parseInt(data['quantiti_errors']);
                     up_indicators_store.up_uploaded_products=parseInt(data['uploaded_products']);
                     up_indicators_store.up_updated_products_information=parseInt(data['updated_products_information']);
@@ -157,75 +157,74 @@ var up_indicators_store={
                     up_indicators_store.up_uploaded_products_time=parseInt(data['uploaded_products_time']);
                     up_indicators_store.up_updated_products_information_time=parseInt(data['updated_products_information_time']);
                     up_indicators_store.up_updated_products_time=parseInt(data['updated_products_time']);
+                    up_indicators_store.update_all();
                     return ;
                 }
             });
         },
         update_all:function () {
 
-
-
-
-
-            $('#up_quantiti_products').html(up_indicators_store.cr_quantiti_products);
+            $('#up_quantiti_products').html(up_indicators_store.up_quantiti_products);
             $('#count_errors').html(up_indicators_store.up_quantiti_errors);
             $('#up_uploaded_products').html(up_indicators_store.up_uploaded_products);
             $('#up_updated_products_information').html(up_indicators_store.up_updated_products_information);
             $('#up_updated_products').html(up_indicators_store.up_updated_products);
 
-
             if(up_indicators_store.up_status_step_updating==1){
                 $('#up_progress_uploaded_products').addClass('active');
                 $('#up_progress_updated_products_information').removeClass('active');
                 $('#up_progress_updated_products').removeClass('active');
-                //$('#up_status_step_updating').html('Загрузка товаров');
-                $('#up_uploaded_products_time').html('Осталось '+timer(up_indicators_store.up_uploaded_products_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_uploaded_products));
-                console.log(up_indicators_store.up_uploaded_products_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_uploaded_products);
+                $('#up_uploaded_products_time').html('Осталось '+timer(up_indicators_store.up_uploaded_products_time*up_indicators_store.up_quantiti_products/up_indicators_store.up_uploaded_products));
+                console.log(up_indicators_store.up_uploaded_products_time*up_indicators_store.up_quantiti_products/up_indicators_store.up_uploaded_products);
             }else if(up_indicators_store.up_status_step_updating==2){
                 $('#up_progress_uploaded_products').removeClass('active');
                 $('#up_progress_updated_products_information').addClass('active');
                 $('#up_progress_updated_products').removeClass('active');
-                //$('#up_status_step_updating').html('Обновление информации о товарах');
-                $('#up_updated_products_information_time').html('Осталось '+timer(up_indicators_store.up_updated_products_information_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_updated_products_information));
+                $('#up_updated_products_information_time').html('Осталось '+timer(up_indicators_store.up_updated_products_information_time*up_indicators_store.up_quantiti_products/up_indicators_store.up_updated_products_information));
                 $('#up_uploaded_products_time').html('Готово за '+timer(up_indicators_store.up_uploaded_products_time));
             }else if(up_indicators_store.up_status_step_updating==3){
                 $('#up_progress_uploaded_products').removeClass('active');
                 $('#up_progress_updated_products_information').removeClass('active');
                 $('#up_progress_updated_products').addClass('active');
-                ///$('#up_status_step_updating').html('Обновление товаров на сайте');
-                $('#up_updated_products_time').html('Осталось '+timer(up_indicators_store.up_updated_products_time*up_indicators_store.cr_quantiti_products/up_indicators_store.up_updated_products));
+                $('#up_updated_products_time').html('Осталось '+timer(up_indicators_store.up_updated_products_time*up_indicators_store.up_quantiti_products/up_indicators_store.up_updated_products));
                 $('#up_uploaded_products_time').html('Готово за '+timer(up_indicators_store.up_uploaded_products_time));
                 $('#up_updated_products_information_time').html('Сделано за '+timer(up_indicators_store.up_updated_products_information_time));
             }else if(up_indicators_store.up_status_step_updating==0){
                 $('#up_progress_uploaded_products').removeClass('active');
                 $('#up_progress_updated_products_information').removeClass('active');
                 $('#up_progress_updated_products').removeClass('active');
-                //$('#up_status_step_updating').html('Обновление выключено');
                 $('#up_uploaded_products_time').html('Готово за '+timer(up_indicators_store.up_uploaded_products_time));
                 $('#up_updated_products_information_time').html('Закончено за '+timer(up_indicators_store.up_updated_products_information_time));
                 $('#up_updated_products_time').html('Закончено за '+timer(up_indicators_store.up_updated_products_time));
             }
             if(up_indicators_store.up_status_updating==1){
                 $('#up_status_updating').html('В процессе обновления');
+                up_start_updating();
             }else if(up_indicators_store.up_status_updating==2) {
                 $('#up_status_updating').html('Обновление приостановлено');
+                up_start_updating();
             }else if(up_indicators_store.up_status_updating==0){
                 $('#up_status_updating').html('Обновление выключено');
+                up_end_of_updating();
+            }else if(up_indicators_store.up_status_updating==10) {
+                $('#up_status_updating').html('Обновление закончено');
+                up_end_of_updating();
             }
-            $('#up_progress_uploaded_products div').width(100*up_indicators_store.up_uploaded_products/up_indicators_store.cr_quantiti_products+'%');
-            $('#up_progress_updated_products_information div').width(100*up_indicators_store.up_updated_products_information/up_indicators_store.cr_quantiti_products+'%');
-            $('#up_progress_updated_products div').width(100*up_indicators_store.up_updated_products/up_indicators_store.cr_quantiti_products+'%');
+            $('#up_progress_uploaded_products div').width(100*up_indicators_store.up_uploaded_products/up_indicators_store.up_quantiti_products+'%');
+            $('#up_progress_updated_products_information div').width(100*up_indicators_store.up_updated_products_information/up_indicators_store.up_quantiti_products+'%');
+            $('#up_progress_updated_products div').width(100*up_indicators_store.up_updated_products/up_indicators_store.up_quantiti_products+'%');
             $('#up_time_from_start').html(timer(Math.floor(Date.now()/1000)-up_indicators_store.up_time_of_start_updating));
-            $('#up_time_to_end').html(timer(Math.floor(((Math.floor(Date.now()/1000)-up_indicators_store.up_time_of_start_updating)/(up_indicators_store.up_uploaded_products+up_indicators_store.up_updated_products_information+up_indicators_store.up_updated_products))*up_indicators_store.cr_quantiti_products*3)
+            $('#up_time_to_end').html(timer(Math.floor(((Math.floor(Date.now()/1000)-up_indicators_store.up_time_of_start_updating)/(up_indicators_store.up_uploaded_products+up_indicators_store.up_updated_products_information+up_indicators_store.up_updated_products))*up_indicators_store.up_quantiti_products*3)
             ));
             //time_to_end();
             //timers.updating_indicators = setTimeout(indicators.update,2000);
         }
 
 }
-var get={
 
-    errors: function () {
+var up_errors={
+
+    get: function () {
         $.ajax({
             type:'post',//тип запроса: get,post либо head
             url:'status/up_status.php',//url адрес файла обработчика
@@ -248,12 +247,10 @@ var get={
                 load_finish();
             }
         });
-    }
-}
-var indicators={
+    },
     count_errors:{
         value:0,
-        set: function (a) {
+            set: function (a) {
             this.value=a;
             $('#count_errors').html(this.value);
         },
@@ -262,12 +259,11 @@ var indicators={
             $('#count_errors').html(this.value);
         }
 
-    }
-
 }
+}
+
 function up_live_indicators() {
     up_indicators_store.get_indicators();
-    up_timers.live_indicators = setTimeout("up_live_indicators()",2000);
 
 }
 
@@ -373,58 +369,55 @@ $('#err').on("click", function(){
     $('.added_record').remove();
     get.errors();
 });
-function load_start(){
-    $('#content').css({opacity:0.5});
-    $('#loader').fadeIn( 200, "linear")
-}
-function load_finish(){
-    $('#loader').fadeOut( 100, "linear");
-    $('#content').css({opacity:1});
-}
-function start_parsing(){
+function up_start_updating(){
     $('#up_continue_buttons').show();
     $('#up_start_buttons').hide();
-    up_live_indicators();
+    if(up_timers.live_indicators===0){
+        up_timers.live_indicators = setInterval(up_live_indicators,2000);
+    }
 }
-function end_of_updating() {
+function up_end_of_updating() {
     $('#up_continue_buttons').hide();
     $('#up_start_buttons').show();
+    clearInterval(up_timers.live_indicators);
+    up_timers.live_indicators=0;
 }
+$('#up_update_info').on("click", function(){
+    up_click_btn()
+});
 $('#up_startparsing').on("click", function(){
-    start_parsing();
+    up_click_btn();
     updator.startparsing();
 });
 $('#up_update_PL').on("click", function(){
-    start_parsing();
+    up_click_btn();
     updator.update_PL();
 });
 $('#up_update_PI').on("click", function(){
-    start_parsing();
+    up_click_btn();
     updator.update_PI();
 });
 $('#up_upload_PL').on("click", function(){
-    start_parsing();
+    up_click_btn();
     updator.upload_PL();
 });
 $('#up_continue_updating').on("click", function(){
+    up_click_btn();
     updator.contiune();
 });
 $('#up_pause_updating').on("click", function(){
+    up_click_btn();
     updator.pause();
 });
 $('#up_stop_updating').on("click", function(){
-    end_of_updating();
+    up_click_btn();
     updator.stop();
 });
+function up_click_btn(time = 500){
+    load_start();
+    setTimeout(up_indicators_store.get_indicators,time);
+    setTimeout(load_finish,time+100);
+}
 
 up_indicators_store.get_indicators();
-setTimeout(function () {
-    if(up_indicators_store.up_continue_creating==0){
-        $('#up_continue_buttons').hide();
-    }else{
-        $('#up_start_buttons').hide();
-        up_live_indicators();
-    }
 
-    load_finish();
-},500);

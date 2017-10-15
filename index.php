@@ -7,7 +7,6 @@ $acsess='true';
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="jquery.tablesorter.js"></script>
     <script type="text/javascript">
         $(document).ready(function()
         {
@@ -103,12 +102,13 @@ $acsess='true';
             </p>
         </div>
         <div class="col-md-9 well admin-content" id="Creating">
-
-
-
-
             <div class="row">
                 <div class="col-md-8">
+                    <div>
+                        <button id="cr_update_info" type="button" class="btn btn-default btn-sm" style="float: right;">
+                            <span class="glyphicon glyphicon-refresh"></span> Refresh
+                        </button>
+                    </div>
                     <h2>Информация</h2>
                     <div class="row">
                         <div class="col-md-8">Ссылок найдено: </div>   <div id="cr_quantity_urls" class="col-md-4">0</div>
@@ -118,14 +118,12 @@ $acsess='true';
                         <div class="col-md-8">Количество обработанных ссылок:
                             <div id="cr_progress_quantity_parsed_urls" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
                         </div>   <div  class="col-md-4"><div id="cr_quantity_parsed_urls">0</div><div id="cr_uploaded_products_time">0</div></div>
-
                         <div class="col-md-8">
                             Продуктов найдено:
                         </div>
                         <div id="cr_quantity_found_products" class="col-md-4">
                             0
                         </div>
-
                         <div class="col-md-8">
                             Товаров загружено из магазина:
                             <div id="cr_progress_quantity_downloaded_from_our_PL" class="progress"><div class="progress-bar progress-bar-striped"></div></div>
@@ -191,6 +189,11 @@ $acsess='true';
 
             <div class="row">
                 <div class="col-md-8">
+                    <div>
+                        <button id="up_update_info" type="button" class="btn btn-default btn-sm" style="float: right;">
+                            <span class="glyphicon glyphicon-refresh"></span> Refresh
+                        </button>
+                    </div>
                     <h2>Информация</h2>
                     <div class="row">
                         <div class="col-md-8">Товаров в магазине: </div>   <div id="up_quantiti_products" class="col-md-4">0</div>
@@ -243,6 +246,7 @@ $acsess='true';
         </div>
     </div>
 </div>
+<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/up_index.js"></script>
 </body>
