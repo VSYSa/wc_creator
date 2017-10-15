@@ -129,7 +129,7 @@ function pars_magia_sveta(&$url,&$html,$what='false'){
     return ($str);
 
 }
-function pars_electra(&$url,&$html,$what='false'){
+function pars_electra(&$url,$what='false'){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url ); // отправляем на
     curl_setopt($ch, CURLOPT_HEADER, 1); // пустые заголовки
@@ -171,11 +171,11 @@ function pars_electra(&$url,&$html,$what='false'){
     $quantity = $data[ost];
     $price = $data[price]*2;
 
-    if($quantity==0){//есть ли запись "уточнить цену", то error
+    if($price==0){//есть ли запись "уточнить цену", то error
         write_error('471','У товара нет цены, поэтому не парсим его.',$url);
         return 471;
     }
-    if($price==0){//если нет в наличии, то error
+    if($quantity==0){//если нет в наличии, то error
         write_error('472','Товара нет в наличии, поэтому не парсим его.',$html->find('a.available-tab-open'));
         return 472;
     }

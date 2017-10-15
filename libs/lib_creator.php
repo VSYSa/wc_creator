@@ -282,7 +282,7 @@ function pars(&$url,&$html){
     }elseif(preg_match ( '/antares-svet.ru/' ,  $url )){
         return(pars_antares_svet($url,$html));
     }elseif(preg_match ( '/electra.ru/' ,  $url )){
-        return(pars_electra($url,$html));
+        return(pars_electra($url));
     }
     else{
         write_error('466','Товар не может быть распарсен тк для него не прописывали правило.',$url);
@@ -738,7 +738,14 @@ function check_is_NULL ($str){
     }
 }
 function write_error($code,$message,$url){
-    mysql_query('INSERT INTO `errors_log` (`time`, `error_code`, `data`, `url`) VALUES ('.time().', '.$code.', "'.mysql_real_escape_string($message).'", "'.mysql_real_escape_string($url).'")');
+    if(preg_match ( '/magia-sveta.ru/' ,  $url )) {
+        $shop='magia-sveta';
+    }elseif(preg_match ( '/antares-svet.ru/' ,  $url )){
+        $shop='antares-svet';
+    }elseif(preg_match ( '/electra.ru/' ,  $url )){
+        $shop='electra';
+    }
+    mysql_query('INSERT INTO `errors_log` (`time`, `error_code`, `data`, `url`,`shop`) VALUES ('.time().', '.$code.', "'.mysql_real_escape_string($message).'", "'.mysql_real_escape_string($url).'", "'.$shop.'")');
 }
 
 ?>

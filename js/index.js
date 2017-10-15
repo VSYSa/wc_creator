@@ -190,13 +190,13 @@ var cr_indicators_store={
             $('#cr_status_updating').html('Загрузка товаров');
         }else if(cr_indicators_store.cr_status_updating==2){
             $('#cr_progress_quantity_parsed_urls').removeClass('active');
-            $('#progress_updated_products_information').addClass('active');
+            $('#cr_progress_updated_products_information').addClass('active');
             $('#cr_progress_quantity_downloaded_from_our_PL').removeClass('active');
             $('#cr_status_updating').html('Загрузка наших товаров');
             $('#updated_products_information_time').html('Осталось '+timer(cr_indicators_store.updated_products_information_time*cr_indicators_store.quantity_products/cr_indicators_store.updated_products_information));
         }else if(cr_indicators_store.cr_status_updating==3){
             $('#cr_progress_quantity_parsed_urls').removeClass('active');
-            $('#progress_updated_products_information').removeClass('active');
+            $('#cr_progress_updated_products_information').removeClass('active');
             $('#cr_progress_quantity_downloaded_from_our_PL').addClass('active');
             $('#cr_status_updating').html('Выборка новых продуктов');
         }else if(cr_indicators_store.cr_status_updating==4){

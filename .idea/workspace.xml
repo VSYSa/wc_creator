@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79986b25-f786-4ab5-8124-cb1a25201274" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/up_index.js" afterPath="$PROJECT_DIR$/js/up_index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/lib_creator.php" afterPath="$PROJECT_DIR$/libs/lib_creator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/lib_updator.php" afterPath="$PROJECT_DIR$/libs/lib_updator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/settings.php" afterPath="$PROJECT_DIR$/libs/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/creator.php" afterPath="$PROJECT_DIR$/main/creator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parser.php" afterPath="$PROJECT_DIR$/parser/parser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/status/up_status.php" afterPath="$PROJECT_DIR$/status/up_status.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/adminstyle.css" afterPath="$PROJECT_DIR$/style/adminstyle.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/main/up_updating.php" afterPath="$PROJECT_DIR$/main/updator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/status/status.php" afterPath="$PROJECT_DIR$/status/cr_status.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,9 +20,73 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+            <state relative-caret-position="304">
+              <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lib_creator.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/libs/lib_creator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1266">
+              <caret line="747" column="199" lean-forward="false" selection-start-line="747" selection-start-column="199" selection-end-line="747" selection-end-column="199" />
+              <folding>
+                <element signature="n#spider#0;n#!!top" expanded="false" />
+                <element signature="n#update_product_list#0;n#!!top" expanded="false" />
+                <element signature="n#check_on_valid_products#0;n#!!top" expanded="false" />
+                <element signature="n#upload_products#0;n#!!top" expanded="false" />
+                <element signature="n#insert_product_with_data#0;n#!!top" expanded="false" />
+                <element signature="e#11942#23638#0#PHP" expanded="false" />
+                <element signature="n#write_log#0;n#!!top" expanded="false" />
+                <element signature="n#table_in_array#0;n#!!top" expanded="false" />
+                <element signature="n#get_categories_links#0;n#!!top" expanded="false" />
+                <element signature="n#send_email#0;n#!!top" expanded="false" />
+                <element signature="n#next_url#0;n#!!top" expanded="false" />
+                <element signature="n#this_is_file#0;n#!!top" expanded="false" />
+                <element signature="n#addhttp#0;n#!!top" expanded="false" />
+                <element signature="n#continue_update#0;n#!!top" expanded="false" />
+                <element signature="n#error_check_image_url#0;n#!!top" expanded="false" />
+                <element signature="n#check_is_NULL#0;n#!!top" expanded="false" />
+                <marker date="1508076095177" expanded="true" signature="598:665" ph="UPDATE `sett... " />
+                <marker date="1508076095177" expanded="true" signature="860:964" ph="SELECT COUNT... url_list" />
+                <marker date="1508076095177" expanded="true" signature="1163:1255" ph="UPDATE `url_... " />
+                <marker date="1508076095177" expanded="true" signature="1932:2013" ph="SELECT COUNT... url_list" />
+                <marker date="1508076095177" expanded="true" signature="2057:2188" ph="INSERT INTO `url_list`... " />
+                <marker date="1508076095177" expanded="true" signature="2388:2478" ph="UPDATE `url_... " />
+                <marker date="1508076095177" expanded="true" signature="2665:2732" ph="UPDATE `sett... " />
+                <marker date="1508076095177" expanded="true" signature="2804:2848" ph="ALTER TABLE `products_list`... " />
+                <marker date="1508076095177" expanded="true" signature="3216:3338" ph="UPDATE `crea... " />
+                <marker date="1508076095177" expanded="true" signature="3681:3876" ph="INSERT INTO `products_list`... " />
+                <marker date="1508076095177" expanded="true" signature="4356:4423" ph="UPDATE `sett... " />
+                <marker date="1508076095177" expanded="true" signature="4467:4537" ph="SELECT COUNT... found_products" />
+                <marker date="1508076095177" expanded="true" signature="4613:4688" ph="SELECT `prod... found_products" />
+                <marker date="1508076095177" expanded="true" signature="4736:4823" ph="SELECT COUNT... products_list" />
+                <marker date="1508076095177" expanded="true" signature="4859:4938" ph="DELETE FROM " />
+                <marker date="1508076095177" expanded="true" signature="4982:5079" ph="UPDATE `foun... " />
+                <marker date="1508076095177" expanded="true" signature="5228:5295" ph="UPDATE `sett... " />
+                <marker date="1508076095177" expanded="true" signature="5887:6193" ph="SELECT t.`ca... categories_сommunication" />
+                <marker date="1508076095177" expanded="true" signature="6458:6520" ph="SELECT COUNT... found_products" />
+                <marker date="1508076095177" expanded="true" signature="6585:6716" ph="SELECT `id`,... found_products" />
+                <marker date="1508076095177" expanded="true" signature="6746:6826" ph="UPDATE `foun... " />
+                <marker date="1508076095177" expanded="true" signature="6935:7015" ph="UPDATE `foun... " />
+                <marker date="1508076095177" expanded="true" signature="7148:7299" ph="SELECT `base... found_products" />
+                <marker date="1508076095177" expanded="true" signature="9042:9120" ph="UPDATE `foun... " />
+                <marker date="1508076095177" expanded="true" signature="9322:9431" ph="INSERT INTO `creating_products`.`errors_log`... " />
+                <marker date="1508076095177" expanded="true" signature="9686:9818" ph="INSERT INTO `creating_products`.`errors_log`... " />
+                <marker date="1508076095177" expanded="true" signature="9890:10018" ph="INSERT INTO `creating_products`.`errors_log`... " />
+                <marker date="1508076095177" expanded="true" signature="10094:10201" ph="INSERT INTO `creating_products`.`errors_log`... " />
+                <marker date="1508076095177" expanded="true" signature="10333:11439" ph="INSERT INTO `found_products`... " />
+                <marker date="1508076095177" expanded="false" signature="15971:20141" ph="..." />
+                <marker date="1508076095177" expanded="false" signature="20184:23634" ph="..." />
+                <marker date="1508076095177" expanded="true" signature="25418:25475" ph="SELECT COUNT... url_list" />
+                <marker date="1508076095177" expanded="true" signature="25539:25634" ph="SELECT `url`... url_list" />
+                <marker date="1508076095177" expanded="true" signature="27186:27286" ph="UPDATE `sett... " />
+                <marker date="1508076095177" expanded="true" signature="27307:27380" ph="UPDATE `sett... " />
+                <marker date="1508076095177" expanded="true" signature="27436:27500" ph="SELECT `valu... settings" />
+                <marker date="1508076095177" expanded="true" signature="28551:28744" ph="INSERT INTO `errors_log`... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,24 +94,26 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="247" selection-end-column="1" />
+            <state relative-caret-position="288">
+              <caret line="192" column="56" lean-forward="false" selection-start-line="192" selection-start-column="19" selection-end-line="192" selection-end-column="56" />
               <folding>
                 <element signature="e#56#4752#0" expanded="false" />
                 <element signature="e#8004#8302#0" expanded="false" />
-                <element signature="e#8936#9252#0" expanded="false" />
-                <element signature="e#10706#10791#0" expanded="false" />
-                <element signature="e#10843#10923#0" expanded="false" />
+                <element signature="e#8939#9258#0" expanded="false" />
+                <element signature="e#10712#10797#0" expanded="false" />
+                <element signature="e#10849#10929#0" expanded="false" />
+                <element signature="n#!!block;n#dop_z#0" expanded="false" />
+                <element signature="n#!!block;n#timer#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="up_index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="up_index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/up_index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="269" column="70" lean-forward="false" selection-start-line="269" selection-start-column="70" selection-end-line="269" selection-end-column="70" />
+            <state relative-caret-position="653">
+              <caret line="422" column="14" lean-forward="false" selection-start-line="422" selection-start-column="14" selection-end-line="422" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -66,8 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clear_all</find>
-      <find>startspider</find>
       <find>start_spider</find>
       <find>upload_our_PL</find>
       <find>upload_PL</find>
@@ -96,9 +151,10 @@
       <find>live_indicators</find>
       <find>start_buttons</find>
       <find>time_last_updated</find>
+      <find>live</find>
+      <find>progress_updated_products_information</find>
     </findStrings>
     <replaceStrings>
-      <replace>cr_memory_usage</replace>
       <replace>cr_next_url_to_updating</replace>
       <replace>cr_continue_creating</replace>
       <replace>cr_startupdating</replace>
@@ -128,6 +184,7 @@
       <replace>cr_start_buttons</replace>
       <replace>cr_continue_buttons</replace>
       <replace>up_start_buttons</replace>
+      <replace>cr_progress_updated_products_information</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -141,18 +198,19 @@
         <option value="$PROJECT_DIR$/creator.php" />
         <option value="$PROJECT_DIR$/lib.php" />
         <option value="$PROJECT_DIR$/up_index.js" />
-        <option value="$PROJECT_DIR$/parser/parser.php" />
         <option value="$PROJECT_DIR$/main/creator.php" />
         <option value="$PROJECT_DIR$/main/updator.php" />
         <option value="$PROJECT_DIR$/style/adminstyle.css" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/libs/settings.php" />
-        <option value="$PROJECT_DIR$/libs/lib_creator.php" />
         <option value="$PROJECT_DIR$/libs/lib_updator.php" />
         <option value="$PROJECT_DIR$/status/cr_status.php" />
         <option value="$PROJECT_DIR$/status/up_status.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/up_index.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/libs/lib_creator.php" />
+        <option value="$PROJECT_DIR$/parser/parser.php" />
+        <option value="$PROJECT_DIR$/../wp_wc_creator_products/creating_products/lib.php" />
       </list>
     </option>
   </component>
@@ -221,6 +279,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="status" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wc_up" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,15 +452,15 @@
       <updated>1507921049016</updated>
       <workItem from="1507921052738" duration="1860000" />
       <workItem from="1507923037030" duration="670000" />
-      <workItem from="1507952536718" duration="9080000" />
+      <workItem from="1507952536718" duration="12059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11610000" />
+    <option name="totallyTimeSpent" value="14589000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -491,20 +563,6 @@
     <entry file="file://$PROJECT_DIR$/lib.php" />
     <entry file="file://$PROJECT_DIR$/up_include.php" />
     <entry file="file://$PROJECT_DIR$/up_index.php" />
-    <entry file="file://$PROJECT_DIR$/parser/parser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="349" column="2" lean-forward="true" selection-start-line="349" selection-start-column="2" selection-end-line="349" selection-end-column="2" />
-          <folding>
-            <element signature="n#get#0;n#!!top" expanded="false" />
-            <element signature="n#pars#0;n#!!top" expanded="false" />
-            <element signature="n#pars_magia_sveta#0;n#!!top" expanded="false" />
-            <element signature="n#pars_electra#0;n#!!top" expanded="false" />
-            <element signature="n#pars_antares_svet#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/creator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-179">
@@ -578,71 +636,6 @@
         <state relative-caret-position="323">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/lib_creator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="31" />
-          <folding>
-            <element signature="n#spider#0;n#!!top" expanded="false" />
-            <element signature="n#update_product_list#0;n#!!top" expanded="false" />
-            <element signature="n#check_on_valid_products#0;n#!!top" expanded="false" />
-            <element signature="n#upload_products#0;n#!!top" expanded="false" />
-            <element signature="n#insert_product_with_data#0;n#!!top" expanded="false" />
-            <element signature="n#pars#0;n#!!top" expanded="false" />
-            <element signature="e#11948#23644#0#PHP" expanded="false" />
-            <element signature="n#write_log#0;n#!!top" expanded="false" />
-            <element signature="n#table_in_array#0;n#!!top" expanded="false" />
-            <element signature="n#get_categories_links#0;n#!!top" expanded="false" />
-            <element signature="n#send_email#0;n#!!top" expanded="false" />
-            <element signature="n#is_product#0;n#!!top" expanded="false" />
-            <element signature="n#next_url#0;n#!!top" expanded="false" />
-            <element signature="n#this_is_file#0;n#!!top" expanded="false" />
-            <element signature="n#addhttp#0;n#!!top" expanded="false" />
-            <element signature="n#continue_update#0;n#!!top" expanded="false" />
-            <element signature="n#error_check_image_url#0;n#!!top" expanded="false" />
-            <element signature="n#check_is_NULL#0;n#!!top" expanded="false" />
-            <element signature="n#write_error#0;n#!!top" expanded="false" />
-            <marker date="1507961150026" expanded="true" signature="598:665" ph="UPDATE `sett... " />
-            <marker date="1507961150026" expanded="true" signature="860:964" ph="SELECT COUNT... url_list" />
-            <marker date="1507961150026" expanded="true" signature="1163:1255" ph="UPDATE `url_... " />
-            <marker date="1507961150026" expanded="true" signature="1932:2013" ph="SELECT COUNT... url_list" />
-            <marker date="1507961150026" expanded="true" signature="2057:2188" ph="INSERT INTO `url_list`... " />
-            <marker date="1507961150026" expanded="true" signature="2388:2478" ph="UPDATE `url_... " />
-            <marker date="1507961150026" expanded="true" signature="2665:2732" ph="UPDATE `sett... " />
-            <marker date="1507961150026" expanded="true" signature="2804:2848" ph="ALTER TABLE `products_list`... " />
-            <marker date="1507961150026" expanded="true" signature="3216:3338" ph="UPDATE `crea... " />
-            <marker date="1507961150026" expanded="true" signature="3681:3876" ph="INSERT INTO `products_list`... " />
-            <marker date="1507961150026" expanded="true" signature="4356:4423" ph="UPDATE `sett... " />
-            <marker date="1507961150026" expanded="true" signature="4467:4537" ph="SELECT COUNT... found_products" />
-            <marker date="1507961150026" expanded="true" signature="4613:4688" ph="SELECT `prod... found_products" />
-            <marker date="1507961150026" expanded="true" signature="4736:4823" ph="SELECT COUNT... products_list" />
-            <marker date="1507961150026" expanded="true" signature="4859:4938" ph="DELETE FROM " />
-            <marker date="1507961150026" expanded="true" signature="4982:5079" ph="UPDATE `foun... " />
-            <marker date="1507961150026" expanded="true" signature="5228:5295" ph="UPDATE `sett... " />
-            <marker date="1507961150026" expanded="true" signature="5887:6193" ph="SELECT t.`ca... categories_сommunication" />
-            <marker date="1507961150026" expanded="true" signature="6458:6520" ph="SELECT COUNT... found_products" />
-            <marker date="1507961150026" expanded="true" signature="6585:6716" ph="SELECT `id`,... found_products" />
-            <marker date="1507961150026" expanded="true" signature="6746:6826" ph="UPDATE `foun... " />
-            <marker date="1507961150026" expanded="true" signature="6935:7015" ph="UPDATE `foun... " />
-            <marker date="1507961150026" expanded="true" signature="7148:7299" ph="SELECT `base... found_products" />
-            <marker date="1507961150026" expanded="true" signature="9042:9120" ph="UPDATE `foun... " />
-            <marker date="1507961150026" expanded="true" signature="9322:9431" ph="INSERT INTO `creating_products`.`errors_log`... " />
-            <marker date="1507961150026" expanded="true" signature="9686:9818" ph="INSERT INTO `creating_products`.`errors_log`... " />
-            <marker date="1507961150026" expanded="true" signature="9890:10018" ph="INSERT INTO `creating_products`.`errors_log`... " />
-            <marker date="1507961150026" expanded="true" signature="10094:10201" ph="INSERT INTO `creating_products`.`errors_log`... " />
-            <marker date="1507961150026" expanded="true" signature="10333:11439" ph="INSERT INTO `found_products`... " />
-            <marker date="1507961150026" expanded="false" signature="15977:20147" ph="..." />
-            <marker date="1507961150026" expanded="false" signature="20190:23640" ph="..." />
-            <marker date="1507961150026" expanded="true" signature="25424:25481" ph="SELECT COUNT... url_list" />
-            <marker date="1507961150026" expanded="true" signature="25545:25640" ph="SELECT `url`... url_list" />
-            <marker date="1507961150026" expanded="true" signature="27192:27292" ph="UPDATE `sett... " />
-            <marker date="1507961150026" expanded="true" signature="27313:27386" ph="UPDATE `sett... " />
-            <marker date="1507961150026" expanded="true" signature="27442:27506" ph="SELECT `valu... settings" />
-            <marker date="1507961150026" expanded="true" signature="28306:28479" ph="INSERT INTO `errors_log`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,33 +734,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/js/up_index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+        <state relative-caret-position="653">
+          <caret line="422" column="14" lean-forward="false" selection-start-line="422" selection-start-column="14" selection-end-line="422" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="247" selection-end-column="1" />
+        <state relative-caret-position="288">
+          <caret line="192" column="56" lean-forward="false" selection-start-line="192" selection-start-column="19" selection-end-line="192" selection-end-column="56" />
           <folding>
             <element signature="e#56#4752#0" expanded="false" />
             <element signature="e#8004#8302#0" expanded="false" />
-            <element signature="e#8936#9252#0" expanded="false" />
-            <element signature="e#10706#10791#0" expanded="false" />
-            <element signature="e#10843#10923#0" expanded="false" />
+            <element signature="e#8939#9258#0" expanded="false" />
+            <element signature="e#10712#10797#0" expanded="false" />
+            <element signature="e#10849#10929#0" expanded="false" />
+            <element signature="n#!!block;n#dop_z#0" expanded="false" />
+            <element signature="n#!!block;n#timer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/up_index.js">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="269" column="70" lean-forward="false" selection-start-line="269" selection-start-column="70" selection-end-line="269" selection-end-column="70" />
+        <state relative-caret-position="304">
+          <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../wp_wc_creator_products/creating_products/lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="420" column="16" lean-forward="false" selection-start-line="420" selection-start-column="16" selection-end-line="420" selection-end-column="16" />
+          <folding>
+            <marker date="1508076494972" expanded="true" signature="617:684" ph="UPDATE `sett... " />
+            <marker date="1508076494972" expanded="true" signature="879:983" ph="SELECT COUNT... url_list" />
+            <marker date="1508076494972" expanded="true" signature="1182:1274" ph="UPDATE `url_... " />
+            <marker date="1508076494972" expanded="true" signature="1951:2032" ph="SELECT COUNT... url_list" />
+            <marker date="1508076494972" expanded="true" signature="2076:2207" ph="INSERT INTO `url_list`... " />
+            <marker date="1508076494972" expanded="true" signature="2407:2497" ph="UPDATE `url_... " />
+            <marker date="1508076494972" expanded="true" signature="2684:2751" ph="UPDATE `sett... " />
+            <marker date="1508076494972" expanded="true" signature="2823:2867" ph="ALTER TABLE `products_list`... " />
+            <marker date="1508076494972" expanded="true" signature="3235:3357" ph="UPDATE `crea... " />
+            <marker date="1508076494972" expanded="true" signature="3700:3895" ph="INSERT INTO `products_list`... " />
+            <marker date="1508076494972" expanded="true" signature="4375:4442" ph="UPDATE `sett... " />
+            <marker date="1508076494972" expanded="true" signature="4486:4556" ph="SELECT COUNT... found_products" />
+            <marker date="1508076494972" expanded="true" signature="4632:4707" ph="SELECT `prod... found_products" />
+            <marker date="1508076494972" expanded="true" signature="4755:4842" ph="SELECT COUNT... products_list" />
+            <marker date="1508076494972" expanded="true" signature="4878:4957" ph="DELETE FROM " />
+            <marker date="1508076494972" expanded="true" signature="5001:5098" ph="UPDATE `foun... " />
+            <marker date="1508076494972" expanded="true" signature="5247:5314" ph="UPDATE `sett... " />
+            <marker date="1508076494972" expanded="true" signature="5906:6212" ph="SELECT t.`ca... categories_сommunication" />
+            <marker date="1508076494972" expanded="true" signature="6477:6539" ph="SELECT COUNT... found_products" />
+            <marker date="1508076494972" expanded="true" signature="6604:6735" ph="SELECT `id`,... found_products" />
+            <marker date="1508076494972" expanded="true" signature="6765:6845" ph="UPDATE `foun... " />
+            <marker date="1508076494972" expanded="true" signature="6954:7034" ph="UPDATE `foun... " />
+            <marker date="1508076494972" expanded="true" signature="7167:7318" ph="SELECT `base... found_products" />
+            <marker date="1508076494972" expanded="true" signature="9033:9111" ph="UPDATE `foun... " />
+            <marker date="1508076494972" expanded="true" signature="9313:9422" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076494972" expanded="true" signature="9677:9809" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076494972" expanded="true" signature="9881:10009" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076494972" expanded="true" signature="10085:10192" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076494972" expanded="true" signature="10324:11430" ph="INSERT INTO `found_products`... " />
+            <marker date="1508076494972" expanded="true" signature="26269:26326" ph="SELECT COUNT... url_list" />
+            <marker date="1508076494972" expanded="true" signature="26390:26485" ph="SELECT `url`... url_list" />
+            <marker date="1508076494972" expanded="true" signature="28008:28108" ph="UPDATE `sett... " />
+            <marker date="1508076494972" expanded="true" signature="28129:28202" ph="UPDATE `sett... " />
+            <marker date="1508076494972" expanded="true" signature="28258:28322" ph="SELECT `valu... settings" />
+            <marker date="1508076494972" expanded="true" signature="29123:29296" ph="INSERT INTO `errors_log`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/parser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="168" column="44" lean-forward="true" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="44" />
+          <folding>
+            <element signature="n#get#0;n#!!top" expanded="false" />
+            <element signature="n#pars#0;n#!!top" expanded="false" />
+            <element signature="n#pars_magia_sveta#0;n#!!top" expanded="false" />
+            <element signature="n#pars_antares_svet#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/lib_creator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1266">
+          <caret line="747" column="199" lean-forward="false" selection-start-line="747" selection-start-column="199" selection-end-line="747" selection-end-column="199" />
+          <folding>
+            <element signature="n#spider#0;n#!!top" expanded="false" />
+            <element signature="n#update_product_list#0;n#!!top" expanded="false" />
+            <element signature="n#check_on_valid_products#0;n#!!top" expanded="false" />
+            <element signature="n#upload_products#0;n#!!top" expanded="false" />
+            <element signature="n#insert_product_with_data#0;n#!!top" expanded="false" />
+            <element signature="e#11942#23638#0#PHP" expanded="false" />
+            <element signature="n#write_log#0;n#!!top" expanded="false" />
+            <element signature="n#table_in_array#0;n#!!top" expanded="false" />
+            <element signature="n#get_categories_links#0;n#!!top" expanded="false" />
+            <element signature="n#send_email#0;n#!!top" expanded="false" />
+            <element signature="n#next_url#0;n#!!top" expanded="false" />
+            <element signature="n#this_is_file#0;n#!!top" expanded="false" />
+            <element signature="n#addhttp#0;n#!!top" expanded="false" />
+            <element signature="n#continue_update#0;n#!!top" expanded="false" />
+            <element signature="n#error_check_image_url#0;n#!!top" expanded="false" />
+            <element signature="n#check_is_NULL#0;n#!!top" expanded="false" />
+            <marker date="1508076095177" expanded="true" signature="598:665" ph="UPDATE `sett... " />
+            <marker date="1508076095177" expanded="true" signature="860:964" ph="SELECT COUNT... url_list" />
+            <marker date="1508076095177" expanded="true" signature="1163:1255" ph="UPDATE `url_... " />
+            <marker date="1508076095177" expanded="true" signature="1932:2013" ph="SELECT COUNT... url_list" />
+            <marker date="1508076095177" expanded="true" signature="2057:2188" ph="INSERT INTO `url_list`... " />
+            <marker date="1508076095177" expanded="true" signature="2388:2478" ph="UPDATE `url_... " />
+            <marker date="1508076095177" expanded="true" signature="2665:2732" ph="UPDATE `sett... " />
+            <marker date="1508076095177" expanded="true" signature="2804:2848" ph="ALTER TABLE `products_list`... " />
+            <marker date="1508076095177" expanded="true" signature="3216:3338" ph="UPDATE `crea... " />
+            <marker date="1508076095177" expanded="true" signature="3681:3876" ph="INSERT INTO `products_list`... " />
+            <marker date="1508076095177" expanded="true" signature="4356:4423" ph="UPDATE `sett... " />
+            <marker date="1508076095177" expanded="true" signature="4467:4537" ph="SELECT COUNT... found_products" />
+            <marker date="1508076095177" expanded="true" signature="4613:4688" ph="SELECT `prod... found_products" />
+            <marker date="1508076095177" expanded="true" signature="4736:4823" ph="SELECT COUNT... products_list" />
+            <marker date="1508076095177" expanded="true" signature="4859:4938" ph="DELETE FROM " />
+            <marker date="1508076095177" expanded="true" signature="4982:5079" ph="UPDATE `foun... " />
+            <marker date="1508076095177" expanded="true" signature="5228:5295" ph="UPDATE `sett... " />
+            <marker date="1508076095177" expanded="true" signature="5887:6193" ph="SELECT t.`ca... categories_сommunication" />
+            <marker date="1508076095177" expanded="true" signature="6458:6520" ph="SELECT COUNT... found_products" />
+            <marker date="1508076095177" expanded="true" signature="6585:6716" ph="SELECT `id`,... found_products" />
+            <marker date="1508076095177" expanded="true" signature="6746:6826" ph="UPDATE `foun... " />
+            <marker date="1508076095177" expanded="true" signature="6935:7015" ph="UPDATE `foun... " />
+            <marker date="1508076095177" expanded="true" signature="7148:7299" ph="SELECT `base... found_products" />
+            <marker date="1508076095177" expanded="true" signature="9042:9120" ph="UPDATE `foun... " />
+            <marker date="1508076095177" expanded="true" signature="9322:9431" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076095177" expanded="true" signature="9686:9818" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076095177" expanded="true" signature="9890:10018" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076095177" expanded="true" signature="10094:10201" ph="INSERT INTO `creating_products`.`errors_log`... " />
+            <marker date="1508076095177" expanded="true" signature="10333:11439" ph="INSERT INTO `found_products`... " />
+            <marker date="1508076095177" expanded="false" signature="15971:20141" ph="..." />
+            <marker date="1508076095177" expanded="false" signature="20184:23634" ph="..." />
+            <marker date="1508076095177" expanded="true" signature="25418:25475" ph="SELECT COUNT... url_list" />
+            <marker date="1508076095177" expanded="true" signature="25539:25634" ph="SELECT `url`... url_list" />
+            <marker date="1508076095177" expanded="true" signature="27186:27286" ph="UPDATE `sett... " />
+            <marker date="1508076095177" expanded="true" signature="27307:27380" ph="UPDATE `sett... " />
+            <marker date="1508076095177" expanded="true" signature="27436:27500" ph="SELECT `valu... settings" />
+            <marker date="1508076095177" expanded="true" signature="28551:28744" ph="INSERT INTO `errors_log`... " />
+          </folding>
         </state>
       </provider>
     </entry>
