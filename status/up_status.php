@@ -16,14 +16,12 @@ function db(){
 }
 db();
 
-function send($a){
-    print_r(json_encode($a));
-}
+
 
 if($_POST['what_to_do']==='get_all_information'){
     $request = array(
         'quantiti_products'   => mysql_fetch_array(mysql_query("SELECT `value` FROM `settings` WHERE `title`='quantiti_products'"))[0],
-        'quantiti_errors'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `errors` WHERE 1'))[0],
+        'quantiti_errors'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `errors_log` WHERE 1'))[0],
         'uploaded_products'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `products_list` WHERE `date_upload_product_in_list`!=0'))[0],
         'updated_products_information'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `products_list` WHERE `date_update`!=0'))[0],
         'updated_products'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `products_list` WHERE `date_upload`!=0'))[0],
@@ -43,7 +41,10 @@ if($_POST['what_to_do']==='get_all_information'){
     send($request);
 }
 elseif($_POST['what_to_do']==='get_errors'){
-    send(table_in_array('SELECT `products_list`.`id`, `products_list`.`product_id`, `products_list`.`parsing_url`,    `products_list`.`product_url`, `errors`.`text` FROM    `products_list`,`errors`  WHERE    `products_list`.id = `errors`.`id_from_products_list`'));
+    send(table_in_array('SELECT `id`, `time`, `error_code`, `data`, `url`, `shop` FROM `errors_log` WHERE 1'));
+}
+elseif($_POST['what_to_do']==='clear_all_errors'){
+    table_in_array('TRUNCATE TABLE `errors_log`');
 }
 elseif($_POST['what_to_do']==='pause_parsing'){
     mysql_query("UPDATE `settings` SET `value` = 2 WHERE `title` = 'continue_update'");
@@ -71,4 +72,6 @@ elseif($_POST['what_to_do']==='stop_parsing'){
 else{
     echo 111;
 }
+
+
 ?>

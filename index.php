@@ -6,7 +6,12 @@ $acsess='true';
     <meta charset="utf-8">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://momentjs.com/downloads/moment.js" ></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
     <script type="text/javascript">
         $(document).ready(function()
         {
@@ -29,8 +34,6 @@ $acsess='true';
         });
     </script>
     <script type="text/javascript" src=""></script>
-
-    <script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
     <link type="text/css" rel="stylesheet" href="style/adminstyle.css">
     <link type="text/css" rel="stylesheet" href="style/loading.css">
 
@@ -86,8 +89,8 @@ $acsess='true';
                 <li><a  data-target-id="table"><i class="fa fa-table fa-fw"></i>Table</a></li>
                 <li><a  data-target-id="forms"><i class="fa fa-tasks fa-fw"></i>Forms</a></li>
                 <li><a  data-target-id="calender"><i class="fa fa-calendar fa-fw"></i>Calender</a></li>
-                <li id="err"><a  data-target-id="cr_errors"><i class="fa fa-pencil fa-fw"></i>creating errors <div id="cr_count_errors"> 0 </div></a></li>
-                <li id="err"><a  data-target-id="up_errors"><i class="fa fa-pencil fa-fw"></i>updating errors <div id="up_count_errors"> 0 </div></a></li>
+                <li id="cr_errors_menu"><a  data-target-id="cr_errors"><i class="fa fa-pencil fa-fw"></i>creating errors <div id="cr_count_errors"> 0 </div></a></li>
+                <li id="up_errors_menu"><a  data-target-id="up_errors"><i class="fa fa-pencil fa-fw"></i>updating errors <div id="up_count_errors"> 0 </div></a></li>
             </ul>
         </div>
         <div class="col-md-9 well admin-content" id="home">
@@ -241,13 +244,27 @@ $acsess='true';
             Forms
         </div>
         <div class="col-md-9 well admin-content" id="cr_errors">
+            <button id="cr_errors_clearall" type="button" class="btn btn-default btn-sm" style="float: left;">
+                <span class="glyphicon glyphicon-trash"></span> Clear all
+            </button>
+            <button id="cr_errors_refresh" type="button" class="btn btn-default btn-sm" style="float: right;">
+                <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
         </div>
         <div class="col-md-9 admin-content" id="up_errors">
+            <button id="up_errors_clearall" type="button" class="btn btn-default btn-sm" style="float: left;">
+                <span class="glyphicon glyphicon-trash"></span> Clear all
+            </button>
+            <button id="up_errors_refresh" type="button" class="btn btn-default btn-sm" style="float: right;">
+                <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
+
         </div>
     </div>
 </div>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/up_index.js"></script>
+
 </body>
 </html>

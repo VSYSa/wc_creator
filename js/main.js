@@ -9,6 +9,8 @@ function load_finish(){
     $('#loader').fadeOut( 100, "linear");
     $('#content').css({opacity:1});
 }
+
 setTimeout(function () {
     load_finish();
 },600);
+

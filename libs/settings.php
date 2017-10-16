@@ -17,5 +17,21 @@ error_reporting (E_ALL & ~ E_DEPRECATED & ~ E_NOTICE);
 error_reporting (0);
 
 
-
+function send($a){
+    print_r(json_encode($a));
+}
+function table_in_array($mysql_query){
+    $rs=mysql_query($mysql_query);
+    $table = array();
+    $schet=0;
+    while($row = mysql_fetch_assoc($rs)) {
+        $strROW = array();
+        foreach ($row as $key => $value){
+            $strROW[$key] = $value;
+        }
+        $table[$schet] = $strROW;
+        $schet++;
+    }
+    return $table;
+}
 ?>

@@ -18,13 +18,10 @@ db();
 
 
 
-function send($a){
-    print_r(json_encode($a));
-}
-
 if($_POST['what_to_do']==='get_all_information'){
     $request = array(
         'quantity_urls'   => mysql_fetch_array(mysql_query("SELECT COUNT(1) FROM `url_list` WHERE 1"))[0],
+        'quantiti_errors'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `errors_log` WHERE 1'))[0],
         'quantity_parsed_urls'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `url_list` WHERE `status_updating`=2'))[0],
         'quantity_urls_to_parsing'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `url_list` WHERE `status_updating`=1'))[0],
         'quantity_found_products'   => mysql_fetch_array(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE 1'))[0],
@@ -60,6 +57,19 @@ elseif($_POST['what_to_do']==='clear_all') {
     mysql_query('TRUNCATE TABLE `url_list`');
 
     echo 'ready';
-}else{
+}
+elseif($_POST['what_to_do']==='get_errors'){
+    send(table_in_array('SELECT `id`, `time`, `error_code`, `data`, `url`, `shop` FROM `errors_log` WHERE 1'));
+}
+elseif($_POST['what_to_do']==='clear_all_errors'){
+    table_in_array('TRUNCATE TABLE `errors_log`');
+}
+else{
     echo 111;
 }
+
+
+
+
+
+?>

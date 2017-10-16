@@ -62,7 +62,6 @@ function pars(&$url,&$html,$what=false){
 }
 
 function pars_magia_sveta(&$url,&$html,$what){
-
     if($html->innertext==''){
         write_error('470','Страница товара не загрузилась.',$url);//если не загрузилась страничка, то error
         return 470;
@@ -76,7 +75,6 @@ function pars_magia_sveta(&$url,&$html,$what){
         return 472;
     }
 
-
     $price = $html->find('span.price', 0);    //находим первое значение у тега а с классом available-tab-open
     if (count($price->find('span.old-price', 0))) {
         $price = $price->find('span.old-price', 0);
@@ -85,7 +83,6 @@ function pars_magia_sveta(&$url,&$html,$what){
     $price = preg_replace("/[^0-9]/", '', $price);     //отчищаем от слов
     $quantity = $html->find('a.available-tab-open', 0);    //находим первое значение у тега а с классом available-tab-open
     $quantity = preg_replace("/[^0-9]/", '', $quantity);
-
 
     if($what){//если нам нужно для обновления товров, то возвращаем
         return (array( 'stock_quantity' => $quantity, 'regular_price' => $price));

@@ -7,8 +7,17 @@
  */
 
 require_once( 'settings.php' );
+
 require_once('../api/woocommerce-api.php');
+
 require_once( '../parser/parser.php' );
+function db(){
+    $db_id = mysql_connect(db_host, db_username, db_password)
+    or die('Не удалось соединиться: ' . mysql_error());
+    mysql_select_db('updateproducts')
+    or die('Не удалось выбрать базу данных');
+}
+db();
 
 /**
  * Created by PhpStorm.
@@ -72,25 +81,21 @@ function update_product_information(){
 
     mysql_query('UPDATE `settings` SET `value`=2 WHERE `title`="status_step_updating"');
 
-    while(mysql_num_rows( mysql_query('SELECT `id`,`parsing_url` FROM `products_list` WHERE `status`=0  ORDER BY ID ASC LIMIT 1'))) {
-
-        $data = mysql_fetch_object(
-            mysql_query('SELECT `id`,`product_id`,`parsing_url` FROM `products_list` WHERE `status`=0  ORDER BY ID ASC LIMIT 1')
-        );
-        $pars_data = pars($data->parsing_url,get($data->parsing_url),true);
+    while(mysql_num_rows( $query=mysql_query('SELECT `id`,`parsing_url` FROM `products_list` WHERE `status`=0  ORDER BY ID ASC LIMIT 1'))) {
+        $data = mysql_fetch_object($query);
+        $content = new simple_html_dom();
+        $content->load(get($data->parsing_url));
+        $pars_data = pars($data->parsing_url,$content,true);
         if (!is_array($pars_data)) {
-
-
-            /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            удаляем товар если ошибка критическая и заносим в write_error
-            */!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-            mysql_query('UPDATE `products_list` SET `product_quantiti` = 0,`product_price` = 0,`date_update` = '.time().',`status` = 500 WHERE `id` = '.$data->id);
-            mysql_query('INSERT INTO `errors` (`product_id`,`id_from_products_list`, `text`) VALUES ('.$data->product_id.','.$data->id.',"'.$pars_data['error'].'")');
+            if($pars_data==470 || $pars_data==471 ){
+                remove_product($data->id);
+            }
+           mysql_query('UPDATE `products_list` SET `product_quantiti` = 0,`product_price` = 0,`date_update` = '.time().',`status` = 500 WHERE `id` = '.$data->id);
         }else{
             mysql_query('UPDATE `products_list` SET `product_quantiti` = ' . $pars_data['stock_quantity'] . ',`product_price` = ' . $pars_data['regular_price'] . ',`date_update` = ' . time() . ',`status` = "1"  WHERE `id` = ' . $data->id);
         }
         mysql_query('UPDATE `settings` SET `value` = ' . time() . ' WHERE `title` = "last_update"');
+        unset($data,$content,$pars_data);
         continue_update();
     }
     return;
@@ -103,18 +108,7 @@ function update_product_information(){
  * Time: 18:25
  */
 
-require_once( 'settings.php' );
 
-require_once('../api/woocommerce-api.php');
-
-require_once( '../parser/parser.php' );
-function db(){
-    $db_id = mysql_connect(db_host, db_username, db_password)
-    or die('Не удалось соединиться: ' . mysql_error());
-    mysql_select_db('updateproducts')
-    or die('Не удалось выбрать базу данных');
-}
-db();
 
 function remove_product($product_id){
     $options = array(
@@ -233,5 +227,18 @@ function send_email($message){
 function send($a){
     print_r(json_encode($a));
 }
+function write_error($code,$message,$url)
+{
+    if ($url != '') {
+        if (preg_match('/magia-sveta.ru/', $url)) {
+            $shop = 'magia-sveta';
+        } elseif (preg_match('/antares-svet.ru/', $url)) {
+            $shop = 'antares-svet';
+        } elseif (preg_match('/electra.ru/', $url)) {
+            $shop = 'electra';
+        }
+    }
 
+    mysql_query('INSERT INTO `errors_log` (`time`, `error_code`, `data`, `url`,`shop`) VALUES (' . time() . ', ' . $code . ', "' . mysql_real_escape_string($message) . '", "' . mysql_real_escape_string($url) . '", "' . $shop . '")');
+}
 ?>

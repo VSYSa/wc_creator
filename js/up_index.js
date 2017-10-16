@@ -165,7 +165,7 @@ var up_indicators_store={
         update_all:function () {
 
             $('#up_quantiti_products').html(up_indicators_store.up_quantiti_products);
-            $('#count_errors').html(up_indicators_store.up_quantiti_errors);
+            $('#up_count_errors').html(up_indicators_store.up_quantiti_errors);
             $('#up_uploaded_products').html(up_indicators_store.up_uploaded_products);
             $('#up_updated_products_information').html(up_indicators_store.up_updated_products_information);
             $('#up_updated_products').html(up_indicators_store.up_updated_products);
@@ -225,6 +225,8 @@ var up_indicators_store={
 var up_errors={
 
     get: function () {
+        load_start();
+        $('.dataTables_wrapper').remove();
         $.ajax({
             type:'post',//тип запроса: get,post либо head
             url:'status/up_status.php',//url адрес файла обработчика
@@ -237,16 +239,44 @@ var up_errors={
             },
             success:function (data) {//возвращаемый результат от сервера
                 data = jQuery.parseJSON(data);
+
+                create_record('#up_errors', '<table id="up_errors_table" >                    <thead><tr><th>ID</th><th>Time</th><th>Code</th><th>Message</th><th>Link</th><th>Shop</th></tr></thead>                    <tfoot><tr ><th>ID</th><th>Time</th><th>Code</th><th>Message</th><th>Link</th><th>Shop</th></tr></tfoot>                    <tbody id="up_errors_table_tbody"> </tbody>                    </table>');
+
+
                     for (var i = 0; i < data.length; i++) {
-                        var error_product = '№' + (i + 1) + ' При обновлении <a href="' +
-                            data[i]['product_url'] + '" target="_blank">товара</a> с id = ' +
-                            data[i]['product_id'] + ', от <a href="' + data[i]['parsing_url'] + '" target="_blank">поставщика</a> выдал ошибку: ' +
-                            data[i]['text'] + ' <button class="btn btn-danger" id="delete_product" data-id="' + data[i]['product_id'] + '">удалить?</button>'
-                        create_record('#errors', error_product);
+                        var up_error_product ='<tr class="up_added_row_of_error_table">'+
+                                '<td>'+data[i]['id']+'</td>'+
+                                '<td>'+moment(data[i]['time']*1000).format("DD-MM-YYYY h:mm:ss")+'</td>'+
+                                '<td>'+data[i]['error_code']+'</td>'+
+                                '<td>'+data[i]['data']+'</td>'+
+                                '<td> <a href="'+data[i]['url']+'" target="_blank" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-link"></span> Link  </a></td>'+
+                                '<td>'+data[i]['shop']+'</td>'+'</tr>';
+                        create_record('#up_errors_table_tbody', up_error_product);
+
+
+
                     }
+
+                sorting_tables('#up_errors_table')
                 load_finish();
             }
         });
+    },
+    clear_all:function () {
+        var i= $.ajax({
+            type:'post',
+            url:'status/up_status.php',//url адрес файла обработчика
+            cache: false,
+            data:{'what_to_do':'clear_all_errors'},//параметры запроса
+            response:'text',//тип возвращаемого ответа text либо xml
+            async:true,
+            error: function(){
+                console.log('ajax error on posting')
+            },
+            success:function (data) {//возвращаемый результат от сервера
+            }
+        });
+        i.abort();
     },
     count_errors:{
         value:0,
@@ -259,8 +289,18 @@ var up_errors={
             $('#count_errors').html(this.value);
         }
 
+    }
 }
-}
+
+$('#up_errors_menu').on("click", function(){
+    up_errors.get();
+});
+$('#up_errors_refresh').on("click", function(){
+    up_errors.get();
+});
+$('#up_errors_clearall').on("click", function(){
+    up_errors.clear_all();
+});
 
 function up_live_indicators() {
     up_indicators_store.get_indicators();
@@ -339,7 +379,7 @@ function timer(time_in_second) {
     return time;
 }
 //Функция запуска и остановки
-function StartStop() {
+function StartStop(plase) {
     if (init==0){
         ClearСlock();
         time_to_end();
@@ -352,23 +392,37 @@ function StartStop() {
         init=0;
     }
 }
+
 function create_record(plase, text){
-    var record = document.createElement('div');
+    var record = document.createElement('tr');
     record.className = 'well added_record';
     record.innerHTML = text;
-    $(plase).prepend(record);
+    //$(plase).append(record);
+    $(text).appendTo(plase);
 };
-$('#errors').on("click", '#delete_product',function(){
-    indicators.count_errors.down();
-    var id = $(this).data(id);
-    ajax.add_to_remove_product(id.id);
-    $(this).parent().remove(500);
-});
-$('#err').on("click", function(){
-    load_start();
-    $('.added_record').remove();
-    get.errors();
-});
+function sorting_tables(plase) {
+    // Setup - add a text input to each footer cell
+    $(plase+' tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+
+    // DataTable
+    var table = $(plase).DataTable();
+
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+}
 function up_start_updating(){
     $('#up_continue_buttons').show();
     $('#up_start_buttons').hide();
