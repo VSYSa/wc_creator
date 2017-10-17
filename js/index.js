@@ -321,12 +321,15 @@ var cr_errors={
 
 $('#cr_errors_menu').on("click", function(){
     cr_errors.get();
+    cr_click_btn();
 });
 $('#cr_errors_refresh').on("click", function(){
     cr_errors.get();
+    cr_click_btn();
 });
 $('#cr_errors_clearall').on("click", function(){
     cr_errors.clear_all();
+    cr_click_btn();
 });
 
 function cr_live_indicators() {

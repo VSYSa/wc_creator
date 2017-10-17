@@ -294,12 +294,15 @@ var up_errors={
 
 $('#up_errors_menu').on("click", function(){
     up_errors.get();
+    up_click_btn();
 });
 $('#up_errors_refresh').on("click", function(){
     up_errors.get();
+    up_click_btn();
 });
 $('#up_errors_clearall').on("click", function(){
     up_errors.clear_all();
+    up_click_btn();
 });
 
 function up_live_indicators() {

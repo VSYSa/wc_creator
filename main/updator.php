@@ -49,7 +49,7 @@ elseif($_POST['what_to_do']==='remove_product'){
 
 }
 else{
-    echo 111;
+    echo 'no_command';
 }
 
 

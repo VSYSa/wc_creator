@@ -6,19 +6,13 @@
  * Time: 2:14
  */
 
-error_reporting (1);
+
 
 require_once( 'settings.php' );
 
 require_once('../api/woocommerce-api.php');
 
 require_once( '../parser/parser.php' );
-
-
-
-
-
-
 
 
 function db(){
@@ -294,20 +288,7 @@ function write_log($str){
     fwrite($fp, $str. PHP_EOL);
     fclose($fp);
 }
-function table_in_array($mysql_query){
-    $rs=mysql_query($mysql_query);
-    $table = array();
-    $schet=0;
-    while($row = mysql_fetch_assoc($rs)) {
-        $strROW = array();
-        foreach ($row as $key => $value){
-            $strROW[$key] = $value;
-        }
-        $table[$schet] = $strROW;
-        $schet++;
-    }
-    return $table;
-}
+
 function get_categories_links($mysql_query){
     $rs=mysql_query($mysql_query);
     $table = array();
@@ -353,25 +334,7 @@ function next_url(){
         return;
     }
 }
-/* прописали в parser.php
-function get($url){
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    //curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_REFERER, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-    curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4");
-    $str = curl_exec($curl);
-    if (curl_getinfo($curl, CURLINFO_HTTP_CODE) != 200) {
-        curl_close($curl);
-        return 'error';
-    }
-    curl_close($curl);
-    return $str;
-}
-*/
+
 function this_is_file(&$link){
     preg_match('/.+\.(\w+)$/xis', $link, $pocket);//получаю расширение файла
     if(!empty($pocket)) {
