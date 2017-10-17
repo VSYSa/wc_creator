@@ -280,14 +280,6 @@ function insert_product_with_data(&$url,&$html){
     return;
 }
 
-function write_log($str){
-    $date = date("d-m");
-    $time = date("H:i:s");
-    $fp = fopen("../logs/$date.txt", 'a');
-    fwrite($fp, $time);
-    fwrite($fp, $str. PHP_EOL);
-    fclose($fp);
-}
 
 function get_categories_links($mysql_query){
     $rs=mysql_query($mysql_query);

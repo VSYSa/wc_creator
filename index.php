@@ -244,16 +244,16 @@ $acsess='true';
             Forms
         </div>
         <div class="col-md-9 well admin-content" id="cr_errors">
-            <button id="cr_errors_clearall" type="button" class="btn btn-default btn-sm" style="float: left;">
-                <span class="glyphicon glyphicon-trash"></span> Clear all
+            <button id="cr_errors_clear" type="button" class="btn btn-default btn-sm" style="float: left;">
+                <span class="glyphicon glyphicon-trash"></span> Clear
             </button>
             <button id="cr_errors_refresh" type="button" class="btn btn-default btn-sm" style="float: right;">
                 <span class="glyphicon glyphicon-refresh"></span> Refresh
             </button>
         </div>
         <div class="col-md-9 admin-content" id="up_errors">
-            <button id="up_errors_clearall" type="button" class="btn btn-default btn-sm" style="float: left;">
-                <span class="glyphicon glyphicon-trash"></span> Clear all
+            <button id="up_errors_clear" type="button" class="btn btn-default btn-sm" style="float: left;">
+                <span class="glyphicon glyphicon-trash"></span> Clear
             </button>
             <button id="up_errors_refresh" type="button" class="btn btn-default btn-sm" style="float: right;">
                 <span class="glyphicon glyphicon-refresh"></span> Refresh

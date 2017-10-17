@@ -34,4 +34,12 @@ function table_in_array($mysql_query){
     }
     return $table;
 }
+function write_log($str){
+    $date = date("d-m");
+    $time = date("H:i:s");
+    $fp = fopen("../logs/$date.txt", 'a');
+    fwrite($fp, $time);
+    fwrite($fp, $str. PHP_EOL);
+    fclose($fp);
+}
 ?>

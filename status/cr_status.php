@@ -61,6 +61,12 @@ elseif($_POST['what_to_do']==='clear_all') {
 elseif($_POST['what_to_do']==='get_errors'){
     send(table_in_array('SELECT `id`, `time`, `error_code`, `data`, `url`, `shop` FROM `errors_log` WHERE 1'));
 }
+elseif($_POST['what_to_do']==='clear_errors_row'){
+    foreach (json_decode($_POST['row_id']) as $value){
+            mysql_query('DELETE FROM `errors_log` WHERE `id`='.$value.'');
+        unset($value);
+    }
+}
 elseif($_POST['what_to_do']==='clear_all_errors'){
     table_in_array('TRUNCATE TABLE `errors_log`');
 }

@@ -25,7 +25,6 @@ if($_POST['what_to_do']==='start_creating'){
 
 }
 elseif($_POST['what_to_do']==='start_spider'){
-    write_log(123123123);
     mysql_query('UPDATE `settings` SET `value`=1 WHERE `title`="continue_creating"');
     mysql_query('UPDATE `settings` SET `value`='.time().' WHERE `title`="time_of_start_updating"');
     foreach (json_decode($_POST['updating_shops']) as $value){

@@ -240,24 +240,14 @@ var up_errors={
             success:function (data) {//возвращаемый результат от сервера
                 data = jQuery.parseJSON(data);
 
-                create_record('#up_errors', '<table id="up_errors_table" >                    <thead><tr><th>ID</th><th>Time</th><th>Code</th><th>Message</th><th>Link</th><th>Shop</th></tr></thead>                    <tfoot><tr ><th>ID</th><th>Time</th><th>Code</th><th>Message</th><th>Link</th><th>Shop</th></tr></tfoot>                    <tbody id="up_errors_table_tbody"> </tbody>                    </table>');
+                create_record('#up_errors', error_head('up'));
 
+                for (var i = 0; i < data.length; i++) {
 
-                    for (var i = 0; i < data.length; i++) {
-                        var up_error_product ='<tr class="up_added_row_of_error_table">'+
-                                '<td>'+data[i]['id']+'</td>'+
-                                '<td>'+moment(data[i]['time']*1000).format("DD-MM-YYYY h:mm:ss")+'</td>'+
-                                '<td>'+data[i]['error_code']+'</td>'+
-                                '<td>'+data[i]['data']+'</td>'+
-                                '<td> <a href="'+data[i]['url']+'" target="_blank" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-link"></span> Link  </a></td>'+
-                                '<td>'+data[i]['shop']+'</td>'+'</tr>';
-                        create_record('#up_errors_table_tbody', up_error_product);
+                    create_record('#up_errors_table_tbody', error_table(data[i],'up'));
+                }
 
-
-
-                    }
-
-                sorting_tables('#up_errors_table')
+                sorting_tables('#up_errors_table');
                 load_finish();
             }
         });
@@ -289,6 +279,22 @@ var up_errors={
             $('#count_errors').html(this.value);
         }
 
+    },
+    clear_rows: function ($str) {
+        $.ajax({
+            type:'post',//тип запроса: get,post либо head
+            url:'status/up_status.php',//url адрес файла обработчика
+            cache: false,
+            data:{'what_to_do':'clear_errors_row','row_id':$str},//параметры запроса
+            response:'text',//тип возвращаемого ответа text либо xml
+            async:true,
+            error: function(){
+                console.log('ajax error on getting')
+            },
+            success:function (data) {//возвращаемый результат от сервера
+                console.log(data);
+            }
+        });
     }
 }
 
@@ -300,8 +306,16 @@ $('#up_errors_refresh').on("click", function(){
     up_errors.get();
     up_click_btn();
 });
-$('#up_errors_clearall').on("click", function(){
-    up_errors.clear_all();
+$('#up_errors_clear').on("click", function(){
+    load_start();
+
+    var selected =$('#up_errors .selected');
+    if (selected.length != 0) {
+        up_errors.clear_rows(JSON.stringify(clear_errors_row(selected)));
+    } else  if(confirm('Do yo want remove all rows of error log?')){
+        up_errors.clear_all();
+    }
+    up_errors.get();
     up_click_btn();
 });
 
@@ -396,36 +410,8 @@ function StartStop(plase) {
     }
 }
 
-function create_record(plase, text){
-    var record = document.createElement('tr');
-    record.className = 'well added_record';
-    record.innerHTML = text;
-    //$(plase).append(record);
-    $(text).appendTo(plase);
-};
-function sorting_tables(plase) {
-    // Setup - add a text input to each footer cell
-    $(plase+' tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    } );
 
-    // DataTable
-    var table = $(plase).DataTable();
 
-    // Apply the search
-    table.columns().every( function () {
-        var that = this;
-
-        $( 'input', this.footer() ).on( 'keyup change', function () {
-            if ( that.search() !== this.value ) {
-                that
-                    .search( this.value )
-                    .draw();
-            }
-        } );
-    } );
-}
 function up_start_updating(){
     $('#up_continue_buttons').show();
     $('#up_start_buttons').hide();

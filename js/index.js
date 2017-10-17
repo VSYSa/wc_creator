@@ -267,24 +267,14 @@ var cr_errors={
             success:function (data) {//возвращаемый результат от сервера
                 data = jQuery.parseJSON(data);
 
-                cr_create_record('#cr_errors', '<table id="cr_errors_table" >                    <thead><tr><th>ID</th><th>Time</th><th>Code</th><th>Message</th><th>Link</th><th>Shop</th></tr></thead>                    <tfoot><tr ><th>ID</th><th>Time</th><th>Code</th><th>Message</th><th>Link</th><th>Shop</th></tr></tfoot>                    <tbody id="cr_errors_table_tbody"> </tbody>                    </table>');
-
+                create_record('#cr_errors', error_head('cr'));
 
                 for (var i = 0; i < data.length; i++) {
-                    var cr_error_product ='<tr class="cr_added_row_of_error_table">'+
-                        '<td>'+data[i]['id']+'</td>'+
-                        '<td>'+moment(data[i]['time']*1000).format("DD-MM-YYYY h:mm:ss")+'</td>'+
-                        '<td>'+data[i]['error_code']+'</td>'+
-                        '<td>'+data[i]['data']+'</td>'+
-                        '<td> <a href="'+data[i]['url']+'" target="_blank" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-link"></span> Link  </a></td>'+
-                        '<td>'+data[i]['shop']+'</td>'+'</tr>';
-                    cr_create_record('#cr_errors_table_tbody', cr_error_product);
 
-
-
+                    create_record('#cr_errors_table_tbody', error_table(data[i],'cr'));
                 }
 
-                cr_sorting_tables('#cr_errors_table')
+                sorting_tables('#cr_errors_table');
                 load_finish();
             }
         });
@@ -305,17 +295,33 @@ var cr_errors={
         });
         i.abort();
     },
-    count_errors:{
-        value:0,
+    count_errors: {
+        value: 0,
         set: function (a) {
-            this.value=a;
+            this.value = a;
             $('#count_errors').html(this.value);
         },
         down: function () {
-            this.value-=1;
+            this.value -= 1;
             $('#count_errors').html(this.value);
         }
 
+    },
+    clear_rows: function ($str) {
+        $.ajax({
+            type:'post',//тип запроса: get,post либо head
+            url:'status/cr_status.php',//url адрес файла обработчика
+            cache: false,
+            data:{'what_to_do':'clear_errors_row','row_id':$str},//параметры запроса
+            response:'text',//тип возвращаемого ответа text либо xml
+            async:true,
+            error: function(){
+                console.log('ajax error on getting')
+            },
+            success:function (data) {//возвращаемый результат от сервера
+                console.log(data);
+            }
+        });
     }
 }
 
@@ -327,8 +333,16 @@ $('#cr_errors_refresh').on("click", function(){
     cr_errors.get();
     cr_click_btn();
 });
-$('#cr_errors_clearall').on("click", function(){
-    cr_errors.clear_all();
+$('#cr_errors_clear').on("click", function(){
+    load_start();
+
+    var selected =$('#cr_errors .selected');
+    if (selected.length != 0) {
+        cr_errors.clear_rows(JSON.stringify(clear_errors_row(selected)));
+    } else if(confirm('Do yo want remove all rows of error log?')){
+        cr_errors.clear_all();
+    }
+    cr_errors.get();
     cr_click_btn();
 });
 
@@ -340,36 +354,8 @@ var cr_timers = {
     live_indicators:0
 }
 
-function cr_create_record(plase, text){
-    var record = document.createElement('tr');
-    record.className = 'well added_record';
-    record.innerHTML = text;
-    //$(plase).append(record);
-    $(text).appendTo(plase);
-};
-function cr_sorting_tables(plase) {
-    // Setup - add a text input to each footer cell
-    $(plase+' tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    } );
 
-    // DataTable
-    var table = $(plase).DataTable();
 
-    // Apply the search
-    table.columns().every( function () {
-        var that = this;
-
-        $( 'input', this.footer() ).on( 'keyup change', function () {
-            if ( that.search() !== this.value ) {
-                that
-                    .search( this.value )
-                    .draw();
-            }
-        } );
-    } );
-}
 function dop_z(varr){
     if(varr<=9 && varr>=0){
         return ('0'+varr);
@@ -404,12 +390,7 @@ function cr_click_btn(time = 500){
     setTimeout(cr_indicators_store.get_indicators,time);
     setTimeout(load_finish,time+100);
 }
-function create_record(plase, text){
-    var record = document.createElement('div');
-    record.className = 'well added_record';
-    record.innerHTML = text;
-    $(plase).prepend(record);
-};
+
 
 function start_creating(){
     $('#cr_continue_buttons').show();

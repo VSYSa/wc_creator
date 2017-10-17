@@ -17,7 +17,6 @@ function db(){
 db();
 
 
-
 if($_POST['what_to_do']==='get_all_information'){
     $request = array(
         'quantiti_products'   => mysql_fetch_array(mysql_query("SELECT `value` FROM `settings` WHERE `title`='quantiti_products'"))[0],
@@ -40,9 +39,6 @@ if($_POST['what_to_do']==='get_all_information'){
     );
     send($request);
 }
-elseif($_POST['what_to_do']==='get_errors'){
-    send(table_in_array('SELECT `id`, `time`, `error_code`, `data`, `url`, `shop` FROM `errors_log` WHERE 1'));
-}
 elseif($_POST['what_to_do']==='clear_all_errors'){
     table_in_array('TRUNCATE TABLE `errors_log`');
 }
@@ -63,7 +59,21 @@ elseif($_POST['what_to_do']==='stop_parsing'){
     mysql_query('DELETE FROM `errors` WHERE `product_id`='+$_POST['product_id']);
     mysql_query('UPDATE `products_list` SET `status`=404 WHERE `product_id`='+$_POST['product_id']);
     send('ready');
-}elseif($_POST['what_to_do']==='remove_product'){
+}
+elseif($_POST['what_to_do']==='get_errors'){
+    send(table_in_array('SELECT `id`, `time`, `error_code`, `data`, `url`, `shop` FROM `errors_log` WHERE 1'));
+}
+elseif($_POST['what_to_do']==='clear_errors_row'){
+    write_log($_POST['row_id']);
+    foreach (json_decode($_POST['row_id']) as $value){
+        write_log($value);
+        mysql_query('DELETE FROM `errors_log` WHERE `id`='.$value);
+        unset($value);
+    }
+}elseif($_POST['what_to_do']==='clear_all_errors'){
+    table_in_array('TRUNCATE TABLE `errors_log`');
+}
+elseif($_POST['what_to_do']==='remove_product'){
     remove_product($_POST['product_id']);
     mysql_query('DELETE FROM `products_list` WHERE `product_id`='+$_POST['product_id']);
     mysql_query('DELETE FROM `to_remove` WHERE `product_id`='+$_POST['product_id']);
