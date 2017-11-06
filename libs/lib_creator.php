@@ -109,6 +109,8 @@ function update_product_list()
             print_r($e->get_request());
             print_r($e->get_response());
         }
+        write_error(153,'при загрузке товаров из нашего магазина произошла ошибка');
+        update_product_list();
     }
 }
 //оставляем в таблице товары, которых у нас нет
@@ -132,7 +134,7 @@ function upload_products(){
         'debug' => false,
         'return_as_array' => true,
         'validate_url' => false,
-        'timeout' => 300,
+        'timeout' => 3000,
         'ssl_verify' => true,
     );
 
@@ -147,20 +149,25 @@ function upload_products(){
         }
         unset($get_categories);
         $get_categories=get_categories_links('
-    SELECT 
-      t.`category_name` AS `diller_category`,
-      t1.`category_name` AS `our_category` 
-    FROM `categories_сommunication` 
-    JOIN `categories_dillers` t ON t.id = `categories_сommunication`.id_diller_category 
-    JOIN `categories_our` t1 ON t1.id = `categories_сommunication`.id_our_category
-    ');
+        SELECT 
+          t.`category_name` AS `diller_category`,
+          t1.`category_name` AS `our_category` 
+        FROM `categories_сommunication` 
+        JOIN `categories_dillers` t ON t.id = `categories_сommunication`.id_diller_category 
+        JOIN `categories_our` t1 ON t1.id = `categories_сommunication`.id_our_category
+        ');
 
         $name_atributes=array('base_color'=>'Цвет основания','plafond_color'=>'Цвет плафона','brand'=>'Бренд','lamp_base'=>'Цоколь','voltage'=>'Вольтаж','power'=>'Мощность','quantity_lamps'=>'Количество ламп');
-        while((mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=3'))[0])!=0){
-            $product=mysql_fetch_assoc(mysql_query('SELECT `id`, `product_url`, `title`, `quantity`, `price`, `sku`, `category`, `image` FROM `found_products` WHERE `product_status`=3'));
+        while((mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=2'))[0])!=0){
+            $product=mysql_fetch_assoc(mysql_query('SELECT `id`, `product_url`, `title`, `quantity`, `price`, `sku`, `category`, `image` FROM `found_products` WHERE `product_status`=2'));
             mysql_query('UPDATE `found_products` SET `product_status`=105 WHERE `id`="'.$product['id'].'"');
             if($get_categories[$product['category']]=='product_to_delete'){
                 mysql_query('UPDATE `found_products` SET `product_status`=535 WHERE `id`="'.$product['id'].'"');
+                continue_update();
+                continue;
+            }else if($get_categories[$product['category']]==''){
+                write_error(536,'категория "'.$product['category'].'" незадиклорирована в базе категорий',$product['product_url']);
+                mysql_query('UPDATE `found_products` SET `product_status`=536 WHERE `id`="'.$product['id'].'"');
                 continue_update();
                 continue;
             }
@@ -182,7 +189,7 @@ function upload_products(){
                 'reviews_allowed'=> 0, //отключаем комментарии
                 'custom_meta'=> array(
                     'provider_url'=>$product['product_url'],
-                    '_specifications_display_attributes' => yes //чтобы в теме "electra" по дефолту отображались атрибуты, без обновления страницы товара, со стороны админа
+                    '_specifications_display_attributes' => yes //чтобы в теме "electra" по дефолту отображались атрибуты, без ручного обновления страницы с товаром в админке
                 ),
                 'images' => Array (
                     array(
@@ -217,10 +224,8 @@ function upload_products(){
 
         unset($client,$name_atributes);
 
-
-
-    } catch (WC_API_Client_Exception $e) {
-        mysql_query('INSERT INTO `creating_products`.`errors_log` (`time`, `error_code`, `data`) VALUES ('.time().', 111, "catch")');
+    } 
+    catch (WC_API_Client_Exception $e) {
         echo $e->getMessage() . PHP_EOL;
         echo $e->getCode() . PHP_EOL;
 
@@ -229,14 +234,70 @@ function upload_products(){
             print_r($e->get_request());
             print_r($e->get_response());
         }
-        mysql_query('INSERT INTO `creating_products`.`errors_log` (`time`, `error_code`, `data`) VALUES ('.$e->get_response()->code.', 111, "error code")');
-        if($e->get_response()->code==400){
-            mysql_query('INSERT INTO `creating_products`.`errors_log` (`time`, `error_code`, `data`) VALUES ('.$e->get_response()->code.', 111, "return")');
-            return upload_products();
+        write_error(102,'при загрузки товара пришлось очень долго ждать',$product['product_url']);
+        upload_products();
+    }
+    recheck_products_uploading();
+    
+}
+//  rest api не фильтрует по мета полям, нужно скачивать таблицу с товарами и пеерепроверять
+function recheck_products_uploading(){
+    mysql_query('UPDATE `settings` SET `value` = 5 WHERE `title` = "status_updating"');
+    
+
+    try {
+        if((mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=102 OR `product_status`=105'))[0])!=0){
+            update_product_list();
+            mysql_query('UPDATE `settings` SET `value` = 5 WHERE `title` = "status_updating"');
+
+            while((mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=102'))[0])!=0){
+                $url_of_download_product=mysql_fetch_row(mysql_query('SELECT `product_url` FROM `found_products` WHERE `product_status`=102 LIMIT 1'))[0];
+
+                if(mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `products_list` WHERE `parsing_url`="'.$url_of_download_product.'"'))[0]>0){
+                    mysql_query('UPDATE `found_products` SET `product_status`=4 WHERE `product_url`="'.$url_of_download_product.'"');
+                }else{
+                    mysql_query('UPDATE `found_products` SET `product_status`=2 WHERE `product_url`="'.$url_of_download_product.'"');
+                }
+
+                
+                unset($url_of_download_product);
+                continue_update();
+            }
+
+
+            while((mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=105'))[0])!=0){
+                $url_of_download_product=mysql_fetch_row(mysql_query('SELECT `product_url` FROM `found_products` WHERE `product_status`=105 LIMIT 1'))[0];
+
+                if(mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `products_list` WHERE `parsing_url`="'.$url_of_download_product.'"'))[0]>0){
+                    mysql_query('UPDATE `found_products` SET `product_status`=4 WHERE `product_url`="'.$url_of_download_product.'"');
+                }else{
+                    mysql_query('UPDATE `found_products` SET `product_status`=2 WHERE `product_url`="'.$url_of_download_product.'"');
+                }
+
+                
+                unset($url_of_download_product);
+                continue_update();
+            }
+
+            upload_products();
         }
 
+    } catch (WC_API_Client_Exception $e) {
+        echo $e->getMessage() . PHP_EOL;
+        echo $e->getCode() . PHP_EOL;
+
+        if ($e instanceof WC_API_Client_HTTP_Exception) {
+
+            print_r($e->get_request());
+            print_r($e->get_response());
+        }
+        write_error(103,'проверка продукта на наличие после загрузки неудалась',$product['product_url']);
     }
-    mysql_query('INSERT INTO `creating_products`.`errors_log` (`time`, `error_code`, `data`) VALUES ('.time().', 111, "end")');
+
+        if((mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=105'))[0])!=0){
+            mysql_query('UPDATE `found_products` SET `product_status`=2 WHERE `product_status`=105');
+        }
+
 }
 
 function insert_product_with_data(&$url,&$html){
@@ -260,7 +321,7 @@ function insert_product_with_data(&$url,&$html){
  `quantity_lamps`
  ) VALUES (
  "' . mysql_real_escape_string($url) . '",
- 3,
+ 1,
  "' . mysql_real_escape_string($data['title']) . '",
  "' . mysql_real_escape_string($data['quantity']) . '",
  "' . mysql_real_escape_string($data['price']) . '",
@@ -331,7 +392,7 @@ function this_is_file(&$link){
     preg_match('/.+\.(\w+)$/xis', $link, $pocket);//получаю расширение файла
     if(!empty($pocket)) {
         $pocket=$pocket[1];
-        $file_formats = array('rar', 'zip', 'avi', 'mpeg', 'mp3', 'gif', 'tif', 'jpg', 'bmp', 'ppt', 'txt', 'xls', 'doc', 'png', 'pdf','jpeg');
+        $file_formats = array('rar', 'zip', 'avi', 'mpeg', 'mp3', 'gif', 'tif', 'jpg', 'bmp', 'ppt', 'txt', 'xls', 'doc', 'png', 'pdf','jpeg','gz','tar','xml','zip');
         foreach ($file_formats as &$value) {
             if ($pocket == $value) {
                 unset($value,$pocket,$file_formats,$link);

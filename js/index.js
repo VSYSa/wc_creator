@@ -131,6 +131,7 @@ var cr_indicators_store={
         cr_quantity_urls_to_parsing:0,
         cr_quantity_found_products:0,
         cr_continue_creating:0,
+        cr_products_to_uploading:0,
         cr_status_updating:0,
         cr_goods_uploaded:0,
         time_of_start_updating:0,
@@ -168,6 +169,7 @@ var cr_indicators_store={
                 cr_indicators_store.cr_memory_usage=parseInt(data['memory_usage']);
                 cr_indicators_store.last_updated=parseInt(data['last_updated']);
                 cr_indicators_store.cr_next_url_to_updating=data['next_url_to_updating'];
+                cr_indicators_store.cr_products_to_uploading=parseInt(data['products_to_uploading']);
                 cr_indicators_store.update_all();
                 return ;
             }
@@ -234,8 +236,8 @@ var cr_indicators_store={
                 start_creating();
             }
     
-            $('#cr_progress_quantity_parsed_urls div').width(100*cr_indicators_store.cr_quantity_parsed_urls/cr_indicators_store.cr_quantity_urls+'%');
-            $('#cr_progress_goods_uploaded div').width(100*cr_indicators_store.cr_goods_uploaded/cr_indicators_store.cr_quantity_found_products+'%');
+            $('#cr_progress_quantity_parsed_urls div').width(100*cr_indicators_store.cr_quantity_parsed_urls/(cr_indicators_store.cr_quantity_urls_to_parsing+cr_indicators_store.cr_quantity_parsed_urls)+'%');
+            $('#cr_progress_goods_uploaded div').width(100*cr_indicators_store.cr_goods_uploaded/(cr_indicators_store.cr_goods_uploaded+cr_indicators_store.cr_products_to_uploading)+'%');
             $('#cr_progress_quantity_downloaded_from_our_PL div').width(100*cr_indicators_store.cr_quantity_downloaded_from_our_PL/cr_indicators_store.quantiti_products_in_our_shop+'%');
     
             $('#cr_time_from_start').html(timer(Math.floor(Date.now()/1000)-cr_indicators_store.time_of_start_updating));

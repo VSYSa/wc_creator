@@ -71,7 +71,7 @@ function pars_magia_sveta(&$url,&$html,$what){
         return 471;
     }
     if(!preg_match('/в наличии/',$html->find('a.available-tab-open span',0))){//если нет в наличии, то error
-        write_error('472','Товара нет в наличии, поэтому не парсим его.',$html->find('a.available-tab-open'));
+        write_error('472','Товара нет в наличии, поэтому не парсим его.',$url);
         return 472;
     }
 
@@ -173,7 +173,7 @@ function pars_electra(&$url,&$html,$what){
         return 471;
     }
     if($quantity==0){//если нет в наличии, то error
-        write_error('472','Товара нет в наличии, поэтому не парсим его.',$html->find('a.available-tab-open'));
+        write_error('472','Товара нет в наличии, поэтому не парсим его.',$url);
         return 472;
     }
 

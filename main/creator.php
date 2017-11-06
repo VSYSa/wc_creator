@@ -4,7 +4,6 @@
 
 
 require_once('../libs/lib_creator.php');
-write_log(3333333);
 
 
 if($_POST['what_to_do']==='start_creating'){

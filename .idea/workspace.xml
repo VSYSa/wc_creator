@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79986b25-f786-4ab5-8124-cb1a25201274" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/16-10.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/up_index.js" afterPath="$PROJECT_DIR$/js/up_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/lib_creator.php" afterPath="$PROJECT_DIR$/libs/lib_creator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/lib_updator.php" afterPath="$PROJECT_DIR$/libs/lib_updator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/settings.php" afterPath="$PROJECT_DIR$/libs/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/17-10.txt" afterPath="$PROJECT_DIR$/logs/17-10.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/creator.php" afterPath="$PROJECT_DIR$/main/creator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/cookie.txt" afterPath="$PROJECT_DIR$/parser/cookie.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/status/cr_status.php" afterPath="$PROJECT_DIR$/status/cr_status.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/status/up_status.php" afterPath="$PROJECT_DIR$/status/up_status.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parser.php" afterPath="$PROJECT_DIR$/parser/parser.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +15,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/settings.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -42,7 +31,7 @@
       <file leaf-file-name="up_index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/up_index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="4845">
               <caret line="285" column="26" lean-forward="false" selection-start-line="285" selection-start-column="26" selection-end-line="285" selection-end-column="26" />
               <folding />
             </state>
@@ -52,7 +41,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
+            <state relative-caret-position="7191">
               <caret line="423" column="4" lean-forward="false" selection-start-line="423" selection-start-column="4" selection-end-line="423" selection-end-column="26" />
               <folding />
             </state>
@@ -62,7 +51,7 @@
       <file leaf-file-name="cr_status.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/status/cr_status.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state relative-caret-position="1173">
               <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
               <folding>
                 <marker date="1508271093440" expanded="true" signature="493:532" ph="SELECT COUNT... url_list" />
@@ -96,8 +85,8 @@
       <file leaf-file-name="up_status.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/status/up_status.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+            <state relative-caret-position="1105">
+              <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
               <folding>
                 <marker date="1508273182324" expanded="true" signature="493:557" ph="SELECT `valu... settings" />
                 <marker date="1508273182324" expanded="true" signature="627:668" ph="SELECT COUNT... errors_log" />
@@ -133,15 +122,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+              <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
               <folding>
                 <element signature="n#!!block;n#create_record#0" expanded="false" />
                 <element signature="n#!!block;n#sorting_tables#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parser.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/parser/parser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,7 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>start_updating</find>
       <find>update_PI</find>
       <find>update_product_information</find>
       <find>write_err</find>
@@ -187,6 +185,7 @@
       <find>write</find>
       <find>clear a</find>
       <find>start_spider</find>
+      <find>472</find>
     </findStrings>
     <replaceStrings>
       <replace>cr_continue_creating</replace>
@@ -233,7 +232,6 @@
         <option value="$PROJECT_DIR$/lib.php" />
         <option value="$PROJECT_DIR$/up_index.js" />
         <option value="$PROJECT_DIR$/../wp_wc_creator_products/creating_products/lib.php" />
-        <option value="$PROJECT_DIR$/parser/parser.php" />
         <option value="$PROJECT_DIR$/style/adminstyle.css" />
         <option value="$PROJECT_DIR$/../downloader.php" />
         <option value="$PROJECT_DIR$/downloader.php" />
@@ -248,6 +246,7 @@
         <option value="$PROJECT_DIR$/libs/lib_creator.php" />
         <option value="$PROJECT_DIR$/status/up_status.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/parser/parser.php" />
       </list>
     </option>
   </component>
@@ -259,9 +258,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -279,7 +279,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -364,6 +363,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,22 +476,21 @@
       <workItem from="1507923037030" duration="670000" />
       <workItem from="1507952536718" duration="55781000" />
       <workItem from="1508261785332" duration="1014000" />
-      <workItem from="1508264748035" duration="8367000" />
+      <workItem from="1508264748035" duration="8426000" />
+      <workItem from="1508314621610" duration="680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67692000" />
+    <option name="totallyTimeSpent" value="68431000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22546972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -503,6 +502,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -538,6 +538,113 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/libs/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding>
+            <element signature="n#write_log#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/up_index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4845">
+          <caret line="285" column="26" lean-forward="false" selection-start-line="285" selection-start-column="26" selection-end-line="285" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7191">
+          <caret line="423" column="4" lean-forward="false" selection-start-line="423" selection-start-column="4" selection-end-line="423" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/status/cr_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
+          <folding>
+            <marker date="1508271093440" expanded="true" signature="493:532" ph="SELECT COUNT... url_list" />
+            <marker date="1508271093440" expanded="true" signature="602:643" ph="SELECT COUNT... errors_log" />
+            <marker date="1508271093440" expanded="true" signature="718:775" ph="SELECT COUNT... url_list" />
+            <marker date="1508271093440" expanded="true" signature="854:911" ph="SELECT COUNT... url_list" />
+            <marker date="1508271093440" expanded="true" signature="989:1034" ph="SELECT COUNT... found_products" />
+            <marker date="1508271093440" expanded="true" signature="1106:1170" ph="SELECT `valu... settings" />
+            <marker date="1508271093440" expanded="true" signature="1240:1302" ph="SELECT `valu... settings" />
+            <marker date="1508271093440" expanded="true" signature="1373:1468" ph="SELECT `url`... url_list" />
+            <marker date="1508271093440" expanded="true" signature="1533:1595" ph="SELECT COUNT... found_products" />
+            <marker date="1508271093440" expanded="true" signature="1677:1721" ph="SELECT COUNT... products_list" />
+            <marker date="1508271093440" expanded="true" signature="1798:1867" ph="SELECT `valu... settings" />
+            <marker date="1508271093440" expanded="true" signature="1942:2004" ph="SELECT `valu... settings" />
+            <marker date="1508271093440" expanded="true" signature="2088:2164" ph="SELECT `valu... settings" />
+            <marker date="1508271093440" expanded="true" signature="2229:2288" ph="SELECT `valu... settings" />
+            <marker date="1508271093440" expanded="true" signature="2353:2412" ph="SELECT `valu... settings" />
+            <marker date="1508271093440" expanded="true" signature="2514:2579" ph="UPDATE `sett... " />
+            <marker date="1508271093440" expanded="true" signature="2672:2737" ph="UPDATE `sett... " />
+            <marker date="1508271093440" expanded="true" signature="2827:2892" ph="UPDATE `sett... " />
+            <marker date="1508271093440" expanded="true" signature="2913:2980" ph="UPDATE `sett... " />
+            <marker date="1508271093440" expanded="true" signature="3289:3371" ph="SELECT `id`,... errors_log" />
+            <marker date="1508271093440" expanded="true" signature="3509:3541" ph="DELETE FROM " />
+            <marker date="1508271093440" expanded="true" signature="3509:3544" ph="DELETE FROM " />
+            <marker date="1508271093440" expanded="true" signature="3509:3556" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/status/up_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+          <folding>
+            <marker date="1508273182324" expanded="true" signature="493:557" ph="SELECT `valu... settings" />
+            <marker date="1508273182324" expanded="true" signature="627:668" ph="SELECT COUNT... errors_log" />
+            <marker date="1508273182324" expanded="true" signature="740:815" ph="SELECT COUNT... products_list" />
+            <marker date="1508273182324" expanded="true" signature="898:957" ph="SELECT COUNT... products_list" />
+            <marker date="1508273182324" expanded="true" signature="1028:1087" ph="SELECT COUNT... products_list" />
+            <marker date="1508273182324" expanded="true" signature="1154:1220" ph="SELECT `id` products_list" />
+            <marker date="1508273182324" expanded="true" signature="1290:1352" ph="SELECT `valu... settings" />
+            <marker date="1508273182324" expanded="true" signature="1427:1494" ph="SELECT `valu... settings" />
+            <marker date="1508273182324" expanded="true" signature="1568:1626" ph="SELECT `valu... settings" />
+            <marker date="1508273182324" expanded="true" signature="1703:1772" ph="SELECT `valu... settings" />
+            <marker date="1508273182324" expanded="true" signature="1849:1997" ph="SELECT `date... products_list" />
+            <marker date="1508273182324" expanded="true" signature="2035:2182" ph="SELECT `date... products_list" />
+            <marker date="1508273182324" expanded="true" signature="2270:2370" ph="SELECT `date... products_list" />
+            <marker date="1508273182324" expanded="true" signature="2408:2507" ph="SELECT `date... products_list" />
+            <marker date="1508273182324" expanded="true" signature="2583:2683" ph="SELECT `date... products_list" />
+            <marker date="1508273182324" expanded="true" signature="2721:2820" ph="SELECT `date... products_list" />
+            <marker date="1508273182324" expanded="true" signature="3104:3171" ph="UPDATE `sett... " />
+            <marker date="1508273182324" expanded="true" signature="3264:3331" ph="UPDATE `sett... " />
+            <marker date="1508273182324" expanded="true" signature="3420:3487" ph="UPDATE `sett... " />
+            <marker date="1508273182324" expanded="true" signature="3508:3580" ph="UPDATE `sett... " />
+            <marker date="1508273182324" expanded="true" signature="3677:3773" ph="INSERT INTO `updateproducts`.`to_remove`... " />
+            <marker date="1508273182324" expanded="true" signature="3984:4024" ph="DELETE FROM " />
+            <marker date="1508273182324" expanded="true" signature="4066:4125" ph="UPDATE `prod... " />
+            <marker date="1508273182324" expanded="true" signature="4241:4323" ph="SELECT `id`,... errors_log" />
+            <marker date="1508273182324" expanded="true" signature="4517:4553" ph="DELETE FROM " />
+            <marker date="1508273182324" expanded="true" signature="4517:4561" ph="DELETE FROM " />
+            <marker date="1508273182324" expanded="true" signature="4517:4562" ph="DELETE FROM " />
+            <marker date="1508273182324" expanded="true" signature="4806:4853" ph="DELETE FROM " />
+            <marker date="1508273182324" expanded="true" signature="4895:4938" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#create_record#0" expanded="false" />
+            <element signature="n#!!block;n#sorting_tables#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -619,14 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/parser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/updator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -689,7 +788,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/up_index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="4845">
           <caret line="285" column="26" lean-forward="false" selection-start-line="285" selection-start-column="26" selection-end-line="285" selection-end-column="26" />
           <folding />
         </state>
@@ -808,7 +907,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/status/cr_status.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="1173">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
           <folding>
             <marker date="1508271093440" expanded="true" signature="493:532" ph="SELECT COUNT... url_list" />
@@ -840,7 +939,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
+        <state relative-caret-position="7191">
           <caret line="423" column="4" lean-forward="false" selection-start-line="423" selection-start-column="4" selection-end-line="423" selection-end-column="26" />
           <folding />
         </state>
@@ -848,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/status/up_status.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        <state relative-caret-position="1105">
+          <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
           <folding>
             <marker date="1508273182324" expanded="true" signature="493:557" ph="SELECT `valu... settings" />
             <marker date="1508273182324" expanded="true" signature="627:668" ph="SELECT COUNT... errors_log" />
@@ -887,11 +986,19 @@
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+          <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
           <folding>
             <element signature="n#!!block;n#create_record#0" expanded="false" />
             <element signature="n#!!block;n#sorting_tables#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/parser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

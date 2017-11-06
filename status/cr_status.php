@@ -29,6 +29,7 @@ if($_POST['what_to_do']==='get_all_information'){
         'status_updating'   => mysql_fetch_array(mysql_query('SELECT `value` FROM `settings` WHERE `title`="status_updating"'))[0],
         'next_url_to_updating' => mysql_fetch_row(mysql_query('SELECT `url` FROM `url_list` WHERE `status_updating`=1 ORDER BY `date_of_uploading` ASC LIMIT 1'))[0],
         'goods_uploaded' => mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=4'))[0],
+        'products_to_uploading' => mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `found_products` WHERE `product_status`=2'))[0],
         'quantity_downloaded_from_our_PL' => mysql_fetch_row(mysql_query('SELECT COUNT(1) FROM `products_list` WHERE 1'))[0],
         'time_of_start_updating'   => mysql_fetch_array(mysql_query('SELECT `value` FROM `settings` WHERE `title`="time_of_start_updating"'))[0],
         'time_of_end_updating'   => mysql_fetch_array(mysql_query('SELECT `value` FROM `settings` WHERE `title`="end_of_updating"'))[0],
